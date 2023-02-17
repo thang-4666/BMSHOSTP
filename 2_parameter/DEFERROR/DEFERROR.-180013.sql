@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180013;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180013, '[-180013]: Tỷ lệ margin tâng hệ thống thấp hơn tầng loại hình!', '[-180013]:System margin rate under type defined margin rate !', 'MR', NULL);COMMIT;

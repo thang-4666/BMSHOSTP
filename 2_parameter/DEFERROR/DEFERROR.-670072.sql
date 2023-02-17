@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670072;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670072, '[-670072]: Tài khoản chưa đăng ký với ngân hàng', '[-670072]: Tài khoản chưa đăng ký với ngân hàng', 'RM', 0);COMMIT;

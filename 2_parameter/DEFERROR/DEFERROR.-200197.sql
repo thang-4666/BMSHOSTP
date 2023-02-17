@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200197;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200197, '[-200197]: Điều kiện loại hình tiểu khoản GDKQ không đúng!', '[-200197]:The Margin type is not correct!', 'CF', NULL);COMMIT;

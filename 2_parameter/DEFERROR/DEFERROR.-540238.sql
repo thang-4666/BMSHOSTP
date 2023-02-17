@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540238;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540238, '[-540238]:Món vay có tỉ lệ thực tế nhỏ hơn tỉ lệ cảnh báo, không được phép gia hạn!', '[-540238]:món vay có tỉ lệ thực tế nhỏ hơn tỉ lệ cảnh báo, không được phép gia hạn!', 'LN', NULL);COMMIT;

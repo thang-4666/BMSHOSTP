@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -904457;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-904457, '[-904457]: Hồ sơ đã gửi lên trung tâm!', '[-904457]: Hồ sơ đã gửi lên trung tâm!', 'SE', NULL);COMMIT;

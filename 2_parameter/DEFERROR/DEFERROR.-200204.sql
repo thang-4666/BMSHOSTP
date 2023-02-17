@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200204;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200204, '[-200204]: Không được cập nhật Loại hình Margin(Credit line) tương ứng với Mã loại hình.', '[-200204]: AFTYPE not approved', 'CF', NULL);COMMIT;

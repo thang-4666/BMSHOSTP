@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('USERPASSLENGTH','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'USERPASSLENGTH', '6', 'Độ dài tối thiểu mật khẩu của user', 'Độ dài tối thiểu mật khẩu của user', 'Y', 'A', 'P');COMMIT;

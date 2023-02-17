@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100113;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100113, '[-100113]:Phien giao dich khong hop le!', '[-100113]:Invalid trading secssion!', 'SA', NULL);COMMIT;

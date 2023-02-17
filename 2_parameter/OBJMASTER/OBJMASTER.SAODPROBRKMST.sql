@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.ODPROBRKMST','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.ODPROBRKMST', 'Quản lý chính sách ưu đãi phí môi giới', 'Brokerage fee promotion management', 'Y', 'N', 'NNNNYYY');COMMIT;

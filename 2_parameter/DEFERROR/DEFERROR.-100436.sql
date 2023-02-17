@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100436;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100436, '[-100436]: Mã chứng khoán Import từ excel bị trùng lặp, Kiểm tra lại dữ liệu đầu vào!', '[-100436]: Mã chứng khoán Import từ excel bị trùng lặp, Kiểm tra lại dữ liệu đầu vào!', 'SA', NULL);COMMIT;

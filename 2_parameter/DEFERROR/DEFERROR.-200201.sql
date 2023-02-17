@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200201;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200201, '[-200201]: Một khách hàng chỉ được có một tiểu khỏan nhận lệnh từ ETS', '[-200201]: Duplicate ETS field', 'SA', NULL);COMMIT;

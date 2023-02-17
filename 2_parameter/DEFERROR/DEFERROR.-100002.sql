@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100002, '[-100002]: Không thể xoá chi nhánh/đại lý hiện tại!', '[-100002]: Cannot delete current branch!', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561026;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561026, '[-561026] : Môi giới chuyển và nhận phải cùng vai trò', '[-561026] : Remisers must be same role', 'RE', 0);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900022;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900022, 'Vẫn còn số dư chứng khoán chờ thanh toán trong tiểu khoản', '[-900022]: ERR_SE_NETTING', 'SE', NULL);COMMIT;

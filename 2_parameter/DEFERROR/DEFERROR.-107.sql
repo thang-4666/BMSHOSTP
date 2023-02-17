@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -107;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-107, '[H107]: Tên đăng nhập hoặc mật khẩu không đúng', '[H107]: Username or password invalid', 'HT', NULL);COMMIT;

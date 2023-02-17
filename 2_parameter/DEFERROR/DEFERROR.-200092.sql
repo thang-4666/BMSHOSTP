@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200092;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200092, '[-200202]: Loại hình chứng khoán chưa được duyệt.', '[-200092]: SETYPE not approved', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561023;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561023, '[-561023] : Các tiểu khoản của khách hàng phải được gán vào 1 môi giới', '[-561023] : All account must be same remiser', 'RE', 0);COMMIT;

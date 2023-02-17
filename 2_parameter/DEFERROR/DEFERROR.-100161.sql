@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100161;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100161, '[-100161] Đang có yêu cầu thay đổi chưa xử lý hoàn tất!', '[-100161] Have pending request!', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100710;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100710, '[-100710]: User không được phép làm backdate giao dịch này!', '[-100710]: User is not allow do backdate for this transaction!', 'SA', NULL);COMMIT;

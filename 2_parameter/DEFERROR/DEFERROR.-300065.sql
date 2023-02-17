@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300065;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300065, '[-300065]:KL hủy nhở hơn số lượng đã đăng ký hoặc trạng thái của sự kiện không hợp lệ!', '[-300065]: KL hủy nhở hơn số lượng đã đăng ký hoặc trạng thái của sự kiện không hợp lệ', 'CA', NULL);COMMIT;

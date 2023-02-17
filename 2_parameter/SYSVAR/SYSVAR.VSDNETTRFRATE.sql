@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('VSDNETTRFRATE','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'VSDNETTRFRATE', '0', 'Phí chuyển khoản chứng khoán bù trừ', 'Phi chuyen khoan chung khoan bu tru', 'N', 'A', 'P');COMMIT;

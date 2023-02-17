@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180038;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180038, '[-180038]: Vượt quá hạn mức vay đa cấp', '[-180038]:Over margin limit!', 'MR', NULL);COMMIT;

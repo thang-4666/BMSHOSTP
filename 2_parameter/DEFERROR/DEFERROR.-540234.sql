@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540234;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540234, '[-540234]: Hạn mức bảo lảnh cấp không đủ cho giải ngân bảo lãnh!', '[-540234]: Hạn mức bảo lảnh cấp không đủ cho giải ngân bảo lãnh!', 'LN', NULL);COMMIT;

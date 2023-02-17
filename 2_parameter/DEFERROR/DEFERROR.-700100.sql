@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700100;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700100, '[-700100]: Lệnh không được phép hủy sửa', '-700100]: Lệnh không được phép hủy sửa', 'OD', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100194;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100194, '[-100194]:Mã sổ cổ đông bị trùng!', '[-100194]: Mã sổ cổ đông bị trùng!', 'SA', NULL);COMMIT;

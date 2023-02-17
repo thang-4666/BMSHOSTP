@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100200;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100200, '[-100200]: Tài khoản có giao dịch đang thực hiện liên quan!', '[-100200]: Tài khoản có giao dịch đang thực hiện liên quan', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269009;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269009, '[-269009]: SL quyền mua chưa đăng kí không hợp lệ!', '[-269009]: SL quyền mua chưa đăng kí không hợp lệ', 'SE', NULL);COMMIT;

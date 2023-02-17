@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -280103;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-280103, '[-280103]: Chứng chỉ quỹ không đủ!', '[-280103]: Fund unit not enought!', 'FN', NULL);COMMIT;

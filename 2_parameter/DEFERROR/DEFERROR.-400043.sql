@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400043;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400043, '[-400043]: Interest accure must be equal zero!', '[-400043]:Interest accure must be equal zero!', 'CI', NULL);COMMIT;

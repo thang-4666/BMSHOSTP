@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900007, '[-900007]: Số lượng không trùng với điện nhận về!', '[-900007]: Số lượng không trùng với điện nhận về!', 'SE', NULL);COMMIT;

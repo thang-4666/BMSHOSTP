@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700064;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700064, '[-700064]: CK đặt mua margin không nằm trên danh sách CK margin cho phép!', '[-700064]: Chứng khoán đặt mua margin không nằm trên danh sách chứng khoán mua margin cho phép!', 'OD', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM APPMODULES WHERE 1 = 1 AND NVL(MODCODE,'NULL') = NVL('CF','NULL');Insert into APPMODULES   (TXCODE, MODCODE, MODNAME, CLASSNAME) Values   ('00', 'CF', 'Quản lý hồ sơ khách hàng', 'CF');COMMIT;

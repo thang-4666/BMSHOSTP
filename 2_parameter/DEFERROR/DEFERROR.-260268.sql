@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260268;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260268, '[-260268]: Ngày sinh không đúng định dạng!', '[-260268]: Incorrect date of birth!', 'CF', NULL);COMMIT;

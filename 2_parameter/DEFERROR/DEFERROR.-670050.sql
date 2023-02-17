@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670050;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670050, '[-670050]: Bảng kê không tồn tại trong hệ thống ngân hàng', '[-670050]: Report not founded', 'RM', 0);COMMIT;

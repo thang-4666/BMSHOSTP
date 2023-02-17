@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540231;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540231, '[-540231]: Số tiền thanh lý nhỏ hơn số tiền tái ký và số tiền khả dụng của tiểu khoản!', '[-540231]: Số tiền thanh lý nhỏ hơn số tiền tái ký và số tiền khả dụng của tiểu khoản!', 'LN', NULL);COMMIT;

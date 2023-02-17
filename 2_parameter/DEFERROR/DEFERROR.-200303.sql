@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200303;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200303, '[-200303]: Hạn mức tín dụng nguồn ngân hàng chưa khai báo cho loại hình nghiệp vụ!', '[-200303]: Hạn mức tín dụng nguồn ngân hàng chưa khai báo cho loại hình nghiệp vụ!', 'CF', NULL);COMMIT;

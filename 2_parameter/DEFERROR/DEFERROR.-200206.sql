@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200206;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200206, '[-200206]: Giao dịch yêu cầu nhiều hơn một chử ký của chủ tài khoản!', '[-200206]: Giao dịch yêu cầu nhiều hơn một chử ký của chủ tài khoản!', 'CF', NULL);COMMIT;

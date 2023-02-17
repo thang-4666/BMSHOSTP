@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -201222;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-201222, '[-201222]: Quý khách nhập sai họ và tên hoặc chứng minh nhân dân', '[-201222]: Quý khách nhập sai họ và tên hoặc chứng minh nhân dân', 'CF', NULL);COMMIT;

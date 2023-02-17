@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700005;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700005, '[-700005]: Có lệnh đặt hoặc lệnh chờ thanh toán', '[-700005]: Có lệnh đặt hoặc lệnh chờ thanh toán', 'OD', NULL);COMMIT;

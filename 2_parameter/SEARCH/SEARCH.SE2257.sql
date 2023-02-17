@@ -1,6 +1,0 @@
-SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('SE2257','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('SE2257', 'Trung tâm lưu ký từ chối hồ sơ giải tỏa cầm cố (2257)', 'View pending to cancel Send release mortage (wait for 2257)', 'select se.autoid,tl.BUSDATE,se.txdate, af.acctno afacctno,se.acctno,cf.fullname CUSTNAME,cf.custodycd,sb.symbol,sb.parvalue,se.qtty,sb.codeid,cf.address
-from semortage se, afmast af ,cfmast cf,sbsecurities sb,VW_TLLOG_ALL TL
-where substr(se.acctno,1,10)= af.acctno
-and SE.TXNUM = TL.TXNUM AND SE.TXDATE = TL.TXDATE
-and af.custid= cf.custid AND SE.DELTD<>''Y''
-and substr(se.acctno,11)= sb.codeid and se.status = ''N'' and se.tltxcd = ''2233'' and se.sendqtty>0 ', 'SEMAST', '', '', '2257', NULL, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '', '');COMMIT;

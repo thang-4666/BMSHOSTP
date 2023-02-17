@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180052;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180052, '[-180052]: Hạn mức bảo lãnh khách hàng thấp hơn hạn mức bảo lãnh hợp đồng  ', '[-180052]:Customer creditline limit under account limit !', 'MR', NULL);COMMIT;

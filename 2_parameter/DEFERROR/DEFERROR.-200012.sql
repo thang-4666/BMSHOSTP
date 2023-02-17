@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200012;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200012, '[-200012]: Số tiểu khoản không tồn tại', '[-200012]: Số tiểu khoản không tồn tại', 'CF', NULL);COMMIT;

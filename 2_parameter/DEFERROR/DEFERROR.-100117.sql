@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100117;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100117, '[-100117]:Khong duoc doi sang loai hinh vay khac!', '[-100117]:Cannot change to other loan type!', 'SA', NULL);COMMIT;

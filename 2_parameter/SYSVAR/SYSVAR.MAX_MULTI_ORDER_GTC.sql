@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('MAX_MULTI_ORDER_GTC','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('OD', 'MAX_MULTI_ORDER_GTC', '10', 'Số lượng nhân lệnh GTC tối đa', 'So luong nhan lenh toi da', 'Y', 'A', 'P');COMMIT;

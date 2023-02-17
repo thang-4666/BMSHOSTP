@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570023;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570023, '[-570023] Trạng thái hạn mức nguồn không hợp lệ', '[-570023] Trạng thái hạn mức nguồn không hợp lệ', 'TD', NULL);COMMIT;

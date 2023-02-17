@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300062;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300062, '[-300062]: Ngày đăng kí quyền mua cuối cùng không được sau ngày thực hiện dự kiến!', '[-300062]: Ngày đăng kí quyền mua cuối cùng không được sau ngày thực hiện dự kiến', 'CA', NULL);COMMIT;

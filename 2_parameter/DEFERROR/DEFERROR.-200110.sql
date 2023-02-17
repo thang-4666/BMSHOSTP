@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200110;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200110, '[-200110]: Loại hình tiểu khoản không hợp lệ!', '[-200110]: Loại hình tiểu khoản không hợp lệ!', 'CF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100028;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100028, '[-100028]: Không tìm thấy mã tổ chức phát hành này!', '[-100028]: Issuer id is not exists', 'SA', NULL);COMMIT;

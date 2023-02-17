@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100137;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100137, '[-100137]: Số tiền chuyển nhỏ hơn số tiền tối thiểu!', '[-100137]: Số tiền chuyển nhỏ hơn số tiền tối thiểu!', 'SA', NULL);COMMIT;

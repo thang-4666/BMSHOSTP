@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540236;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540236, '[-540236]:Món vay đã đến hạn, không được phép gia hạn!', '[-540236]:Món vay đã đến hạn, không được phép gia hạn!', 'LN', NULL);COMMIT;

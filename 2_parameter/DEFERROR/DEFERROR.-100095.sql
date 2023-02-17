@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100095;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100095, '[-100095]: Gửi SMS không thành công!', '[-100095]: Gửi SMS không thành công!', 'CF', NULL);COMMIT;

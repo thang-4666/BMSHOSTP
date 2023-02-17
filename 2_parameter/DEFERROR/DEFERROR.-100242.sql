@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100242;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100242, '[-100242]:Thông tin thay đổi của Quý khách đang chờ xác nhận của VSD!', '[-100242]:Thông tin thay đổi của Quý khách đang chờ xác nhận của VSD!', 'CF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -606;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-606, 'Trader không được phép giao dịch trên phương án', 'Trader không được phép giao dịch trên phương án', 'PM', NULL);COMMIT;

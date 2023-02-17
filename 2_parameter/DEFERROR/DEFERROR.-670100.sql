@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670100;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670100, '[-670100] : Bảng kê xác nhận bị NULL, Hãy kiểm tra lại với NH! ', '[-670100] : Bảng kê xác nhận bị NULL, Hãy kiểm tra lại với NH!', 'RM', 0);COMMIT;

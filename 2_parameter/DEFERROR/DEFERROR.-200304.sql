@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200304;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200304, '[-200304] Tài khoản đã đăng ký cho kênh giao dịch này!', '[-200304] Tài khoản đã đăng ký cho kênh giao dịch này!', 'CF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300041;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300041, '[-300041]: Trái phiếu phải là trái phiếu chuyển đổi!', '[-300041]: The symbol is invalid', 'SA', NULL);COMMIT;

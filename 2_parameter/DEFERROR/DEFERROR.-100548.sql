@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100548;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100548, '[-100548]: Giá trị nguồn tăng thêm không được vượt quá phần nguồn đã sử dụng !', '[-100548]: Giá trị nguồn tăng thêm không được vượt quá phần nguồn đã sử dụng !', 'PR', NULL);COMMIT;

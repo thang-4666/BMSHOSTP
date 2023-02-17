@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100990;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100990, '[-100990]: Lỗi exception khi thực hiện xác thực!', '[-100990]: Lỗi exception khi thực hiện xác thực!', 'DL', NULL);COMMIT;

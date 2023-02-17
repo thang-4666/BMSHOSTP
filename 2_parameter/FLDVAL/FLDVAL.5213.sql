@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM FLDVAL WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('5213','NULL');Insert into FLDVAL   (FLDNAME, OBJNAME, ODRNUM, VALTYPE, OPERATOR, VALEXP, VALEXP2, ERRMSG, EN_ERRMSG, TAGFIELD, TAGVALUE, CHKLEV) Values   ('10', '5213', 0, 'V', '>>', '@0', '', 'Ty le dam bao phai lon hon 0!', 'Secured ratio cannot less than 0!', '', '', 0);COMMIT;

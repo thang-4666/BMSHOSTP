@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200423;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200423, '[-200423]: Số tài khoản bên nhận không hợp lệ!', '[-200423]: Invalid recipient account number!', 'CF', NULL);COMMIT;

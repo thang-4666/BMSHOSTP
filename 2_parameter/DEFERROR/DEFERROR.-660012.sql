@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -660012;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-660012, '[-660012] : Không tìm thấy ngân hàng', '[-660012] : Không tìm thấy ngân hàng', 'RM', 0);COMMIT;

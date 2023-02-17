@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100067;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100067, '[-100067]: Bạn không phải là nhân viên quỹ!', '[-100067]: You are not a cashier!', 'SA', NULL);COMMIT;

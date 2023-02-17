@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180009;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180009, '[-180009]: Tài khoản không thuộc loại hình margin!', '[-180009]:Account is not margin type !', 'MR', NULL);COMMIT;

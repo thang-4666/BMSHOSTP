@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100042;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100042, '[-100042]: Không thể xóa mã loại tiền do vẫn còn dữ liệu liên quan!', '[-100042]:Cannot delete the Currency which contains related data!', 'SA', NULL);COMMIT;

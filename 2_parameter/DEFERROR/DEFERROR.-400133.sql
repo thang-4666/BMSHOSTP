@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400133;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400133, '[-400133]: Ứng ngoài phạm vi giá trị tối thiểu tối đa của loại hình ứng mới!', '[-400133]: Ứng ngoài phạm vi giá trị tối thiểu tối đa của loại hình ứng mới!', 'CI', NULL);COMMIT;

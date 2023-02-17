@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100223;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100223, '[-100223]:Ngoài khoảng thời gian khai báo khách hàng!', '[-100223]:out of date', 'SA', NULL);COMMIT;

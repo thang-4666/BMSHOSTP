@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200199;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200199, '[-200199]: Hệ thống hiện tại không cho phép gia hạn HĐ Margin!', '[-200199]:System not allow to extend Margin deal!', 'CF', NULL);COMMIT;

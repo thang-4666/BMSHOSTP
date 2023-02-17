@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100501;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100501, '[-100501]: Trạng thái "Ðã xác nhận TT KH" chỉ được chuyển sang "Ðã Hủy", "Ðã gửi HS"!', '[-100501]: Trạng thái "Ðã xác nhận TT KH" chỉ được chuyển sang "Ðã Hủy", "Ðã gửi HS"!', 'CF', NULL);COMMIT;

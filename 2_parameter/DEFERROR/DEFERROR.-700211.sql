@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700211;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700211, '[-700211]: Đang trong giờ giao dịch không được phép giải tỏa lệnh!', '[-700211]: Dang trong gio giao dich khong duoc phep giai toa lenh!', 'OD', NULL);COMMIT;

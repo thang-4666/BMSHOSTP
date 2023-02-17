@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100536;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100536, '[-100536]: Mỗi loại hình chỉ được gán với một pool mặc định!', '[-100536]: Mỗi loại hình chỉ được gán với một pool mặc định!', 'SA', NULL);COMMIT;

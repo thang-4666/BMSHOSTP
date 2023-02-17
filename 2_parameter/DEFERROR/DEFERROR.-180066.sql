@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180066;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180066, '[-180066]: Serial token không hợp lệ', '[-180066]: Serial token không hợp lệ!', 'CF', NULL);COMMIT;

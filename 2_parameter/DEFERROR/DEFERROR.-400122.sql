@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400122;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400122, '[-400122]:Loại tiểu khoản không hợp lệ. Phải là loại không Margin!', '[-400122]:ERR_CI_ACCOUNT_TYPE_INVALID!', 'CI', NULL);COMMIT;

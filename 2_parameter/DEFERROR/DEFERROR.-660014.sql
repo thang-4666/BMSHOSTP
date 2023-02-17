@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -660014;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-660014, '[-660014] : Số dư hold điều chỉnh không phù hợp (Khác số dư hold ngân hàng)', '[-660014] : Số dư hold điều chỉnh không phù hợp (Khác số dư hold ngân hàng)', 'RM', 0);COMMIT;

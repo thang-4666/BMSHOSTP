@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670022;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670022, '[-670022]: Định dạng mã bảng kê không đúng', '[-670022]: BatchID invalid format', 'RM', 0);COMMIT;

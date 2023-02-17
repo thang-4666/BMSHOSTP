@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540217;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540217, '[-540217]: Ngày gia hạn không vượt quá ngày gia hạn tối đa trong một lần gia hạn!', '[-540217]: Ngày gia hạn không vượt quá số ngày gia hạn tối đa trong một lần gia hạn!', 'LN', NULL);COMMIT;

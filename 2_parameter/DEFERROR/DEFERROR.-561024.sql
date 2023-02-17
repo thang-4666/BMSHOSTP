@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561024;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561024, '[-561024] : Trùng thứ tự ưu tiên hiệu lực', '[-561024] : duplicate effective order', 'RE', 0);COMMIT;

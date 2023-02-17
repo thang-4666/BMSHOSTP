@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701414;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701414, '[-701414]: Ðã hết phiên đặt lệnh.', '[-701414]: Order session has expired.', 'OD', NULL);COMMIT;

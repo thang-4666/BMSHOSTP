@@ -1,3 +1,0 @@
-SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('CF.TLID','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('CF.TLID', 'Danh sách user', 'View list user', 'select tlg.tlid , tlp.tlname username, tlp.tlfullname fullname , tg.grpname
-from tlgrpusers tlg ,tlprofiles tlp,tlgroups tg
-where tlg.tlid = tlp.tlid and  tlg.grpid=tg.grpid AND tlg.grpid like nvl(''<$AFACCTNO>'',''%'')', 'LISTUSER', 'frmTLID', '', '', 0, 50, 'N', 30, '', 'Y', 'T', '', 'N', '', '');COMMIT;

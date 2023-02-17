@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -201120;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-201120, '[-201120]: Tài khoản chưa active', '[-201120]: Tài khoản chưa active', 'SE', NULL);COMMIT;

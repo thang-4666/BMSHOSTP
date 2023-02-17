@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400117;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400117, '[-400117]:Vượt quá hạn mức có thể giao dịch của tiểu khoản!', '[-400116]:Vượt quá hạn mức có thể giao dịch của tiểu khoản!', 'CI', NULL);COMMIT;

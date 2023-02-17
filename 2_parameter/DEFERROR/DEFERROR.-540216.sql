@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540216;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540216, '[-540216]: Tài kho?n không thu?c nhóm margin', '[-540216]: Account not in margin group', 'LN', NULL);COMMIT;

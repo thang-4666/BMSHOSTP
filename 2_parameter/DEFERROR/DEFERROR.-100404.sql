@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100404;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100404, '[-100404]: Loại hình hợp đồng đã được gán vào rổ!', '[-100404]: Loại hình hợp đồng đã được gán vào rổ!', 'SA', NULL);COMMIT;

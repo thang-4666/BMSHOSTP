@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260023;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260023, '[-260023] Loại hình vay phải có nguồn giải ngân từ ngân hàng', '[-260023] Loại hình vay phải có nguồn giải ngân từ ngân hàng', 'DF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100550;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100550, '[-100550]: Hạn mức nguồn muốn đảo vượt quá giá trị đảo nguồn tối đa có thể của hệ thống !', '[-100550]: Hạn mức nguồn muốn đảo vượt quá giá trị đảo nguồn tối đa có thể của hệ thống !', 'PR', NULL);COMMIT;

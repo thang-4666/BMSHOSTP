@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400447;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400447, '[-400447]: Giao dịch không thể xóa vì đã hoàn tất chuyển khoản ra ngân hàng', '[-400447]: The transaction cant be deltd because it has been transfered complete to the bank', 'SE', NULL);COMMIT;

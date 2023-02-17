@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570775;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570775, 'Số tiền trả lãi lớn hơn nợ lãi', 'Số tiền trả lãi lớn hơn nợ lãi', 'LN', NULL);COMMIT;

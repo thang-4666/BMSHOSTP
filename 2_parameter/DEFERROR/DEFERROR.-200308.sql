@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200308;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200308, '[-200308] Chứng thư số hoặc OTP (SMS) chỉ được đăng ký cho kênh Online Trading của BMSC!', '[-200308] Chứng thư số hoặc OTP (SMS) chỉ được đăng ký cho kênh Online Trading của BMSC!', 'CF', NULL);COMMIT;

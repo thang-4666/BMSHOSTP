@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -301001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-301001, '[-301001]:Không thể nhận chuyển khoản sự kiện đã hoàn tất phân bổ', '[-301001]: Không thể nhận chuyển khoản sự kiện đã hoàn tất phân bổ', 'CA', NULL);COMMIT;

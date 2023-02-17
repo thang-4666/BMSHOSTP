@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -665;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-665, 'Số lượng chứng khoán hủy/Khớp vượt quá số lượng lệnh đặt còn lại', 'Số lượng chứng khoán hủy/Khớp vượt quá số lượng lệnh đặt còn lại', 'PM', NULL);COMMIT;

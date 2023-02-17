@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('BANKACCTVALIDATE','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('CF', 'BANKACCTVALIDATE', 'Y', 'Co kiem tra tai khoan ngan hang khong', 'Co kiem tra tai khoan ngan hang khong', 'N', 'A', 'P');COMMIT;

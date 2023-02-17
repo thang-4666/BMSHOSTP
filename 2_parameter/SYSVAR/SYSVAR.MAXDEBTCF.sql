@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('MAXDEBTCF','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('MARGIN', 'MAXDEBTCF', '1000000000', 'Hạn mức nợ tối đa của một khách hàng', 'Max debt for one customer', 'Y', 'A', 'PAP');COMMIT;

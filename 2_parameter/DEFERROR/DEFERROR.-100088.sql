@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100088;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100088, '[-100088]: Hết giờ thực hiện giao dịch', '[-100088]: Transaction timeout', 'SA', NULL);COMMIT;

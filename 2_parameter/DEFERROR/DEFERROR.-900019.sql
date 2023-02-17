@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900019;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900019, '[-900019]: Trạng thái tiểu khoản chưng khoán không hợp lệ', '[-900019]: The status of this account is invalid', 'SE', NULL);COMMIT;

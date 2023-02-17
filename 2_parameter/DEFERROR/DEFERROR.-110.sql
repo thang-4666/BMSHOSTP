@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -110;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-110, '[H110]: Trạng thái mật khẩu lỗi, xin liên hệ với BSC!', '[H110]: Password status invalid', 'HT', NULL);COMMIT;

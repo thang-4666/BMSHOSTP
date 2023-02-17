@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900004;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900004, '[-900004]: Không tìm thây chứng khoán tương ứng với số tiểu khoản', '[-900004]: ERR_SE_AFACCTNO_NOTFOUND', 'SE', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100195;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100195, '[-100195] Trùng mã nơi nhận!', '[-100195] Trùng mã nơi nhận!', 'SA', 0);COMMIT;

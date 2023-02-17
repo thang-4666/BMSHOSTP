@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -290068;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-290068, '[-290068]: Còn cần thực hiện thanh toán tiền lô lẻ!', '[-290068]: Còn cần thực hiện thanh toán tiền lô lẻ', 'OD', NULL);COMMIT;

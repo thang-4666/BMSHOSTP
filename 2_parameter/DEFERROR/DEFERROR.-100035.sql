@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100035;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100035, '[-100035]: Không thể xoá tổ chức phát hành do vẫn còn dữ liệu liên quan!', '[-100035]: Cannot delete the issuer which contains related data!', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100778;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100778, '[-100778]: Giao dịch đã được thực hiện, không thể thực hiện thêm giao dịch tương tự!', '[-100778]: Giao dịch đã được thực hiện, không thể thực hiện thêm giao dịch tương tự!', 'SA', NULL);COMMIT;

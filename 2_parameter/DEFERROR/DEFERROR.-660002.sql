@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -660002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-660002, 'Tài khoản không thể kết nối với ngân hàng', 'Account cannot connect to bank', 'RM', 0);COMMIT;

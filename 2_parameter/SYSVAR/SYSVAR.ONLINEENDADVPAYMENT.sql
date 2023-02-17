@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('ONLINEENDADVPAYMENT','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'ONLINEENDADVPAYMENT', '240000', 'Thoi gian ket thuc ung truoc tren online', 'Thoi gian ket thuc ung truoc tren online', 'Y', 'A', 'PAP');COMMIT;

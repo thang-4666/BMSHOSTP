@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180016;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180016, '[-180016]: Giá vay tầng hệ thống thấp hơn tầng loại hình!', '[-180016]:System loan price rate under type defined loan price rate !', 'MR', NULL);COMMIT;

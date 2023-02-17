@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -560006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-560006, 'Chưa thanh toán hoa hồng cho môi giới', '[-560006] : Balance must be zero', 'RE', 0);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180059;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180059, '[-180059]: User không phải là môi giới quản lý trực tiếp', '[-180059]: User không phải là môi giới quản lý trực tiếp!', 'RE', NULL);COMMIT;

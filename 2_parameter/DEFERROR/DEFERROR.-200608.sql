@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200608;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200608, '[-200608]: Trạng thái yêu cầu không hợp lệ!', '[-200608]: Invalid request status!', 'CF', NULL);COMMIT;

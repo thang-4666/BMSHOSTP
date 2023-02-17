@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -201183;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-201183, '[-201183]: Vượt quá số lượng chứng khoán lẻ của tài khoản!', '[-201183]: Vượt quá số lượng chứng khoán lẻ của tài khoản!', 'CF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200090;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200090, '[-200090]: Khách hàng phải đủ 18 tuổi !', '[-200090]: The customer must be 18 years old', 'CF', NULL);COMMIT;

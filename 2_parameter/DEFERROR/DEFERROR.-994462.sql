@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -994462;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-994462, '[-994462]: Không thay đổi địa chỉ đối với khách hàng nước ngoài!', '[-994462]: You don''t have appropriate permission to perform this operation!', 'CF', NULL);COMMIT;

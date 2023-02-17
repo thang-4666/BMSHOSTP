@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300029;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300029, '[-300029]: Chưa đến ngày cho phép thực hiện chuyển nhượng quyền mua,', '[-300029]: ERR_CA_DATE_CANNOT_EXECUTE', 'CA', NULL);COMMIT;

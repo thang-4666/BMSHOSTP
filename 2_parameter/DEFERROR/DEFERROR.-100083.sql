@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100083;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100083, '[100083]: Ngày hệ thống đã thay đổi, Thoát và Đăng nhập lại để thực hiện giao dịch !', '[-100083] :ERR_SA_BUSDATE_BRANCHDATE_PLZLOGIN_OUT !', 'SA', NULL);COMMIT;

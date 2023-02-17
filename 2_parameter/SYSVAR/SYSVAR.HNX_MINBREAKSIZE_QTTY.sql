@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('HNX_MINBREAKSIZE_QTTY','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'HNX_MINBREAKSIZE_QTTY', '1000', 'Khá»‘i lÆ°á»£ng tÃ¡ch lá»‡nh tá»‘i thiá»ƒu', 'HSX: Minimum quantiy break size', 'N', 'A', 'P');COMMIT;

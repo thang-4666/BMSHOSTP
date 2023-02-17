@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901213;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901213, '[-901213]: Số lượng ck phong tỏa loại 8 không hợp lệ', '[-901213]: Số lượng ck phong tỏa loại 8 không hợp lệ', 'SE', NULL);COMMIT;

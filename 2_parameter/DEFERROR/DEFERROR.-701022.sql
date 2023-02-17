@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701022;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701022, '[-701022]:Đã thực thiện ứng trước hoặc cầm cố, không được xóa !', '[-701022]:Đã thực thiện ứng trước hoặc cầm cố, không được xóa', 'OD', NULL);COMMIT;

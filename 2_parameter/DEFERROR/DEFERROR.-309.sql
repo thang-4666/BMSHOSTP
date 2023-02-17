@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -309;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-309, 'Không đủ số dư Chứng khoán khả dụng để thực hiện phong tỏa', 'Không đủ số dư Chứng khoán khả dụng để thực hiện phong tỏa', 'PM', NULL);COMMIT;

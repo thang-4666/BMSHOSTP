@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260018;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260018, '[-260018]: Nợ gốc <= Tiền nộp < Tổng nợ nên không được trả nợ !', '[-260018]: Nợ gốc <= Tiền nộp < Tổng nợ nên không được trả nợ !', 'DF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700015;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700015, '[-700015]: Không được MUA/BÁN cùng một chứng khoán trong ngày', '[-700015]: BUY/SELL same symbol dur', 'OD', NULL);COMMIT;

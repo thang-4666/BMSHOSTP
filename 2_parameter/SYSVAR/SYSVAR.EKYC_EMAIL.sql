@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('EKYC_EMAIL','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'EKYC_EMAIL', 'buitmtrang@gmail.com', 'Email nhận thông báo mở tài khoản eKYC', 'Email to receive eKYC account opening notification', 'Y', 'A', 'AP');COMMIT;

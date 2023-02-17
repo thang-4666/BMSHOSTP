@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700109;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700109, '[-700109]: Khối lượng sửa không được lớn hơn khối lượng tối đa của 1 lệnh (999900)', '[-700109]:  Khối lượng sửa không được lớn hơn khối lượng tối đa của 1 lệnh (999900)', 'OD', NULL);COMMIT;

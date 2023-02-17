@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.CIFEEDEF_EXT','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.CIFEEDEF_EXT', 'Biểu phí lưu ký riêng cho khách hàng', 'Exception fee deposit for customer', 'N', 'N', 'NNNYYYY');COMMIT;

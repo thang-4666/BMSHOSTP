@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100411;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100411, '[-100411]: Loại hình tín dụng đã được gán vào rổ!', '[-100411]: Loan type has been added in basket!', 'SA', NULL);COMMIT;

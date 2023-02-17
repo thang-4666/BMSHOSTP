@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180035;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180035, '[-180035]: Vượt quá hạn mức bảo lãnh T0 mà user được cấp', '[-180035]:Over allocated guarantee T0 of user!', 'MR', NULL);COMMIT;

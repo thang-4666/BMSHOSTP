@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100995;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100995, 'Chi nhánh thực hiện giao dịch không hợp lệ', 'The invalid branch for transaction', 'SA', NULL);COMMIT;

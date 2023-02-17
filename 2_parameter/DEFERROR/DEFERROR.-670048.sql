@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670048;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670048, '[-670048]: Có ký tự lạ trong file xml', '[-670048]: invalid character in xml', 'RM', 0);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670013;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670013, '[-670013]: Loại bảng kê không đúng', '[-670013]: Transfer type not founded!', 'RM', 0);COMMIT;

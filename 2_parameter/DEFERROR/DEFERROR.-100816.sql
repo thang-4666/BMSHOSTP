@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100816;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100816, '[-100816]: Giá trị tỉ lệ chứng khoán niêm yết không hợp lệ!', '[-100816]: The max debt quantity rate is invalid!', '', NULL);COMMIT;

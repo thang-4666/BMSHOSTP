@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570012;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570012, '[-570012]: Chưa hết kỳ hạn tối thiểu để chuyển sang tự động rút để mua', '[-570012] :Chưa hết kỳ hạn tối thiểu để chuyển sang tự động rút để mua ', 'TD', NULL);COMMIT;

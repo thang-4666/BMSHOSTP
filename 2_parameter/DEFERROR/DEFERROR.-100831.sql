@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100831;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100831, '[-100831]: Một vài trường không thỏa mãn là trường số', '[-100830]: Một vài trường không thỏa mãn là trường số', 'DL', NULL);COMMIT;

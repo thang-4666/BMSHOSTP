@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300034;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300034, '[-300034]:Không đủ chứng khoán quyền để hủy giao dịch chuyển nhượng', '[-300034]:Không đủ chứng khoán quyền để hủy giao dịch chuyển nhượng', 'CA', NULL);COMMIT;

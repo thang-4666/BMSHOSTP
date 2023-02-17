@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100045;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100045, '[-100045]: Nhóm này đã có trong DS phân quyền!', '[-100045]: This group is existed in assignment list!', 'SA', NULL);COMMIT;

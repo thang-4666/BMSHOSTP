@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300043;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300043, '[-300043]:Mã sự kiện quyền không tồn tại !', '[-300043]:Mã sự kiện quyền không tồn tại!', 'CA', NULL);COMMIT;

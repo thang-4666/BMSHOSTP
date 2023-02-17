@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100814;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100814, '[-100814]: Giá trị số phải không bao gồm ký tự phân cách phần ngàn (dấu phẩy)!', '[-100814]: The number can not be formated by comma!', '', NULL);COMMIT;

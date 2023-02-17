@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100017, '[-100017]: Giao dịch này không được phép xóa!', '[-100017]: Transaction can not be delete!', 'SA', NULL);COMMIT;

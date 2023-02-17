@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100059;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100059, '[-100059]: Sự kiện đã được khai báo rồi ,không được khai báo trùng !', '[-100059]: ERR_SA_ICCFTYPEDEF_DUPLICATED!', 'SA', NULL);COMMIT;

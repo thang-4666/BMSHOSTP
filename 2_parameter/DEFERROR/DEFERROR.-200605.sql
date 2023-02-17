@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200605;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200605, '[-200605]: Chưa thay đổi thông tin gì.', '[-200605]: Chua thay doi thong tin gi.', 'SE', NULL);COMMIT;

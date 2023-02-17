@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -70056;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-70056, '[-70056]: Lệnh thỏa thuận đã xác nhận!', '[-70056]: Lệnh thỏa thuận đã xác nhận!', 'OD', NULL);COMMIT;

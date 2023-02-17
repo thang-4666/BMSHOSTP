@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300060;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300060, '[-300060]: Ngày đăng ký cuối cùng không được lớn hơn ngày thực hiện dự kiến!', '[-300060]: Ngày đăng ký cuối cùng không được lớn hơn ngày thực hiện dự kiến!', 'CA', NULL);COMMIT;

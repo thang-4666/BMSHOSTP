@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100812;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100812, '[-100812]: Giá trị số có độ dài tối đa 14 ký tự!', '[-100812]: The length of number can not over 14 characters!', '', NULL);COMMIT;

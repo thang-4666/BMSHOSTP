@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200405;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200405, '[-200405]:Giao dịch không được backdate về trước ngày backdate của giao dịch 8879!', '[-200405]:Giao dịch không được backdate về trước ngày backdate của giao dịch 8879!', 'SE', NULL);COMMIT;

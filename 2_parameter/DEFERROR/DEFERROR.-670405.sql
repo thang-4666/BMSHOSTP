@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670405;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670405, '[-670405]: Không được chuyển từ tài khoản Corebank ra ngân hàng', '[-670406]: Không được chuyển từ tài khoản Corebank ra ngân hàng', 'RM', 0);COMMIT;

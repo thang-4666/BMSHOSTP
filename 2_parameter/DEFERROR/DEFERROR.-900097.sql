@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900097;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900097, '[-900097]: Tài khoản KH vẫn còn chứng khoán quyền chờ thực hiện, !', '[-900097]: Tài khoản KH vẫn còn chứng khoán quyền chờ thực hiện', 'SE', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900054;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900054, '[-900054]: Khối lượng hủy phải nhỏ hơn khối lượng chứng khoán chờ về !', '[-900054]: RECEIVING AMOUNT IS NOT ENOUGHT !', 'SE', NULL);COMMIT;

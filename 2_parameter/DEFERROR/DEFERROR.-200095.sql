@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200095;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200095, '[-200095]: Loại hình vay chưa được duyệt.', '[-200095]: LNTYPE not approved', 'SA', NULL);COMMIT;

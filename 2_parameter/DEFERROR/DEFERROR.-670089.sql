@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670089;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670089, '[-670089]: Ngoài giờ giao dịch thu chi điện tử', '[-670089]: Ngoài giờ giao dịch thu chi điện tử', 'RM', 0);COMMIT;

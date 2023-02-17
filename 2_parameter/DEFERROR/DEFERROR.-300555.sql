@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300555;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300555, '[-300555]: Đã đăng ký quyền mùa hoặc đã đăng ký cổ phiếu ', '[-300555]: Đã đăng ký quyền mùa hoặc đã đăng ký cổ phiếu', 'CA', NULL);COMMIT;

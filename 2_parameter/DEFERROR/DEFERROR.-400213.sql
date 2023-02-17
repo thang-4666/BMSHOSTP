@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400213;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400213, '[-400213]: Giao dịch không thể xóa vì tiểu khoản không đủ tiền!', '[-400213]: Giao dịch không thể xóa vì tiểu khoản không đủ tiền', 'CI', NULL);COMMIT;

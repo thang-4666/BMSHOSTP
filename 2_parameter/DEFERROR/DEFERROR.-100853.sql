@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100853;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100853, '[-100853]: Không được xóa hạn mức tiền gửi đã món sử dụng!', '[-100853]: Không được xóa hạn mức tiền gửi đã món sử dụng', 'SA', NULL);COMMIT;

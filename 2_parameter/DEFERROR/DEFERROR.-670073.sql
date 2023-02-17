@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670073;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670073, '[-670073]: Lỗi chưa được định nghĩa', '[-670073]: Lỗi chưa được định nghĩa', 'RM', 0);COMMIT;

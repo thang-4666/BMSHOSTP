@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100506;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100506, '[-100506]: Khai báo sử dụng dịch vụ bị trùng với một dịch vụ đã khai báo', '[-100506]: Khai báo sử dụng dịch vụ bị trùng với một dịch vụ đã khai báo', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300036;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300036, '[-300036]:Ngày giao dịch trở lại phải lớn hơn ngày hiện tại !', '[-300036]:Trade date must be greater than current date', 'CA', NULL);COMMIT;
