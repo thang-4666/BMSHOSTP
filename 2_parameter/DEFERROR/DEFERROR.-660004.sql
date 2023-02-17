@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -660004;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-660004, 'Trạng thái thay đổi không dúng', 'Cannot revert bank status', 'RM', NULL);COMMIT;

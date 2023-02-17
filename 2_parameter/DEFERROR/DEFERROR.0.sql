@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = 0;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (0, 'Giao dịch thực hiện thành công', 'Transaction successfull!', 'SY', 0);COMMIT;

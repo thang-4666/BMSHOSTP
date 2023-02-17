@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900098;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900098, '[-900098]: Còn chuyển khoản tiền chưa làm 1104!', '[-900098]: Còn chuyển khoản tiền chưa làm 1104!', 'SE', NULL);COMMIT;

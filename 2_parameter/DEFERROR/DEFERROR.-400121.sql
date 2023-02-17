@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400121;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400121, '[-400121]:Thông tin deal lệnh bán không hợp lệ!', '[-400121]:Thông tin deal lệnh bán không hợp lệ!', 'CI', NULL);COMMIT;

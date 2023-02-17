@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200089;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200089, '[-200089]: Số mobile đăng kí nhận SMS chưa được khai báo trên thông tin hợp đồng!', '[-200089]: Số mobile đăng kí nhận SMS chưa được khai báo trên thông tin hợp đồng!', 'CF', NULL);COMMIT;

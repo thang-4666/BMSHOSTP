@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670407;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670407, '[-670407]: Chương trình đã được chạy trên PC khác, hãy kiểm tra lại', '[-670407]: Program is running in another PC', 'RM', 0);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -222241;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-222241, '[-222241]: Giá vốn mới không được để trống!', '[-222241]: Giá vốn mới không được để trống!', 'SE', NULL);COMMIT;

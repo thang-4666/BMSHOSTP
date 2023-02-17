@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260024;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260024, '[-260024]: Thu hồi về quá hạn mức đã dùng !', '[-260024]: Thu hồi về quá hạn mức đã dùng !', 'DF', NULL);COMMIT;

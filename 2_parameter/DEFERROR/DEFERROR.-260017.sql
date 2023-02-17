@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260017, '[-260017]: Không tìm thấy hợp đồng vay !', '[-260017]: Không tìm thấy hợp đồng vay !', 'DF', NULL);COMMIT;

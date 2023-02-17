@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100530;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100530, '[-100530]: Mã giấy tờ của khách hàng đã tồn tại trong hệ thống, chỉ được phép hủy hồ sơ', '[-100530]: Mã giấy tờ của khách hàng đã tồn tại trong hệ thống, chỉ được phép hủy hồ sơ', 'CF', NULL);COMMIT;

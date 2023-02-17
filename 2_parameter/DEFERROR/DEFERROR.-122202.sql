@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -122202;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-122202, '[-122202]: Hệ thống chưa batch giữa ngày xong hoặc đã bắt đầu batch cuối ngày', '[-122202]: Hệ thống chưa batch giữa ngày xong hoặc đã bắt đầu batch cuối ngày!', 'SA', NULL);COMMIT;

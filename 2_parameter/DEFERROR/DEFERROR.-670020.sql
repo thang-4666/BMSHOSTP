@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670020;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670020, '[-670020]: Mã chuyển trùng', '[-670020]: Transfer code duplicate', 'RM', 0);COMMIT;

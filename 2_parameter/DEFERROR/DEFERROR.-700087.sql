@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700087;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700087, '[-700087]: Tạm thời hệ thống không nhận lệnh huỷ sửa sàn HOSE!', '[-700087]: System does not permit Amend/Cancel order from Hose at this time!', 'OD', NULL);COMMIT;

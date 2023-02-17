@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('AUTOBATCHBF_STATUS','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'AUTOBATCHBF_STATUS', 'A', 'Trạng thái Batch giữa ngày tự động(A: Bắt đầu batch, P: đang batch, E: Lỗi, C: Batch xong)', '', 'Y', 'A', 'P');COMMIT;

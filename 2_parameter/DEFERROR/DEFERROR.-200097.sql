@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200097;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200097, '[-200097]: Loại hình thay đổi mới chưa khai báo các loại hình LN, SE, CI.', '[-200097]: The new AFTYPE does not declare LN, SE, CI type.', 'CF', NULL);COMMIT;

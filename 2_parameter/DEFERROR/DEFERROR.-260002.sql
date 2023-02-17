@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260002, '[-260002] Không thể giải ngân cho deal', '[-260002] Không thể giải ngân cho deal', 'DF', NULL);COMMIT;

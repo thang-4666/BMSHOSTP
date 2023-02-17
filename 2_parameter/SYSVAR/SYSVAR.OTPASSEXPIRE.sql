@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('OTPASSEXPIRE','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'OTPASSEXPIRE', '24', 'Thời gian expire khi reset pass online trading', 'Expire time when reset password online trading', 'Y', 'A', 'P');COMMIT;

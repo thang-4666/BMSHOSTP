@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700084;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700084, '[-700084]: Tài khoản corebank đã thanh toán không được sửa số lượng khớp lệnh!', '[-700084]: Tài khoản corebank đã thanh toán không được sửa số lượng khớp lệnh!', 'OD', NULL);COMMIT;

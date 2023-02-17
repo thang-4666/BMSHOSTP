@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180034;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180034, '[-180034]: Bảo lãnh T0 không đủ để giải toả', '[-180034]:Guarantee T0 not enoght to release!', 'MR', NULL);COMMIT;

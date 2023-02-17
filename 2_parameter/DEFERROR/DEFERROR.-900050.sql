@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900050;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900050, '[-900050]: Vượt quá khối lượng cầm cố có thể giải tỏa !', '[-900050]: AMOUNT OVER MORTAGE !', 'SE', NULL);COMMIT;

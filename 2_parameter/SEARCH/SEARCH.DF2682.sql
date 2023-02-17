@@ -1,4 +1,0 @@
-SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('DF2682','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('DF2682', 'Huỷ deal trước khi giải ngân', 'View Release deal before drawndown', '
-SELECT  v.*, (v.dfqtty + v.rcvqtty + v.carcvqtty + v.blockqtty)  SENDQTTY
-FROM v_getdealinfo v WHERE  v.status in (''N'',''P'') and  v.dfqtty + v.rcvqtty + v.carcvqtty + v.blockqtty>0
-', 'DFMAST', '', 'ACCTNO DESC', '2682', NULL, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '', '');COMMIT;

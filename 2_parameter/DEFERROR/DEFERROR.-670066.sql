@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670066;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670066, '[-670066]: Không lấy được chữ ký', '[-670066]: Cannot get sign', 'RM', 0);COMMIT;

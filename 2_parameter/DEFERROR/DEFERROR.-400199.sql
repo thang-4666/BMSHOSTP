@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400199;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400199, '[-400199]: Tài khoản magin không được nhận chứng khoán ngoài danh mục!', '[-400199]: Tài khoản magin không được nhận chứng khoán ngoài danh mục', 'SA', NULL);COMMIT;

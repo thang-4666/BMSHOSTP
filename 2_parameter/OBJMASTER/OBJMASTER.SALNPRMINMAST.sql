@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.LNPRMINMAST','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.LNPRMINMAST', 'Quản lý chính sách ưu đãi phí maign', 'Magin fee promotion management', 'Y', 'N', 'NNNNYYY');COMMIT;

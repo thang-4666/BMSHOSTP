@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700120;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700120, '[-700120]:Chỉ được hủy map với các lệnh được map bằng tay!', '[-700120]:Chỉ được hủy map với các lệnh được map bằng tay!', 'OD', NULL);COMMIT;

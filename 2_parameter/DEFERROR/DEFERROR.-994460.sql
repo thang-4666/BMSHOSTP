@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -994460;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-994460, '[-994460]: Ngoài giờ ứng trước!', '[-994460]: Ngoài giờ ứng trước!', 'SA', NULL);COMMIT;

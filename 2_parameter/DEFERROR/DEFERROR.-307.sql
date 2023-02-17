@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -307;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-307, 'Không nhận giao dịch backdate của ngày hiện tại', 'Không nhận giao dịch backdate của ngày hiện tại', 'PM', NULL);COMMIT;

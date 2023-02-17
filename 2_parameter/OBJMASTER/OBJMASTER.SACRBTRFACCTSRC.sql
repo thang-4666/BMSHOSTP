@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.CRBTRFACCTSRC','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.CRBTRFACCTSRC', 'Quản lý tài khoản nguồn ngân hàng', 'List of source bankacctno information', 'Y', 'N', 'NNNNYYY');COMMIT;

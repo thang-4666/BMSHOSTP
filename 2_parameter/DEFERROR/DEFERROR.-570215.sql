@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570215;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570215, '[-570215]: Vượt quá hạn mức giải ngân tiết kiệm còn lại của user', '[-570215]: Vượt quá hạn mức giải ngân tiết kiệm còn lại của user', 'TD', NULL);COMMIT;

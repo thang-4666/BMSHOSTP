@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100504;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100504, '[-100504]: Trạng thái Đã mở tài khoản chỉ có thể xóa hoặc về trạng thái chờ mở tài khoản!', '[-100504]: Trạng thái Đã mở tài khoản chỉ có thể xóa hoặc về trạng thái chờ mở tài khoản!', 'CF', NULL);COMMIT;

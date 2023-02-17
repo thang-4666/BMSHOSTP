@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100810;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100810, '[-100810]: Giá trị số bắt buộc phải lớn hơn 0!', '[-100810]: The number must be larger than 0!', '', NULL);COMMIT;

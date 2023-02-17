@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570004;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570004, 'Trạng thái món tiền tiết kiệm không hợp lệ', 'The status of term deposit account is invalid', 'TD', NULL);COMMIT;

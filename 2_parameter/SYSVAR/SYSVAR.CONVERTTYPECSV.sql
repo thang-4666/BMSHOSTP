@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('CONVERTTYPECSV','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'CONVERTTYPECSV', ';', 'Ký tự cắt cột của file .csv (cách nhau 1 khoản trắng)', 'Convert csv!', 'N', 'A', '');COMMIT;

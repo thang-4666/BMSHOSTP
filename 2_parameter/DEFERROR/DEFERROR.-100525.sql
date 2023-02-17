@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100525;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100525, '[-100525]: Vượt quá quy định của nguồn chứng khoán theo rổ!', '[-100525]: Vượt quá quy định của nguồn chứng khoán theo rổ', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100018;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100018, '[-100018]: Giao dịch không hợp lệ!', '[-100018]: Giao dịch không hợp lệ', 'SA', NULL);COMMIT;

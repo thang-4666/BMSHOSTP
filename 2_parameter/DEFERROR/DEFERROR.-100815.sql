@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100815;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100815, '[-100815]: số ngày cho mỗi gia hạn không được phép vượt quá tổng chu kì món vay!', '[-100815]: The max debt days must be larger than the debt days!', '', NULL);COMMIT;

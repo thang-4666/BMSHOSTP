@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180025;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180025, '[-180025]: Loại hình margin không hợp lệ', '[-180025]:Margin type was invalid!', 'MR', NULL);COMMIT;

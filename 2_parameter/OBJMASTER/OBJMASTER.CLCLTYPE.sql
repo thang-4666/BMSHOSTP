@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('CL.CLTYPE','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('CL', 'CL.CLTYPE', 'Loại hình tài sản đảm bảo', 'Collateral product management', 'N', 'N', 'NNNYYYY');COMMIT;

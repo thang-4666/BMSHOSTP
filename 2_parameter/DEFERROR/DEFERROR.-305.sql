@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -305;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-305, 'Số lượng CK giải tỏa lớn hơn số đang phong tỏa', 'Số lượng CK giải tỏa lớn hơn số đang phong tỏa', 'PM', NULL);COMMIT;

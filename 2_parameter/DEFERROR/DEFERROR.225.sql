@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = 225;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (225, '[225]:  Hết giờ đặt lệnh!', '[225]: Hết giờ đặt lệnh!', 'SA', NULL);COMMIT;

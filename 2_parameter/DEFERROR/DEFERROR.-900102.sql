@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900102;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900102, '[-900102]:Không đủ số dư chứng khoán để tái lưu ký !', '[-900102]: Không đủ số dư chứng khoán để tái lưu ký', 'SE', NULL);COMMIT;

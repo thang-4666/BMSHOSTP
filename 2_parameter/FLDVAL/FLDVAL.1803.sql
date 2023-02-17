@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM FLDVAL WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('1803','NULL');Insert into FLDVAL   (FLDNAME, OBJNAME, ODRNUM, VALTYPE, OPERATOR, VALEXP, VALEXP2, ERRMSG, EN_ERRMSG, TAGFIELD, TAGVALUE, CHKLEV) Values   ('10', '1803', 1, 'V', '>>', '@0', '', 'Giá trị cấp phải lớn hơn 0', 'Amount should be greater than zero', '', '', 0);COMMIT;

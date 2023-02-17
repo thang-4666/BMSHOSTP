@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260016;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260016, '[-260016]: Không tìm thấy giao dịch giải ngân !', '[-260016]: Không tìm thấy giao dịch giải ngân !', 'DF', NULL);COMMIT;

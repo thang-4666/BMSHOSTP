@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100120;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100120, '[-100120] Tiểu khoản không được phép thực hiện hoặc đang thay đổi loại hình .', '[-100120] Sub-accounts are not allowed to perform or pending change type', 'SA', NULL);COMMIT;

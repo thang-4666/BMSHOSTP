@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('WARNING_RATE','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('BROKERDESK', 'WARNING_RATE', '5', 'Tỉ lệnh cảnh bảo trở thành cổ đông lớn', 'Warning amount on BD', 'Y', 'A', 'P');COMMIT;

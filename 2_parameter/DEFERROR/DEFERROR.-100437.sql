@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100437;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100437, '[-100437]: Kế hoạch đầu tư đã gán tiểu khoản!', '[-100437]: Has sub-account in trading plan!', 'SA', NULL);COMMIT;

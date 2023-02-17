@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400039;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400039, '[-400039]: Không đủ số dư!', '[-400039]: Balance is not valid!', 'CI', NULL);COMMIT;

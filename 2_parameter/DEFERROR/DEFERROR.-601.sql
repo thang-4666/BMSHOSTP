@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -601;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-601, 'Vượt quá hạn mức khối lượng được phép sở hữu của chứng khoán', 'Vượt quá hạn mức khối lượng được phép sở hữu của chứng khoán', 'PM', NULL);COMMIT;

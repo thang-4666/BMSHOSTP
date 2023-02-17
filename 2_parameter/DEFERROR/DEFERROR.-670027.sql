@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670027;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670027, '[-670027]: Số dư phong toả không đổi', '[-670027]: Hold amount not change', 'RM', 0);COMMIT;

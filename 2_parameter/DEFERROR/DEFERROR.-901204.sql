@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901204;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901204, '[-901204]: Thanh toán tiền lô lẻ không hợp lệ', '[-901204]: Thanh toán tiền lô lẻ không hợp lệ', 'SE', NULL);COMMIT;

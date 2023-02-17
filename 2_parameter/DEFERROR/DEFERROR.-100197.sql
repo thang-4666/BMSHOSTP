@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100197;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100197, '[-100197]:Chưa đến ngày được phép gia hạn!', '[-100197]:Chưa đến ngày được phép gia hạn!', 'SA', NULL);COMMIT;

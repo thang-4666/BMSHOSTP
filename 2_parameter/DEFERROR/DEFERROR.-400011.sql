@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400011;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400011, '[-400011]: Mã nhóm kế toán không tồn tại!', '[-400011]:GL group code is not exists!', 'CI', NULL);COMMIT;

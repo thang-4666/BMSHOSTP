@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260161;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260161, '[-260161]: Số lưu ký vẫn còn tiểu khoản hoạt động hoặc chờ duyệt !', '[-260161]:  Số lưu ký vẫn còn tiểu khoản hoạt động hoặc chờ duyệt', 'CF', NULL);COMMIT;

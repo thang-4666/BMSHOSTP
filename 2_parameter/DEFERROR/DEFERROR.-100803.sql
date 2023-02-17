@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100803;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100803, '[-100803]: Loại hình lệnh đặt không được phép khai báo trùng!', '[-100803]: Loại hình lệnh đặt không được phép khai báo trùng', 'SA', NULL);COMMIT;

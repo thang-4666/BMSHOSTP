@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200064;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200064, '[-200064]: Vẫn còn số dư chứng khoán chờ lưu ký nên không thể đóng tiểu khoản !', '[-200064]: ERR_CF_SENDDEPOSIT', 'CF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200093;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200093, '[-200093]: Loại hình tiền chưa được duyệt.', '[-200093]: CITYPE not approved', 'SA', NULL);COMMIT;

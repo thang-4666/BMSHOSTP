@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400047;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400047, '[-400047]: Tài khoản còn khoản tiền trả chậm, không được phép thực hiện đóng!', '[-400047]: Tài khoản còn khoản tiền trả chậm, không được phép thực hiện đóng!', 'CI', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700107;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700107, '[-700107]: Không được sửa từ lệnh thường sang MOK,MAK,MTL và ngược lại', '[-700107]:  Không được sửa từ lệnh thường sang lệnh MOK,MAK,MTL và ngược lại', 'OD', NULL);COMMIT;

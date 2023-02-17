@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200412;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200412, '[-200412]:Loại hình tiểu khoản trả chậm, số ngày trả chậm phải lớn hơn 0!', '[-200412]:Loại hình tiểu khoản trả chậm, số ngày trả chậm phải lớn hơn 0!', '', NULL);COMMIT;

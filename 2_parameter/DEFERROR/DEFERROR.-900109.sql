@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900109;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900109, '[-900109]:Tiểu khoản nhận phải khác tiểu khoản chuyển đi !', '[-900109]: Tiểu khoản nhận phải khác tiểu khoản chuyển đi', 'SE', NULL);COMMIT;

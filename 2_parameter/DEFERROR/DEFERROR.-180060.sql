@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180060;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180060, '[-180060]: Khách hàng ko được sử dụng sản phẩm vay bảo lãnh.', '[-180060]: khách hàng ko được sử dụng sản phẩm vay bảo lãnh.', 'AF', NULL);COMMIT;

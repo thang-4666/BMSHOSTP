@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300072;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300072, '[-300072]:Sự kiện quyền đã chuyển CK sang trạng thái giao dịch', '[-300071]:The stock of this CA has been change to trading before ', 'CA', NULL);COMMIT;

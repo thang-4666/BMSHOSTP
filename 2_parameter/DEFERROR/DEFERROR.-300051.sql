@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300051;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300051, '[-300051]: Giao dịch không thể xóa vì đã chuyển chứng khoán thành giao dịch', '[-300051]: Giao dịch không thể xóa vì đã chuyển chứng khoán thành giao dịch', 'CA', NULL);COMMIT;

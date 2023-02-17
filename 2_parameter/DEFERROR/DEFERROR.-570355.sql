@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570355;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570355, '[-570355]: Hạn mức yêu cầu rút lớn hơn hạn mức còn lại!', '[-570355]: Hạn mức yêu cầu rút lớn hơn hạn mức còn lại!', 'SA', NULL);COMMIT;

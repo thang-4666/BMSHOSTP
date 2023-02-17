@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100535;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100535, '[-100535]: Mỗi tiểu khoản chỉ được khai báo một pool tài khoản hoặc nhóm tài khoản!', '[-100535]: Mỗi tiểu khoản chỉ được khai báo một pool tài khoản hoặc nhóm tài khoản!', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -280104;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-280104, '[-280104]: Loại hình đầu tư không hợp lệ!', '[-280104]: Invalid investment type!', 'FN', NULL);COMMIT;

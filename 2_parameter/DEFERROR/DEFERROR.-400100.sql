@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400100;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400100, '[-400100]: Trạng thái tiểu khoản tiền không hợp lệ!', '[-400100]:Invalid cash account status!', 'CI', NULL);COMMIT;

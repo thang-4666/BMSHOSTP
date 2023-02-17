@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100046;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100046, '[-100046]: Nhóm này đã có trong DS thực hiện giao dịch!', '[-100046]: This group is existed in transaction execute list!', 'SA', NULL);COMMIT;

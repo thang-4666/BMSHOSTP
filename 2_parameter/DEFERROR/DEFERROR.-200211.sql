@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200211;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200211, '[-200211]: Tiểu khoản chỉ được cấp bởi user thuộc nhóm careby của tiểu khoản này!', '[-200211]: Tiểu khoản chỉ được cấp bởi user thuộc nhóm careby của tiểu khoản này!', 'CF', NULL);COMMIT;

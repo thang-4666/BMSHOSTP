@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM FLDVAL WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('LN.LNSCHD','NULL');Insert into FLDVAL   (FLDNAME, OBJNAME, ODRNUM, VALTYPE, OPERATOR, VALEXP, VALEXP2, ERRMSG, EN_ERRMSG, TAGFIELD, TAGVALUE, CHKLEV) Values   ('NML', 'LN.LNSCHD', 0, 'V', '>=', '@0', '', 'No trong han phai lon hon 0!', 'Normal amoun cannot less than 0!', '', '', 0);COMMIT;

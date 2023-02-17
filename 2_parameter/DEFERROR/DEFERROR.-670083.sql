@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670083;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670083, '[-670083]: Tài khoản nhỏ hơn số dư tối thiểu', '[-670083]: Tài khoản nhỏ hơn số dư tối thiểu', 'RM', 0);COMMIT;

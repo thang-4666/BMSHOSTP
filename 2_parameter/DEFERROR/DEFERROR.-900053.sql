@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900053;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900053, '[-900053]: Số lượng giao dịch lô lẻ phải nhỏ hơn lô chẵn theo quy định từng sàn giao dịch !', '[-900053]: AMOUNT IS NOT RETAIL !', 'SE', NULL);COMMIT;

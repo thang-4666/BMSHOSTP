@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570009;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570009, 'Tai khoan khong duoc dung lam bao lanh tien mua', 'Mortgage amount must be zero', 'TD', NULL);COMMIT;

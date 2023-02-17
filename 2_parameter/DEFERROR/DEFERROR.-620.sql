@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -620;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-620, 'Hết thời hạn giao dịch bán của chứng khoán/Phương án', 'Hết thời hạn giao dịch bán của chứng khoán/Phương án', 'PM', NULL);COMMIT;

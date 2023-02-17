@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100804;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100804, '[-100804]: Loại hình ứng trước không được phép khai báo trùng!', '[-100804]: Product type AD is duplicated!', 'SA', NULL);COMMIT;

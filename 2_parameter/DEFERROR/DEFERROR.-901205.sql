@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901205;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901205, '[-901205]: Số lượng chứng khoán giao dịch không hợp lệ', '[-901205]: Số lượng chứng khoán giao dịch không hợp lệ', 'SE', NULL);COMMIT;

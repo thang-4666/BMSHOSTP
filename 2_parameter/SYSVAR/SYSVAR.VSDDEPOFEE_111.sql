@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('VSDDEPOFEE_111','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'VSDDEPOFEE_111', '0.4', 'Biểu phí lưu ký VSD cho cổ phiếu và CCQ', 'Biểu phí lưu ký VSD cho cổ phiếu và CCQ', 'Y', 'A', 'P');COMMIT;

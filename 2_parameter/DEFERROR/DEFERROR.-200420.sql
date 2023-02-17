@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200420;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200420, '[-200420]:Khách hàng thay đổi loại khách hàng cần thay đổi loại hình khách hàng!', '[-200420]:Khách hàng thay đổi loại khách hàng cần thay đổi loại hình khách hàng!', 'CF', NULL);COMMIT;

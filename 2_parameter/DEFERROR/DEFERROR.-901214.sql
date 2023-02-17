@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901214;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901214, '[-901214]: Yêu cầu đã được hủy trước đó', '[-901214]: The request has been rejected before', 'SE', NULL);COMMIT;

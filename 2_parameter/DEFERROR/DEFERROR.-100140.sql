@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100140;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100140, '[-100140]:Khách hàng có tiểu khoản trùng loại hình!', '[-100140]:Khách hàng có tiểu khoản trùng loại hình!', 'CF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200208;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200208, '[-200208]: CMT/HC/GPKD của Chủ tài khoản đã hết hạn!', '[-200208]: CMT/HC/GPKD của Chủ tài khoản đã hết hạn!', '', NULL);COMMIT;

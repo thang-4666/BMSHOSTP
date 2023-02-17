@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570356;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570356, '[-570356]: Hạn mức thu hồi vượt quá số giải ngân trong ngày!', '[-570356]: Hạn mức thu hồi vượt quá số giải ngân trong ngày!', 'SA', NULL);COMMIT;

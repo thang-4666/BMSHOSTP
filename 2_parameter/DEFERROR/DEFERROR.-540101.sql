@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540101;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540101, '[-540101] Trùng biểu lãi suất', '[-540101] Rate ID is duplicate', 'RE', NULL);COMMIT;

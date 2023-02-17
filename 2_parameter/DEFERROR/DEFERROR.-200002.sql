@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200002, '[-200002]: Thông tin khách hàng không tồn tại!', '[-200002]: Thông tin khách hàng không tồn tại!', 'CF', NULL);COMMIT;

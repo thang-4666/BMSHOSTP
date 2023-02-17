@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260267;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260267, '[-260267]: Yêu cầu mở tài khoản đã đươc gửi đi!', '[-260266]: Request id is exist!', 'CF', NULL);COMMIT;

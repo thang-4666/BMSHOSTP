@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -800006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-800006, '[-800006]: Lỗi khi gọi sang PM Service', '[-800006]: Error When Call To PM Service', 'FO', 0);COMMIT;

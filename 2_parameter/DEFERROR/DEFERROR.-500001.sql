@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -500001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-500001, '[-500001]: Mã số tài sản đã được sử dụng!', '[-500001]: Fixed asset code is duplicated!', 'GL', NULL);COMMIT;

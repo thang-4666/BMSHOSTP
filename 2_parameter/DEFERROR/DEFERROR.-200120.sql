@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200120;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200120, '[-200120]: Số tài khoản nhận không hợp lệ hoặc phải là khách hàng thường!', '[-200120]: Số tài khoản nhận không hợp lệ hoặc phải là khách hàng thường', 'CF', NULL);COMMIT;

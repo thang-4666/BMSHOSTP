@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300037;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300037, '[-300037]: Chỉ được chọn một cách khai tỷ lệ !', '[-300037]: You should choose only one devident type', 'CA', NULL);COMMIT;

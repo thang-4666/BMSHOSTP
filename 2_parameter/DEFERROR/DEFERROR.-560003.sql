@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -560003;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-560003, 'Loại tài khoản không hợp lệ', 'The type of remiser account is invalid', 'RE', NULL);COMMIT;

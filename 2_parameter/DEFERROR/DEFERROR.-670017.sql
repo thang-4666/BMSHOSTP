@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670017, '[-670017]: Ngày chuyển bảng kê không phải là ngày hiện tại', '[-670017]: Batch date not present', 'RM', 0);COMMIT;

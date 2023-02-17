@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400018;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400018, '[-400018]: Số tài khoản tiền gửi bị trùng!', '[-400018]:CI account number is duplicated!', 'CI', NULL);COMMIT;

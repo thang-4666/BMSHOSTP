@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670049;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670049, '[-670049]: Mã tiền tệ không tồn tại', '[-670049]: Currcode des not exist', 'RM', 0);COMMIT;

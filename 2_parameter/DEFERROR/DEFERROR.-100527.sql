@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100527;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100527, '[-100527]: Khách hàng đã có tài khoản không được sửa thông tin!', '[-100527]: Khách hàng đã có tài khoản không được sửa thông tin!', 'CF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200106;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200106, '[-200106]: Tiểu khoản nhận và tiểu khoản chuyển không được trùng nhau!', '[-200106]: Tiểu khoản nhận và tiểu khoản chuyển không được trùng nhau!', 'CF', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670025;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670025, '[-670025]: Ngân hàng không hỗ trợ chức năng này', '[-670025]: This bank does not support this function', 'RM', 0);COMMIT;

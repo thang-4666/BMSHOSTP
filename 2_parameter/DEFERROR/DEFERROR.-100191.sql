@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100191;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100191, '[-100191]: Quá số lần được ra hạn của hạng khách hàng!', '[-100191]: Quá số lần được ra hạn của hạng khách hàng!', 'SA', NULL);COMMIT;

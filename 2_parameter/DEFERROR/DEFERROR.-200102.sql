@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200102;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200102, '[-200102]: Tiểu khoản chưa được phân quyền giao dịch trực tuyến', '[-200102]: Tiểu khoản chưa được phân quyền giao dịch trực tuyến', 'CF', NULL);COMMIT;

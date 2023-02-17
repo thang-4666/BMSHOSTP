@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100128;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100128, '[-100128] Mã chứng quyền đã đáo hạn', '[-100128] Code warrants have maturity', 'OD', NULL);COMMIT;

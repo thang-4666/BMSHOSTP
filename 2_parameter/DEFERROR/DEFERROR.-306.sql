@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -306;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-306, 'Không đủ số dư tiền khả dụng cho lưu ký CK', 'Không đủ số dư tiền khả dụng cho lưu ký CK', 'PM', NULL);COMMIT;

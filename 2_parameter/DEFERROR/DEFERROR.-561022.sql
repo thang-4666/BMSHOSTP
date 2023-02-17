@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561022;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561022, 'Chưa thanh toán hoa hồng cho trưởng nhóm', 'Leader has commision', 'RE', 0);COMMIT;

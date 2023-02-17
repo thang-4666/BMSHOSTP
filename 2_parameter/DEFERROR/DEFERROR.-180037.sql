@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180037;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180037, '[-180037]: Không thể đổi dịch vụ tài khoản margin', '[-180037]:Can not change service of margin account!', 'MR', NULL);COMMIT;

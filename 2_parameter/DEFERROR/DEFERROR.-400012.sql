@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400012;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400012, '[-400012]: Không thể xoá loại hình tiền gửi do vẫn còn dữ liệu liên quan!', '[-400012]: Cannot delete the Product type which contains related data!', 'CI', NULL);COMMIT;

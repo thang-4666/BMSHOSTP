@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -280100;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-280100, '[-280100]: Không đủ số dư đầu tư!', '[-280100]: Not enought balance!', 'FN', NULL);COMMIT;

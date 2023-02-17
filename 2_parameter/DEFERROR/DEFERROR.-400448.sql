@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400448;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400448, '[-400448]: Giao dịch không thể xóa vì đã làm giao dịch hủy ủy nhiệm chi', '[-400448]: Giao dịch không thể xóa vì đã làm giao dịch hủy ủy nhiệm chi', 'SE', NULL);COMMIT;

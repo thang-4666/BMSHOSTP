@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100817;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100817, '[-100817]: Giá trị cho phép Margin không hợp lệ, Y: có cho phép, N: không cho phép!', '[-100817]: Giá trị cho phép Margin không hợp lệ, Y: có cho phép, N: không cho phép!', '', NULL);COMMIT;

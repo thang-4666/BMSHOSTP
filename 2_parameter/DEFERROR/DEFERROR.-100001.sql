@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100001, '[-100001]: Mã chi nhánh/đại lý bị trùng!', '[-100001]: Branch code is duplicated!', 'SA', NULL);COMMIT;

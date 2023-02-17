@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300033;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300033, '[-300033]:Không thể thay đổi thuế suất nếu phương thức thu thuế là không ', '[-300033]: ERR_NotExchange_PitrateWhenNotSC', 'CA', NULL);COMMIT;

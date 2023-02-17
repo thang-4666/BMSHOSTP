@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180001, '[-180001]: Loại hình margin đã tồn tại!', '[-180001]:Margin type duplicate!', 'MR', NULL);COMMIT;

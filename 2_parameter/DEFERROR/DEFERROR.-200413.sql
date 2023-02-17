@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200413;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200413, '[-200413]:Khách hàng chưa có số lưu ký!', '[-200413]:Khách hàng chưa có số lưu ký!', 'CF', NULL);COMMIT;

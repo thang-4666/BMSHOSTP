@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -500002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-500002, '[-500002]: Không thể xoá tài khoản này vì còn dữ liệu liên quan!', '[-500002]: Cannot delete the Account number which contains related data!', 'GL', NULL);COMMIT;

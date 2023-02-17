@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260164;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260164, '[-260164]: Tiểu khoản còn lệnh repo chưa đặt lệnh lần 2 !', '[-260164]:  Tiểu khoản còn lệnh repo chưa đặt lệnh lần 2', 'CF', NULL);COMMIT;

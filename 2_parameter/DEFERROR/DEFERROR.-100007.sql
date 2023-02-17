@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100007, '[-100007]: Người sử dụng này thuộc nhóm cụ thể!', '[-100007]: This user belong to some groups!', 'SA', NULL);COMMIT;

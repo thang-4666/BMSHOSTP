@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670008;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670008, '[-670008] : File bảng kê không tồn tại', '[-670008] : Batch file not founded', 'RM', 0);COMMIT;

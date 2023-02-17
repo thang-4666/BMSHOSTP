@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180004;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180004, '[-180004]: Biên độ dao động tỷ lệ thanh khoản không hợp lệ!', '[-180004]:Invalid liquidity rate amplitude !', 'MR', NULL);COMMIT;

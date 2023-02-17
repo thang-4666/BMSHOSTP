@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400206;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400206, '[-400206]: Tài khoản vẫn còn dư nợ !', '[-400206]: Tài khoản vẫn còn dư nợ', 'CI', NULL);COMMIT;

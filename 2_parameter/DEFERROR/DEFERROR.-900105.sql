@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900105;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900105, '[-900105]:Không được backdate về trước ngày tạo hồ sơ VSD!', '[-900105]: Không được backdate về trước ngày tạo hồ sơ VSD', 'SE', NULL);COMMIT;

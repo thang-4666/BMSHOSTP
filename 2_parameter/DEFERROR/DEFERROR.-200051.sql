@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200051;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200051, '[-200051]:Mã báo cáo , chu kỳ bị trùng !', '[-200051]: Report ID or Cycle is duplicated!', 'CF', NULL);COMMIT;

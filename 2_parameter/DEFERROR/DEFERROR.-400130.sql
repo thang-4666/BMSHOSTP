@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400130;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400130, '[-400130]: Số bảng kê này đã được sử dụng!', '[-400130]: Payment order number was used!', 'CI', NULL);COMMIT;

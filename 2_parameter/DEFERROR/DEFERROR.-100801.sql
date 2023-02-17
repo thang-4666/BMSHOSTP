@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100801;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100801, '[-100801]: Ngày hết hiệu lực phải lớn hơn hay bằng ngày hiệu lực!', '[-100801]: Ngày hết hiệu lực phải lớn hơn hay bằng ngày hiệu lực', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180003;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180003, '[-180003]: Biên đội dao động tỷ lệ duy trì không hợp lệ!', '[-180003]:Invalid maintanance rate amplitude !', 'MR', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('CF.AFTYPE','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('CF', 'CF.AFTYPE', 'Loại hình tiểu khoản giao dịch', 'Sub-account product management', 'N', 'N', 'NNNYYYY');COMMIT;

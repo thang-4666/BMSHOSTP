@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900101;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900101, '[-900101]:Chỉ được chuyển nhượng chứng khoán trong cùng một khách hàng !', '[-900101]: Chỉ được chuyển nhượng chứng khoán trong cùng một khách hàng', 'SE', NULL);COMMIT;

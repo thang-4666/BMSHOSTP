@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100420;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100420, '[-100420]: Không được khai trùng biểu phí định kỳ cho ngày tương lai', '[-100420]: ERR_SA_FEEDEF_CI_DUPLICATE', 'SA', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400045;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400045, '[-400045]:Tài khoản đang vay!', '[-400045]:Can not change overdraft account!', 'SA', NULL);COMMIT;

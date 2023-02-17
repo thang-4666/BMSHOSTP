@@ -1,4 +1,0 @@
-SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('LOGIN_INFO_BO','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('LOGIN_INFO_BO', 'Quản lý phiên đăng nhập người dùng', 'User session management', 'select a.sessionid,a.userid,a.ipaddress,a.macaddress,a.status,to_char(a.logintime,''DD/MM/RRRR hh24:mm:ss'') logintime,to_char(a.lastrequest,''DD/MM/RRRR hh24:mm:ss'') lastrequest, a2.cdcontent status_text
-from login_info_bo a ,  allcode a2
-where a2.CDNAME = ''STATUS''  and a2.cdtype = ''SA'' and a2.cdval in(''A'',''C'')
-and a.status = a2.cdval and a.status = ''A''', 'LOGIN_INFO_BO', 'frmLOGIN_INFO_BO', '', '', NULL, 50, 'N', 30, '', 'Y', 'T', '', 'N', '', '');COMMIT;

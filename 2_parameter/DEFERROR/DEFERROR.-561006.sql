@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561006, 'Loại hình tiểu khoản không được phép sử dụng với loại hình môi giới này', 'ERR_REMISER_AFTYPE_ISINVALID', 'RE', NULL);COMMIT;

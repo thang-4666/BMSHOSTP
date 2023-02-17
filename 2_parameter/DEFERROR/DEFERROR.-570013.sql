@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570013;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570013, '[-570013]: Loại hình không cho rút trước hạn không thể chọn tự động rút để mua bằng có!', '[-570013] :Loại hình không cho rút trước hạn không thể chọn tự động rút để mua bằng có!', 'TD', NULL);COMMIT;

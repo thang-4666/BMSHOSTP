@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670102;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670102, '[-670102]: Lỗi gom bảng kê ra ngân hàng!', '[-670102]: Lỗi gom bảng kê ra ngân hàng!', 'RM', 0);COMMIT;

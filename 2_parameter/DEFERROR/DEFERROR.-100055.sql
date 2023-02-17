@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100055;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100055, '[-100055]: Bạn không có quyền duyệt giao dịch này!', '[-100055]: You do not have permission to approve this transaction!', 'SA', NULL);COMMIT;

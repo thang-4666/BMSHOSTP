@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -613;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-613, 'Không đủ số dư tiền cho giao dịch mua', 'Không đủ số dư tiền cho giao dịch mua', 'PM', NULL);COMMIT;

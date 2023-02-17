@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100196;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100196, '[-100196]:Tại một thời điểm chỉ có một đợt review hạng khách hàng!', '[-100196]:Tại một thời điểm chỉ có một đợt review hạng khách hàng !', 'SA', NULL);COMMIT;

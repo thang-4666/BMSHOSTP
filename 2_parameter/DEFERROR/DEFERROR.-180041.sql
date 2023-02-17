@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180041;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180041, '[-180041]: Tiểu khoản Margin không được phép tham gia nhóm liên thông!', '[-180041]: Tiểu khoản Margin không được phép tham gia nhóm liên thông!', 'MR', NULL);COMMIT;

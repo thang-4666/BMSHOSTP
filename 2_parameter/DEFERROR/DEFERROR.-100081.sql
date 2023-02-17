@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100081;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100081, '[-100081]: Không tồn tại mã tài khoản GLBANK!', '[-100081]: GLBANK is not exists. Cannot add new or edit GL account!', 'SA', NULL);COMMIT;

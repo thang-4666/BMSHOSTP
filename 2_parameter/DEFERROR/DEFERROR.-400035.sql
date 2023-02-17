@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400035;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400035, '[-400035]: loại chuyển khoản có chuyển quyền chỉ chuyển được cho khách hàng ngoài cty!', '[-400035]: ERR_CI_MBLOCK_NOT_ENOUGHT', 'CI', NULL);COMMIT;

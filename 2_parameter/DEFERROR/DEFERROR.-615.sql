@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -615;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-615, 'Vượt quá thời hạn mua củachứng khoán/Phương án', 'Vượt quá thời hạn mua củachứng khoán/Phương án', 'PM', NULL);COMMIT;

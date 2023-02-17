@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100093;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100093, 'Mã thành viên lưu ký bị trùng!', 'Deposit id has been duplicate!', 'SA', NULL);COMMIT;

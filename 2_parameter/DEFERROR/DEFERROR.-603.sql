@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -603;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-603, 'Vượt quá mức giá vốn trung bình tối đa được giao dịch của CK', 'Vượt quá mức giá vốn trung bình tối đa được giao dịch của CK', 'PM', NULL);COMMIT;

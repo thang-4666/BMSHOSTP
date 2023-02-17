@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180007, '[-180007]: Tỷ lệ margin chứng khoán không hợp lệ!', '[-180007]:Invalid securities margin rate !', 'MR', NULL);COMMIT;

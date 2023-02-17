@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200070;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200070, '[-200070]: Tai khoan Margin ky han chua tra het no!', '[-200070]:Margin term account has overdraft due!', 'CI', NULL);COMMIT;

@@ -1,1 +1,0 @@
-SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300035;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300035, '[-300035]: Ngày giao dịch trở lại phải là ngày làm việc !', '[-300035]: Ngày giao dịch trở lại phải là ngày làm việc', 'CA', NULL);COMMIT;
