@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570217;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570217, '[-570217]: Món tiết kiệm đã đăng ký đang được tính vào sức mua!', '[-570217]: Món tiết kiệm đã đăng ký đang được tính vào sức mua!', 'TD', NULL);COMMIT;

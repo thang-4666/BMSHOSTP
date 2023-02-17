@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('PLOBYCLOSEPRICE','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'PLOBYCLOSEPRICE', 'N', 'Cho phép đặt lệnh PLO theo giá đóng cửa', 'Cho phép đặt lệnh PLO theo giá đóng cửa', 'N', 'A', '');COMMIT;

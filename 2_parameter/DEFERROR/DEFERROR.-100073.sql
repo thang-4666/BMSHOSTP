@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100073;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100073, '[-100073]: Bạn không có quyền duyệt rủi ro đối với giao dịch này!', '[-100073]: Bạn không có quyền duyệt rủi ro đối với giao dịch này!', 'SA', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100901;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100901, '[-100901]: User xác nhận không tồn tại hoặc đã Inactive!', '[-100901]: User xác nhận không tồn tại hoặc đã Inactive!', 'DL', NULL);COMMIT;

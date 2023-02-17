@@ -1,0 +1,35 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION fnc_get_opnf_refacctno
+(
+v_AFACCTNO     IN Varchar2,
+v_CODEID   IN Varchar2
+)
+RETURN VARCHAR2 IS
+  v_count NUMBER;
+  v_issuerid   varchar2(20);
+  v_sectype   varchar2(20);
+  v_ret     varchar2(40);
+BEGIN
+  v_ret :='';
+  SELECT  ISSUERID, SECTYPE INTO v_issuerid, v_sectype
+  FROM SBSECURITIES WHERE CODEID=v_CODEID;
+    IF v_sectype='008' THEN
+    SELECT CF.CUSTODYCD INTO v_ret
+    FROM CFMAST CF, AFMAST AF WHERE CF.CUSTID=AF.CUSTID AND AF.ACCTNO=v_AFACCTNO;
+  ELSE
+    --OPENFUND
+    SELECT COUNT(RFACCTNO) INTO v_count
+    FROM  AFEXTACCT WHERE STATUS='A' AND AFACCTNO=v_AFACCTNO AND ISSUERID=v_issuerid;
+    IF v_count>0 THEN
+      SELECT RFACCTNO INTO v_ret
+      FROM  AFEXTACCT WHERE STATUS='A' AND AFACCTNO=v_AFACCTNO AND ISSUERID=v_issuerid;
+    END IF;
+  END IF;
+    RETURN v_ret;
+END;
+
+ 
+ 
+ 
+ 
+/

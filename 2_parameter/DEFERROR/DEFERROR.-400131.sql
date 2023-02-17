@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400131;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400131, '[-400131]: Số phí ứng vượt quá phí ứng theo nguồn cũ!', '[-400131]: Số phí ứng vượt quá phí ứng theo nguồn cũ!!', 'CI', NULL);COMMIT;

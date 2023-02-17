@@ -1,0 +1,47 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION fn_get_se_costprice_2200(PV_AFACCTNO IN VARCHAR2, PV_CODEID IN VARCHAR2, PV_CURRCOSTPRICE IN number)
+    RETURN NUMBER IS
+-- Purpose: Lay gia von chung khoan CK
+-- MODIFICATION HISTORY
+-- Person      Date         Comments
+-- ---------   ------       -------------------------------------------
+-- THANHNM   31/01/2012     Created
+    V_RESULT NUMBER;
+BEGIN
+/*
+if LENGTH(PV_CURRCOSTPRICE) >0 then
+ RETURN TO_NUMBER(PV_CURRCOSTPRICE);
+end if;
+*/
+V_RESULT:=PV_CURRCOSTPRICE;
+IF PV_CURRCOSTPRICE <> 999 THEN
+    RETURN PV_CURRCOSTPRICE;
+END IF;
+
+if LENGTH(PV_AFACCTNO) =10 then
+SELECT COSTPRICE INTO V_RESULT
+    FROM SEMAST
+    WHERE AFACCTNO = REPLACE(PV_AFACCTNO,'.','')
+    AND CODEID = PV_CODEID;
+end if;
+
+RETURN V_RESULT;
+EXCEPTION
+   WHEN OTHERS THEN
+    RETURN 0;
+END;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/

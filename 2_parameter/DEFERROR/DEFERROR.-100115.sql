@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100115;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100115, '[-100115]:Khong duoc doi sang loai hinh margin khac!', '[-100115]:Cannot change to other margin type!', 'SA', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300039;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300039, '[-300039]: Tỷ lệ gộp phải lớn hơn 1 !', '[-300039]: The splitrate must be greater than 1', 'CA', NULL);COMMIT;

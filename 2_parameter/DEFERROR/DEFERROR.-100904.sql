@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100904;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100904, '[-100904]: Nhóm này đã được gán vào khách hàng không được phép xóa!', '[-100904]: Product type AD is duplicated!', 'SA', NULL);COMMIT;

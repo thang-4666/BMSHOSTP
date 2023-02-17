@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.SEODDLOT','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.SEODDLOT', 'Tham số bán chứng khoán lô lẻ', 'Parameter of Odd lot securities', 'Y', 'N', 'NNNNNYY');COMMIT;

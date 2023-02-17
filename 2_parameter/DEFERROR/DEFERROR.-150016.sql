@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -150016;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-150016, '[-150016]: Mã đợt sự kiện của CK WFT không được rỗng!', '[-150016]: Corporate action code (WFT) is invalid!', 'ST', NULL);COMMIT;

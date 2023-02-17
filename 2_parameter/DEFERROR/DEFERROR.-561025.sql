@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561025;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561025, '[-561025] : Trùng tính chất phí giảm trừ', '[-561025] : Duppliacte rerfee property', 'RE', 0);COMMIT;

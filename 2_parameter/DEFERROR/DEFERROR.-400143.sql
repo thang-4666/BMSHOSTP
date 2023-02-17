@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400143;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400143, '[-400143]: Không được phép ứng trước với lệnh khớp bán trong ngày!', '[-400143]: Không được phép ứng trước với lệnh khớp bán trong ngày!', 'CI', NULL);COMMIT;

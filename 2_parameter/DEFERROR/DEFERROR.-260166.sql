@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260166;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260166, '[-260166]: Phí lưu ký cộng dồn của tiểu khoản đã thay đổi!', '[-260166]:  The deposit fee accure of this account has been changed', 'CF', NULL);COMMIT;

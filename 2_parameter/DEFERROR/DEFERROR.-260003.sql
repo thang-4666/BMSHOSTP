@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260003;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260003, '[-260003] Không thể mở hợp đồng tín dung', '[-260003] Không thể mở hợp đồng tín dung', 'DF', NULL);COMMIT;

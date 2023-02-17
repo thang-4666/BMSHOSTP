@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300042;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300042, '[-300042]:Phải chọn một cách khai tỷ lệ nhận cổ tức !', '[-300042]:Must choose one devident type!', 'CA', NULL);COMMIT;

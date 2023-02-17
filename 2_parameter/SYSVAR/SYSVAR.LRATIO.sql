@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('LRATIO','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('MARGIN', 'LRATIO', '30', 'Tỷ lệ ký quỹ xử lý tối thiểu UBCK (%)', 'Liquid Ratio', 'Y', 'A', 'P');COMMIT;

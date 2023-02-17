@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200195;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200195, '[-200195]: Khách hàng chưa có tiểu khoản thường!', '[-200195]:This customer have not got normal account yet!', 'CF', NULL);COMMIT;

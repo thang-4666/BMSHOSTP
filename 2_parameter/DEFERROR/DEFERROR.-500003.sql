@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -500003;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-500003, '[-500003]: Mã tài khoản kế toán đã được sử dụng!', '[-500003]: GL account is duplicated!', 'GL', NULL);COMMIT;

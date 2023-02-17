@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300069;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300069, '[-300069]:Chỉ user duyệt sự kiện mới được phép xóa', '[-300069]: Chỉ user duyệt sự kiện mới được phép xóa', 'CA', NULL);COMMIT;

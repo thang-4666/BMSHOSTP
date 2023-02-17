@@ -1,0 +1,2 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200416;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200416, '[-200416]:Mật khẩu phải từ 4 ký tự trở lên, chỉ bao gồm chữ thường hoặc/và số', '[-200416]:Mật khẩu phải từ 4 ký tự trở lên, chỉ bao gồm
+chữ thường hoặc/và số', 'CF', NULL);COMMIT;

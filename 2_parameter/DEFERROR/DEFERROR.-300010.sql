@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300010;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300010, '[-300010]: Đợt thực hiện quyền đã lưu trong lịch nên không được phép xóa !', '[-300010]: ERR_CA_CAMASTID_INVALIDSTATUS', 'CA', NULL);COMMIT;

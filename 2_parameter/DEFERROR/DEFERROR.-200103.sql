@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200103;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200103, '[-200103]: Người dùng này đã được thiết lập master', '[-200103]: Người dùng này đã được thiết lập master', 'CF', NULL);COMMIT;

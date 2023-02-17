@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180064;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180064, '[-180064]:Tỷ lệ thực tế tài khoản giảm dưới tỷ lệ an toàn!', '[-180064]:Tỷ lệ thực tế tài khoản giảm dưới tỷ lệ an toàn!', 'MR', NULL);COMMIT;

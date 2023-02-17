@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -701117;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-701117, '[-701117]: Tài khoản chưa đăng ký miền thanh toán!', '[-701117]: ERR_Account has not register domain payment', 'OD', NULL);COMMIT;

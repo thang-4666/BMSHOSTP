@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100044;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100044, '[-100044]: NSD này đã có trong DS thực hiện giao dịch!', '[-100044]: This user is existed in transaction execute list!', 'SA', NULL);COMMIT;

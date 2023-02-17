@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.SECURITIES_RISK','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.SECURITIES_RISK', 'Tham số hệ thống chứng khoán tài khoản', 'Securities system parameter for credit line', 'Y', 'N', 'NNNNYYY');COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180047;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180047, '[-180047]: Loại hình margin là CL phải chọn loại hình vay mặc định!', '[-180047]: Loại hình margin là CL phải chọn loại hình vay mặc định!', '', NULL);COMMIT;

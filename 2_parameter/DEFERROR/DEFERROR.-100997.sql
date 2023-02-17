@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100997;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100997, '[-100997]: Hạn mức điều chỉnh không được nhỏ hơn giá trị đã sử dụng của nguồn!', '[-100997]:Hạn mức điều chỉnh không được nhỏ hơn giá trị đã sử dụng của nguồn !', 'PR', NULL);COMMIT;

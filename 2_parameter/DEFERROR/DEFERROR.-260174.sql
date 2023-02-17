@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260174;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260174, '[-260174]: Yêu cầu hủy đăng ký miền thanh toán trước khi đóng tài khoản!', '[-260174]: Yeu cau huy dang ky mien domain truoc khi dong tai khoan!', 'CF', NULL);COMMIT;

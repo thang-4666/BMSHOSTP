@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM ALLCODE WHERE 1 = 1 AND NVL(CDNAME,'NULL') = NVL('TYPE','NULL') AND NVL(CDTYPE,'NULL') = NVL('AF','NULL');Insert into ALLCODE   (CDTYPE, CDNAME, CDVAL, CDCONTENT, LSTODR, CDUSER, EN_CDCONTENT, CHSTATUS) Values   ('AF', 'TYPE', '1', 'Chuyển khoản ra ngân hàng', 1, 'Y', 'Chuyển khoản ra ngân hàng', 'C');COMMIT;

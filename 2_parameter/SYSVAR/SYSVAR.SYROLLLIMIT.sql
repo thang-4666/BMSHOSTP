@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('SYROLLLIMIT','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('MARGIN', 'SYROLLLIMIT', '50', 'Tỉ lệ tối đa dùng trong đảo tài sản (Credit Line) tầng hệ thống', 'Limit to roll over col', 'N', 'A', 'P');COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100041;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100041, '[-100041]: Loại tỷ giá này không tồn tại!', '[-100041]:Ratenum is not exist!', 'SA', NULL);COMMIT;

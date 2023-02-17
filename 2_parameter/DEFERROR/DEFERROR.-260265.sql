@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260265;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260265, '[-260265]: Quý khách vui lòng nhập đủ thông tin !', '[-260265]: Please enter all information !', 'CF', NULL);COMMIT;

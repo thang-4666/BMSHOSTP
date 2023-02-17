@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -102021;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-102021, '[-102021]: Không được đặt lại Thứ7, CN và ngày lễ!', '[-102021]: Không được đặt lại Thứ7, CN và ngày lễ!', 'SA', NULL);COMMIT;

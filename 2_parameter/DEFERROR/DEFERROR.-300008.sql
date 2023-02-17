@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300008;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300008, '[-300008]: Không được đặt mua hai loại chứng khoán cùng một lúc!', '[-300008]: EN: Không được đặt mua hai loại chứng khoán cùng một lúc!', 'CA', NULL);COMMIT;

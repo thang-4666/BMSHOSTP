@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180067;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180067, '[-180067]:Tài khoản Margin trạng thái bán xử lý không được đặt lệnh bán thường!', '[-180067]:The Call margin account cant place normal order sell!', 'MR', NULL);COMMIT;

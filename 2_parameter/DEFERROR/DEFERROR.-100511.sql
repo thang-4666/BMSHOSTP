@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100511;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100511, '[-100511]: Trùng khai báo mức ưu tiên thứ tự sử dụng dịch vụ', '[-100511]: Trùng khai báo mức ưu tiên thứ tự sử dụng dịch vụ', 'SA', NULL);COMMIT;

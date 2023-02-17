@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300074;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300074, '[-300074]:Tỷ lệ thực hiện không hợp lệ', '[-300074]:The action rate format is invalid', 'CA', NULL);COMMIT;

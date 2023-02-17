@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -500009;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-500009, '[-500009] Số dư tài khoản kế toán không đủ.', '[-500009] Not enough GL account balance.', 'GL', NULL);COMMIT;

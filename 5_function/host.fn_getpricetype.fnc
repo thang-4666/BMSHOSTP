@@ -1,0 +1,19 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION fn_getpricetype (pv_TRADEPLACE IN VARCHAR2)
+RETURN varchar2
+iS
+    v_result VARCHAR2(003);
+BEGIN
+       SELECT PRICETYPE
+                INTO v_result
+        FROM seoddlot WHERE TRADEPLACE = pv_TRADEPLACE;
+    RETURN v_result;
+EXCEPTION WHEN OTHERS THEN
+    RETURN '001';
+END;
+
+ 
+ 
+ 
+ 
+/

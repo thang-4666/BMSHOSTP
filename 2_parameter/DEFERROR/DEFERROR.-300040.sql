@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300040;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300040, '[-300040]: Trùng mã chứng khoán quyền!', '[-300040]: The option symbol has been used!', 'SA', NULL);COMMIT;

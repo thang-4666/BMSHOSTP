@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -410;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-410, 'Tham số hạn mức đầu tư chứng khoán vượt tham số của phương án bên nhận', 'Tham số hạn mức đầu tư chứng khoán vượt tham số của phương án bên nhận', 'PM', NULL);COMMIT;

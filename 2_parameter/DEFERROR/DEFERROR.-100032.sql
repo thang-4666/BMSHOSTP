@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100032;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100032, '[-100032]: Mã loại tiền bị trùng', '[-100032]: Currency id is duplicated!', 'SA', NULL);COMMIT;

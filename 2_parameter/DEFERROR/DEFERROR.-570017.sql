@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570017, 'Vượt quá số lãi vay cầm cố!', 'Vượt quá số lãi vay cầm cố!', 'TD', NULL);COMMIT;

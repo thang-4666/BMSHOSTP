@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100452;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100452, '[-100452]: Trạng thái liên kết domain không hợp lệ!', '[-100452]: Invalid domain association status!', 'SA', NULL);COMMIT;

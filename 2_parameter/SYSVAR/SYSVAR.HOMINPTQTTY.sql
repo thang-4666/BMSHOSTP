@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('HOMINPTQTTY','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('OD', 'HOMINPTQTTY', '20000', 'Khoi luong CK toi thieu cho lenh thoa thuan san HO', 'Khoi luong CK toi thieu cho lenh thoa thuan san HO', 'N', 'A', '');COMMIT;

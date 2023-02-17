@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200422;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200422, '[-200422]: Khách hàng tổ chức không được thực hiện giao dịch này!', '[-200422]: Khách hàng tổ chức không được thực hiện giao dịch này!', 'CF', NULL);COMMIT;

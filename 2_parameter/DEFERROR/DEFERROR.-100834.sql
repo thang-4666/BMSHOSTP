@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100834;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100834, '[-100834]: Họ tên người thụ hưởng phải cùng tên với tên khách hàng!', '[-100834]: The payee''s full name must be the same as the customer''s name!', 'CF', NULL);COMMIT;

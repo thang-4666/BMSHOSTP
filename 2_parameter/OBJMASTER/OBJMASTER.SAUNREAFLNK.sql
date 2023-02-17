@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.UNREAFLNK','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.UNREAFLNK', 'Danh sách hạn chế đặt lệnh của môi giới', 'Danh sách hạn chế đặt lệnh của môi giới', 'Y', 'N', 'NNNNYYY');COMMIT;

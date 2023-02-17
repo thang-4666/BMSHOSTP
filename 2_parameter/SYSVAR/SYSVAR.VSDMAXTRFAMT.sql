@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('VSDMAXTRFAMT','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'VSDMAXTRFAMT', '0', 'Phí chuyển khoản chứng khoán bù trừ tối đa', 'Phi chuyen khoan chung khoan bu tru toi da', 'N', 'A', 'P');COMMIT;

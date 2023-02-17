@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700067;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700067, '[-700067]: TL trả chậm phải nằm trong khoảng từ 0 đến 100 (đơn vị %)', '[-700067]: TL trả chậm phải nằm trong khoảng từ 0 đến 100 (đơn vị %)', 'OD', NULL);COMMIT;

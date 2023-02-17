@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180042;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180042, '[-180042]: Tỷ lệ k.quỹ ban đầu UBCK phải >= Mức tối thiểu theo quy định!', '[-180042]: Tỷ lệ k.quỹ ban đầu UBCK phải >= Mức tối thiểu theo quy định!', 'MR', NULL);COMMIT;

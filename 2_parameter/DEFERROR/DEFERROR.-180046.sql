@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180046;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180046, '[-180046]: Loại hình vay T0 phải để tham số nguồn công ty và không tuân thủ hệ thống!', '[-180046]: Loại hình vay T0 phải để tham số nguồn công ty và không tuân thủ hệ thống!', '', NULL);COMMIT;

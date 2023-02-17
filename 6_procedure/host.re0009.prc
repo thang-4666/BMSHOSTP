@@ -1,0 +1,160 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE re0009 (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT             IN       VARCHAR2,
+   pv_BRID         IN       VARCHAR2,
+   TLGOUPS         IN       VARCHAR2,
+   TLSCOPE         IN       VARCHAR2,
+   F_DATE          IN       VARCHAR2,
+   T_DATE          IN       VARCHAR2,
+   I_BRIDGD        IN       VARCHAR2,
+   PV_CUSTODYCD    IN       VARCHAR2,
+   RECUSTODYCD     IN       VARCHAR2,
+   PV_SECTYPE    IN       VARCHAR2,
+   PV_TRADEPLACE   IN       VARCHAR2
+
+ )
+IS
+
+--BAO CAO KHOI LUONG GIAO DICH VA PHI CUA CHI NHANH
+--NGOCVTT 22/05/2015
+-- ---------   ------  -------------------------------------------
+   V_STROPT     VARCHAR2 (50);            -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID       VARCHAR2 (40);            -- USED WHEN V_NUMOPTION > 0
+   V_INBRID         VARCHAR2 (50);
+
+    V_CUSTODYCD  VARCHAR2(100);
+
+   V_TODATE         DATE;
+   V_FROMDATE          DATE;
+
+   V_I_BRIDGD          VARCHAR2(100);
+   V_BRNAME            NVARCHAR2(400);
+   V_STRCUSTODYCD    VARCHAR2(100);
+   V_SECTYPE      VARCHAR2(50);
+   V_TRADEPLACE   VARCHAR2(500);
+
+BEGIN
+
+
+    V_STROPT := OPT;
+
+    IF (V_STROPT <> 'A') AND (pv_BRID <> 'ALL')
+    THEN
+      V_STRBRID := pv_BRID;
+    ELSE
+      V_STRBRID := '%%';
+    END IF;
+    -- GET REPORT'S PARAMETERS
+
+       IF (UPPER(I_BRIDGD) <> 'ALL' OR I_BRIDGD <> '')
+   THEN
+      V_I_BRIDGD :=  I_BRIDGD;
+   ELSE
+      V_I_BRIDGD := '%%';
+   END IF;
+
+
+    IF RECUSTODYCD = 'ALL' OR RECUSTODYCD IS NULL THEN
+        V_CUSTODYCD := '%%';
+    ELSE
+        V_CUSTODYCD := RECUSTODYCD;
+    END IF;
+
+
+    IF PV_CUSTODYCD = 'ALL' OR PV_CUSTODYCD IS NULL THEN
+        V_STRCUSTODYCD := '%%';
+    ELSE
+        V_STRCUSTODYCD := PV_CUSTODYCD;
+    END IF;
+
+
+   IF PV_SECTYPE = 'ALL' OR PV_SECTYPE IS NULL THEN
+        V_SECTYPE := '%%';
+    ELSE
+        V_SECTYPE := PV_SECTYPE;
+    END IF;
+
+     IF PV_TRADEPLACE = 'ALL' OR PV_TRADEPLACE IS NULL THEN
+        V_TRADEPLACE := '%%';
+    ELSE
+        V_TRADEPLACE := PV_TRADEPLACE;
+    END IF;
+
+
+   V_FROMDATE:=TO_DATE(F_DATE,'DD/MM/YYYY');
+   V_TODATE:=TO_DATE(T_DATE,'DD/MM/YYYY');
+
+
+   -- GET REPORT'S DATA
+    OPEN  PV_REFCURSOR
+     FOR
+-- PHAI LAY RIENG THEO YEU CAU BAO CAO, VPDD GIANG VO, DONG NAI, AN GIANG
+      SELECT BRID, BRNAME, SUM(NVL(QTTY_O,0)) QTTY_O, SUM(NVL(AMT_O,0)) AMT_O,SUM(NVL(AMT1_O,0)) AMT1_O,
+            SUM(NVL(FEE_O,0)) FEE_O, SUM(NVL(QTTY_H,0)) QTTY_H, SUM(NVL(AMT_F,0)) AMT_F,SUM(NVL(AMT1_F,0)) AMT1_F,
+            SUM(NVL(QTTY_KHOP,0)) QTTY_KHOP, SUM(NVL(FEE_KHOP,0)) FEE_KHOP,SUM(NVL(AMT_KHOP,0)) AMT_KHOP
+
+      FROM (  SELECT  BR.BRID, BR.BRNAME,CF.CAREBY,
+              (CASE WHEN SB.SECTYPE IN ('002', '001', '007', '008', '111') THEN 'Y'
+                    WHEN  SB.SECTYPE IN ('003', '006', '222') THEN 'N' ELSE '' END) SECTYPE,
+                SUM(CASE WHEN OD.VIA='O' THEN OD.ORDERQTTY ELSE 0 END) QTTY_O,
+                SUM(CASE WHEN OD.VIA='O' THEN OD.ORDERQTTY*OD.QUOTEPRICE ELSE 0 END) AMT_O,
+                SUM(CASE WHEN OD.VIA='O' THEN NVL(IO.MATCHQTTY*IO.MATCHPRICE,0) ELSE 0 END ) AMT1_O,
+                SUM(CASE WHEN OD.VIA='O' THEN (CASE WHEN IO.IODFEEACR = 0 and OD.TXDATE = getcurrdate THEN ROUND(IO.matchqtty * io.matchprice * ODT.deffeerate / 100, 2)
+                ELSE io.iodfeeacr END) ELSE 0 END) FEE_O,
+                SUM(CASE WHEN OD.VIA='H' THEN OD.ORDERQTTY ELSE 0 END) QTTY_H,
+                SUM(CASE WHEN OD.VIA NOT IN ('O','H') THEN OD.ORDERQTTY*OD.QUOTEPRICE ELSE 0 END) AMT_F,
+                SUM(CASE WHEN OD.VIA NOT IN ('O','H') THEN NVL(IO.MATCHQTTY*IO.MATCHPRICE,0) ELSE 0 END ) AMT1_F,
+                SUM(NVL(IO.MATCHQTTY,0)) QTTY_KHOP,
+                SUM(CASE WHEN IO.IODFEEACR = 0 and OD.TXDATE = getcurrdate THEN ROUND(IO.matchqtty * io.matchprice * ODT.deffeerate / 100, 2)
+                ELSE io.iodfeeacr END) FEE_KHOP,
+                SUM(NVL(IO.MATCHQTTY*IO.MATCHPRICE,0)) AMT_KHOP
+
+           FROM CFMAST CF,AFMAST AF,
+                SBSECURITIES SB, ODTYPE ODT,VW_ODMAST_ALL OD,VW_IOD_ALL IO,
+                (SELECT  LNK.AFACCTNO ,max(CFRE.CUSTID) CUSTID
+                 FROM REAFLNK LNK, REMAST RE, RETYPE TYP, CFMAST CFRE
+                 WHERE LNK.DELTD <> 'Y' --AND TYP.REROLE='CS'
+                      AND RE.ACTYPE=TYP.ACTYPE AND RE.CUSTID=CFRE.CUSTID AND RE.ACCTNO=LNK.REACCTNO
+                      AND  lnk.frdate <= V_TODATE
+                      AND nvl(lnk.clstxdate,lnk.todate) > V_FROMDATE
+                      AND NVL(CFRE.CUSTID,'000') LIKE V_CUSTODYCD
+                      GROUP BY LNK.AFACCTNO ) RE,
+
+                   ( SELECT BR.BRID,BR.BRNAME,TL.GRPID CAREBY FROM BRGRP BR, TLGROUPS TL
+                   WHERE TL.GRPTYPE='2' AND TL.GRPID NOT IN (SELECT CA.GRPID
+                       FROM TRADEPLACE PA, TRADECAREBY CA
+                       WHERE  PA.TRAID=CA.TRADEID AND PA.BRID=SUBSTR(BR.BRID,1,4))
+                   UNION ALL
+                   SELECT BRID||TRAID BRID, TRADENAME BRNAME, CA.GRPID CAREBY
+                   FROM TRADEPLACE PA, TRADECAREBY CA WHERE PA.TRAID=CA.TRADEID) BR
+
+          WHERE CF.CUSTID=RE.AFACCTNO(+)
+                AND  OD.ORDERID = IO.ORGORDERID(+)
+                AND CF.CUSTID=AF.CUSTID
+                AND AF.ACCTNO=OD.AFACCTNO
+                AND CF.BRID=SUBSTR(BR.BRID,1,4)
+                AND CF.CAREBY=BR.CAREBY
+                AND OD.ACTYPE =ODT.ACTYPE
+                AND OD.DELTD<>'Y'
+                AND OD.EXECTYPE IN ('NS','SS','MS','NB','BC')
+                AND SB.CODEID=OD.CODEID
+                AND SB.SECTYPE IN ('002', '001', '007', '008', '011', '111','003', '006', '222') --Ngay 23/03/2017 CW NamTv chinh sua them sectype 011
+                AND SB.TRADEPLACE IN ('001','002','005')
+                AND OD.TXDATE BETWEEN V_FROMDATE AND V_TODATE
+                AND SB.TRADEPLACE LIKE V_TRADEPLACE
+
+                AND CF.CUSTODYCD LIKE V_STRCUSTODYCD
+                  GROUP BY BR.BRID, BR.BRNAME,CF.CAREBY, (CASE WHEN SB.SECTYPE IN ('002', '001', '007', '008', '111') THEN 'Y'
+                        WHEN  SB.SECTYPE IN ('003', '006', '222') THEN 'N' ELSE '' END)  )
+      WHERE BRID LIKE V_I_BRIDGD  AND SECTYPE LIKE V_SECTYPE
+      GROUP BY BRID, BRNAME
+      ;
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;                                                              -- PROCEDURE
+ 
+/

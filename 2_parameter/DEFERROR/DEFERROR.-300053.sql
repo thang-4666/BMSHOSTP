@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300053;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300053, '[-300053]: Giao dịch không thể xóa vì không đủ số dư chứng khoán', '[-300053]: Giao dịch không thể xóa vì không đủ số dư chứng khoán', 'CA', NULL);COMMIT;

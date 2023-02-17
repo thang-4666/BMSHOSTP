@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260175;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260175, '[-260175]: Hiệu lực đăng ký domain trên VSD còn hiệu lực, tài khoản chưa thể thực hiện đóng!', '[-260175]: Hieu luc dang ky domain con hiệu luc nen chua the thuc hien dong!', 'CF', NULL);COMMIT;

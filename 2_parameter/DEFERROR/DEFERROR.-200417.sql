@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200417;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200417, '[-200417]:Đã tồn tại loại sản phẩm trong CFTYPE', 'CFTYPE has this product', 'CF', NULL);COMMIT;

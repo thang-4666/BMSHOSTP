@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM APPMAP WHERE 1 = 1 AND NVL(TLTXCD,'NULL') = NVL('1622','NULL');Insert into APPMAP   (TLTXCD, APPTYPE, APPTXCD, ACFLD, AMTEXP, COND, ACFLDREF, APPTYPEREF, FLDKEY, ISRUN, TRDESC, ODRNUM) Values   ('1622', 'CI', '0012', '05', '12', '', '03', 'TD', 'ACCTNO', '@1', 'Nhận lãi tiết kiệm, gửi ngày #17, số tiền gửi ban đầu #16', 2);COMMIT;

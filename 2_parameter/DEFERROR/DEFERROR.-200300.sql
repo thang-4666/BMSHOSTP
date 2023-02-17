@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200300;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200300, '[-200300]: Nơi lưu ký không hợp lệ', '[-200200]: Invalid custodian bank', 'CF', NULL);COMMIT;

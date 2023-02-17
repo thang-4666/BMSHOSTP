@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -201413;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-201413, '[-201413]: Độ dài địa chỉ phải lớn hơn 20 ký tự', '[-201413]: Độ dài địa chỉ phải lớn hơn 20 ký tự', 'CF', NULL);COMMIT;

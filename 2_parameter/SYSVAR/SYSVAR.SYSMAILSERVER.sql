@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('SYSMAILSERVER','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'SYSMAILSERVER', 'mail.fssc.com.vn', 'Địa chỉ mail server', 'mail server address', 'N', 'A', 'P');COMMIT;

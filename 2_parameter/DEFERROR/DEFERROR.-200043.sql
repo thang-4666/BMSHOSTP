@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200043;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200043, '[-200043]: Ngày bắt đầu hiệu lực không được lớn hơn ngày hết hiệu lực !', '[-200043]: ERR_CF_CURRDATE_SMALLER_THAN_VALDATE!', 'CF', NULL);COMMIT;

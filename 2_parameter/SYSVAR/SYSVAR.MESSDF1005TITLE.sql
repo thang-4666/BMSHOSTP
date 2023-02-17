@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('MESSDF1005TITLE','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'MESSDF1005TITLE', 'MESSDF1005TITLE', 'ThÃ´ng bÃ¡o khoáº£n vay quÃ¡ háº¡n !', 'ThÃ´ng bÃ¡o khoáº£n vay quÃ¡ háº¡n !', 'N', 'A', 'P');COMMIT;

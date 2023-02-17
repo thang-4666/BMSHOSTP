@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700150;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700150, '[-700150]: Chứng khoán đang bị hạn chế giao dịch!', '[-700150]: Symbol has restriction!', 'OD', NULL);COMMIT;

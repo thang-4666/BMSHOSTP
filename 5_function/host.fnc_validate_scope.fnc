@@ -1,0 +1,53 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION FNC_VALIDATE_SCOPE
+(
+    v_BRID      IN Varchar2,    --CHI NHANH KHACH HANG      CFMAST.BRID
+    v_CAREBY    IN Varchar2,    --NHOM CAREBY KHACH HANG    CFMAST.CAREBY
+    v_TLSCOPE   IN Varchar2,    --PHAM VI TRUY CAP CUA TELLERID = FNC_CHECK_CMDID_SCOPE('RPTID', 'R', 'TLID')
+    v_TLIDBRID  IN Varchar2,    --CHI NHANH CUA TELLER = TLPROFILES.BRID
+    v_TLGROUPS  IN Varchar2     --DANH SACH CAC NHOM MA TELLERID TRUC THUOC
+)
+RETURN NUMBER IS
+    v_regionid varchar2(20);
+BEGIN
+
+    --CAREBY
+    IF INSTR(v_TLGROUPS, v_CAREBY)>0 THEN
+        RETURN 0;
+    END IF;
+
+   /* IF v_TLSCOPE='N' THEN
+         RETURN -1;
+    END IF;
+
+    --ALL
+    IF v_TLSCOPE='A' THEN
+        RETURN 0;
+    END IF;
+    --SUBBRANCH
+    IF (v_TLSCOPE='B' OR  v_TLSCOPE='S') AND v_BRID=v_TLIDBRID THEN
+        RETURN 0;
+    END IF;
+    --BRANCH
+    IF (v_TLSCOPE='B') AND SUBSTR(v_BRID,1,2) || '01'=v_TLIDBRID THEN
+        RETURN 0;
+    END IF;
+    --REGION
+    IF v_TLSCOPE='R' THEN
+        v_regionid := FNC_GET_REGIONID(v_BRID);
+        IF (v_TLIDBRID=v_BRID OR v_REGIONID=v_TLIDBRID) THEN
+            RETURN 0;
+        END IF;
+    END IF;
+    --CAREBY
+    IF v_TLSCOPE='C' AND INSTR(v_TLGROUPS, v_CAREBY)>0 THEN
+        RETURN 0;
+    END IF;*/
+    --DEFAULT
+    RETURN -1;
+END;
+ 
+ 
+ 
+ 
+/

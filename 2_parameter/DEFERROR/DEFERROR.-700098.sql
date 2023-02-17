@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700098;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700098, '[-700098]: Tài khoản đã thực hiện netoff cuối ngày!', '[-700098]: Tài khoản đã thực hiện netoff cuối ngày!', 'OD', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700138;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700138, '[-700138]: TPDN chỉ được đặt lệnh LO!', '[-700138]:  Corporate Bond allow LO order type!', 'OD', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700132;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700132, '[-700132]: Lệnh đang trong quá trình đẩy vào FLEX,không được phép hủy,sửa!', '[-700132]: Lệnh đang trong quá trình đẩy vào FLEX,không được phép hủy,sửa!', 'OD', NULL);COMMIT;

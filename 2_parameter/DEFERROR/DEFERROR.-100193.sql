@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100193;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100193, '[-100193]:Số dư hạn chế chuyển nhượng không đủ!', '[-100193]: Số dư hạn chế chuyển nhượng không đủ!', 'SA', NULL);COMMIT;

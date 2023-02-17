@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670002, '[-670002]: Bảng kê đang duyệt', '[-670002]: Batch transfer is confirming', 'RM', 0);COMMIT;

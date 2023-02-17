@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('ONLINESTART_TRF_TIME','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'ONLINESTART_TRF_TIME', '080000', 'Thoi gian cho phep chuyen tien ra ngan hang', 'Start time Transfer from to other Bank', 'Y', 'A', 'P');COMMIT;

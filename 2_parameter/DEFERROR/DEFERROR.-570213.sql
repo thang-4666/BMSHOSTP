@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570213;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570213, '[-570213]: Vượt quá hạn mức còn lại của đối tác', '[-570213]: Vượt quá hạn mức còn lại của đối tác', 'TD', NULL);COMMIT;

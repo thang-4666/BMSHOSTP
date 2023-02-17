@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -103;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-103, 'Không đủ số dư tiền cho thực hiện quyền mua', 'Không đủ số dư tiền cho thực hiện quyền mua', 'PM', NULL);COMMIT;

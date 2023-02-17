@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -205;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-205, 'Số tiền giải tỏa lớn hơn số hiện đang bị phong tỏa', 'Số tiền giải tỏa lớn hơn số hiện đang bị phong tỏa', 'PM', NULL);COMMIT;

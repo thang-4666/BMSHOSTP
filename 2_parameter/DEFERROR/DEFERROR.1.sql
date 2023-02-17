@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = 1;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (1, '[1]: Mã sự kiện không tồn tại', '[1]: Error execute in database.', 'SY', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180026;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180026, '[-180026]: Tài khoản có dư nợ quá hạn', '[-180026]:Margin account was overdue!', 'MR', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260006, '[-260006] Số lượng chứng khoán chờ về không đủ để làm deal', '[-260006] Số lượng chứng khoán chờ về không đủ để làm deal', 'DF', NULL);COMMIT;

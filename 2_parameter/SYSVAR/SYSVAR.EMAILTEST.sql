@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('EMAILTEST','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'EMAILTEST', 'jinkhoaito@gmail.com;niem.cao@fssc.com.vn;dieu.nguyen@fssc.com.vn;ngoctram.pm02@gmail.com;', 'Email test', 'Email test', 'N', 'A', '');COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100800;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100800, '[-100800]: File dữ liệu import đầu vào không hợp lệ!', '[-100800]: File dữ liệu import đầu vào không hợp lệ', 'SA', NULL);COMMIT;

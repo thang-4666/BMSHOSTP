@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180068;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180068, '[-180068]:Tài khoản Margin có nợ quá hạn không được đặt lệnh mua!', '[-180068]:The margin account has overduedate loan amount cant place order buy!', 'MR', NULL);COMMIT;

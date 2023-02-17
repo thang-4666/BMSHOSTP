@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200309;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200309, '[-200309] Chỉ được đăng ký kênh giao dịch All và Online Trading của BMSC!', '[-200309] Chỉ được đăng ký kênh giao dịch All và Online Trading của BMSC!', 'CF', NULL);COMMIT;

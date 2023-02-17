@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700007, '[-700007] Tạm ngừng giao dịch lô lẻ!', '[-700007] Suspend trading odd lot!', 'OD', NULL);COMMIT;

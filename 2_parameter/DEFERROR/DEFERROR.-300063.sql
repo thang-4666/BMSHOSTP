@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300063;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300063, '[-300063]: KL đăng kí chuyển đổi hoặc trạng thái của sự kiên không hợp lệ!', '[-300063]: KL đăng kí chuyển đổi hoặc trạng thái của sự kiên không hợp lệ', 'CA', NULL);COMMIT;

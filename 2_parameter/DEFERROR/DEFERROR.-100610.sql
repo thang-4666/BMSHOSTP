@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100610;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100610, '[-100610]: Hạn mức vay của tiểu khoản không được phép vượt quá Pool cho phép theo UBCK!', '[-100610]: Hạn mức vay của tiểu khoản không được phép vượt quá Pool cho phép theo UBCK!', 'CF', NULL);COMMIT;

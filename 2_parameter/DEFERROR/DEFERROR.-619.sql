@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -619;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-619, 'Vượt tỷ lệ lỗ của phương án', 'Vượt tỷ lệ lỗ của phương án', 'PM', NULL);COMMIT;

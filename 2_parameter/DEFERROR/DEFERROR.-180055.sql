@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180055;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180055, '[-180055]: Vượt quá hạn mức T0 của nhóm môi giới', '[-180055]: Vượt quá hạn mức T0 của nhóm môi giới!', 'RE', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670095;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670095, '[-670095]: Mật khẩu đăng nhập không đúng', '[-670095]: Login Password invalid', 'RM', 0);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('STR_SESSION_TIME','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'STR_SESSION_TIME', '240000', 'Thời gian bắt đầu chặn khách hàng đặt lệnh trên các kênh', '', 'Y', 'A', 'PAPAP');COMMIT;

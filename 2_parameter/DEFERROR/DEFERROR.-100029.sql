@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100029;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100029, '[-100029]: Vẫn còn chi nhánh hoạt động nên không thể đóng cửa Hội sở !', '[-100029]: ERR_SA_STILLHAS_BRGRP_ACTIVE', 'SA', NULL);COMMIT;

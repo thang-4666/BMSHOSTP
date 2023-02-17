@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -308;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-308, 'Mã giao dịch không có hiệu lực để revert', 'Mã giao dịch không có hiệu lực để revert', 'PM', NULL);COMMIT;

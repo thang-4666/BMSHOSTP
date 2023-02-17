@@ -1,0 +1,3 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('TYPEIDMAP','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('TYPEIDMAP', 'Nhóm loại hình', 'Pool/Room Master', '
+SELECT tim.autoid, prt.actype, tim.typeid, vw.typename FROM TYPEIDMAP tim, prtype prt, vw_type vw where tim.prtype = prt.actype AND prt.TYPE = vw.type  AND vw.actype = tim.typeid  AND tim.prtype = ''<$KEYVAL>''
+', 'PR.TYPEIDMAP', 'typeid', '', '', NULL, 50, 'N', 30, '', 'Y', 'T', '', 'N', '', '');COMMIT;

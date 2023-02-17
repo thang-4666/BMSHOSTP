@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900095;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900095, '[-900095]:Tài khoản vẫn còn chứng khoán phong tỏa!', '[-900095]:Tài khoản vẫn còn chứng khoán phong tỏa', 'SE', NULL);COMMIT;

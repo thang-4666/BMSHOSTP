@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700082;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700082, '[-700082]: Chứng khoán chờ về của lệnh đã được cầm cố!', '[-700082]: Chứng khoán chờ về của lệnh đã được cầm cố!', 'OD', NULL);COMMIT;

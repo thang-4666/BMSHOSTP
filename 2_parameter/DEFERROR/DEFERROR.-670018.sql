@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670018;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670018, '[-670018]: Ngày thực hiện nhỏ hơn ngày hiện tại', '[-670018]: Affected date not current date', 'RM', 0);COMMIT;

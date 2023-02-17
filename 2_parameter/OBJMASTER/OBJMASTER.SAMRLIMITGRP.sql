@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.MRLIMITGRP','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.MRLIMITGRP', 'Quản lý nhóm hạn mức vay cho khách hàng', 'Group account limit management', 'Y', 'N', 'NNNNYYY');COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100827;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100827, '[-100827]: FRDATE phải lớn hơn hoặc bằng ngày hiện tại !', '[-100827]: FRDATE phải lớn hơn hoặc bằng ngày hiện tại !', 'DL', NULL);COMMIT;

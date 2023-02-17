@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700139;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700139, '[-700139]: TPDN không được giao dịch lô lẻ!', '[-700139]:  Corporate Bond do not trade with this lot!', 'OD', NULL);COMMIT;

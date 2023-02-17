@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400017, '[-400017]: Mã tài khoản GL không tồn tại!', '[-400017]:GL master id is not exists!', 'CI', NULL);COMMIT;

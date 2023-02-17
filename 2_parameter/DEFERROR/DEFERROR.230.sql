@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = 230;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (230, '[230]:  Lệnh bán đối ứng đang chờ khớp!', '[230]: Lệnh bán đối ứng đang chờ khớp!', 'SA', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100512;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100512, '[-100512]: Loại hình LNTYPE chưa được gán rổ', '[-100512]: Loại hình LNTYPE chưa được gán rổ', 'SA', NULL);COMMIT;

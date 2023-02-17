@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200404;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200404, '[-200404]:Giao dịch không thể xóa vì đã thực hiện các giao dịch tiếp theo của qui trình!', '[-200404]:Giao dịch không thể xóa vì đã thực hiện các giao dịch tiếp theo của qui trình!', 'SE', NULL);COMMIT;

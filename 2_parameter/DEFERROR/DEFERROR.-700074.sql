@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700074;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700074, '[-700074]: Còn tồn tại lệnh chưa hoàn tất luồng sinh lệnh sửa lỗi.', '[-700074]: Còn tồn tại lệnh chưa hoàn tất luồng sinh lệnh sửa lỗi.', 'OD', NULL);COMMIT;

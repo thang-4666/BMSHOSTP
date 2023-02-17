@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -994459;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-994459, '[-994459]: Ngoài giờ trả nợ margin!', '[-994459]: Ngoài giờ trả nợ margin!', 'SA', NULL);COMMIT;

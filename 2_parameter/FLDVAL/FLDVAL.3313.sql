@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM FLDVAL WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('3313','NULL');Insert into FLDVAL   (FLDNAME, OBJNAME, ODRNUM, VALTYPE, OPERATOR, VALEXP, VALEXP2, ERRMSG, EN_ERRMSG, TAGFIELD, TAGVALUE, CHKLEV) Values   ('09', '3313', 3, 'V', 'IN', '@C', '', 'Trạng thái điện không hợp lệ!', 'Transaction is invalid!', '', '', 0);COMMIT;

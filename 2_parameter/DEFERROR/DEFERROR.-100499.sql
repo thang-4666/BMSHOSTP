@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100499;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100499, '[-100499]: Loại hình CTYPE mới không có sản phẩm phù hợp', '[-100499]: New CTYPE does not have enought AFTYPE ', 'CF', NULL);COMMIT;

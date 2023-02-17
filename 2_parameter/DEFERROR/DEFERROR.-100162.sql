@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100162;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100162, '[-100162] Mật khẩu mới phải từ 4 đến 10 ký tự gồm chữ, số, ký tự đặc biệt, hoa thường!', '[-100162] Pls input new password!', 'SA', NULL);COMMIT;

@@ -1,0 +1,5 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('DOMAIN','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('DOMAIN', 'Quản lý miền thanh toán và hình thức thanh toán', 'Quản lý miền thanh toán và hình thức thanh toán', 'select d.domaincode, d.domainname, d.settletype, d.settlecycle, a0.cdcontent secsettletype, a1.cdcontent cashsettletype, a2.cdcontent isdefault
+from domain d, allcode a0, allcode a1, allcode a2
+where d.secsettletype = a0.cdval and a0.cdname = ''SETTLETYPE'' and a0.cdtype = ''CF''
+and d.cashsettletype = a1.cdval and a1.cdname = ''SETTLETYPE'' and a1.cdtype = ''CF''
+and d.isdefault = a2.cdval and a2.cdname = ''YESNO'' and a2.cdtype = ''SY''', 'DOMAIN', '', '', 'EXEC', 0, 50, 'N', 30, '', 'Y', 'T', '', 'N', '', '');COMMIT;

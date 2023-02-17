@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180010;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180010, '[-180010]: Tỷ lệ an toàn CL nằm ngoài khoảng quy định!', '[-180010]: Tỷ lệ an toàn CL nằm ngoài khoảng quy định!', 'MR', NULL);COMMIT;

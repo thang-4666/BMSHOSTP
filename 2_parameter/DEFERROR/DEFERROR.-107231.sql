@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -107231;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-107231, '[-107231]: Trạng thái thay đổi trùng với trạng thái cũ!', '[-107231]: Trạng thái thay đổi trùng với trạng thái cũ!', 'CF', NULL);COMMIT;

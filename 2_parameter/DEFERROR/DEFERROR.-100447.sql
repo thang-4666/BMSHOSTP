@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100447;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100447, '[-100447]: Trạng thái liên kết Domain không hợp lệ!', '[-100447]: Invalid mapping status!', 'CF', 0);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100999;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100999, '[-100999]: Tiểu khoản đã được gán vào một nhóm hạn mức cùng mã chứng khoán!', '[-100999]: Tiểu khoản đã được gán vào một nhóm hạn mức cùng mã chứng khoán!', 'SA', NULL);COMMIT;

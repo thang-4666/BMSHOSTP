@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540125;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540125, '[-540125]: Dữ liệu đầu vào không hợp lệ', '[-540125]: Dữ liệu đầu vào không hợp lệ', 'OD', NULL);COMMIT;

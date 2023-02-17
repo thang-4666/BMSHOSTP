@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.CFMRIDCODE','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.CFMRIDCODE', 'Thêm CMND không cho phép mở tiểu khoản Margin', 'Thêm CMND không cho phép mở tiểu khoản Margin', 'Y', 'N', 'NNNYYYY');COMMIT;

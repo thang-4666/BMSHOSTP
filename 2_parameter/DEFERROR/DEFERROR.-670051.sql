@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670051;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670051, '[-670051]: Số tham chiếu bị trùng', '[-670051]: RefCode duplicated', 'RM', 0);COMMIT;

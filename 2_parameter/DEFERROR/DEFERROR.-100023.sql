@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100023;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100023, '[-100023]: Hệ thống đã chuyển trạng thái ngừng giao dịch để xử lý các công việc cuối ngày!', '[-100023]: ERR_SA_HOST_OPERATION_ISINACTIVE', 'SA', NULL);COMMIT;

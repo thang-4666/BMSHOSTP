@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100410;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100410, '[-100410]: Tỷ lệ ký quỹ margin không được nhỏ hơn tỷ lệ ký quỹ tối thiểu của UBCK!', '[-100410]:The Crediline basket loanrate must be greater than system minimum loan rate!', 'SA', NULL);COMMIT;

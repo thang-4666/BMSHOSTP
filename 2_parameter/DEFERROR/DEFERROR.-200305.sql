@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200305;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200305, '[-200305]: Loại hình giao dịch ký quỹ bắt buộc khai báo tự động ứng trước!', '[-200305]: Loại hình giao dịch ký quỹ bắt buộc khai báo tự động ứng trước!', 'CF', NULL);COMMIT;

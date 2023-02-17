@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900096;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900096, '[-900096]: Bạn phải nhập CMT/HC/GPKD của khách hàng trước khi làm giao dịch !', '[-900096]: Bạn phải nhập CMT/HC/GPKD của khách hàng trước khi làm giao dịch', 'SE', NULL);COMMIT;

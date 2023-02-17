@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200311;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200311, '[-200311] Thông tin khách hàng đang đăng ký giao dịch trực tuyến. Bạn không được phép xóa!', '[-200311] Thông tin khách hàng đang đăng ký giao dịch trực tuyến. Bạn không được phép xóa!', 'CF', NULL);COMMIT;

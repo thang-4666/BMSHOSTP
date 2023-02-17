@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700012;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700012, '[-700012]:Không đúng quy định giá trần sàn của hệ thống!', '[-700012]:Không đúng quy định giá trần sàn của hệ thống!', 'OD', NULL);COMMIT;

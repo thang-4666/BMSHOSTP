@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100004;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100004, '[-100004]: Không thể xoá chi nhánh/đại lý tồn tại giao dịch viên!', '[-100004]: Cannot delete the branch which contains tellers!', 'SA', NULL);COMMIT;

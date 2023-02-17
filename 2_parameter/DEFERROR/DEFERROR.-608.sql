@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -608;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-608, 'Chưa gán chứng khoán cho Phương án hoặc Chứng khoán đang bị deactive', 'Chưa gán chứng khoán cho Phương án hoặc Chứng khoán đang bị deactive', 'PM', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100163;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100163, '[-100163] Không được thay đổi tên đăng nhập!', '[-100163] Pls do not change username !', 'SA', NULL);COMMIT;

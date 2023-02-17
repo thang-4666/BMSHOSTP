@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540215;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540215, '[-540215]: Loại hình margin khai báo số ngày cho vay vượt quá giới hạn cho phép!', '[-540215]: Loại hình margin khai báo số ngày cho vay vượt quá giới hạn cho phép!', 'LN', NULL);COMMIT;

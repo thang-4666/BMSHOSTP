@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100407;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100407, '[-100407]: Trùng dữ liệu nhập vào, kiểm tra lại dữ liệu nhập vào!', '[-100407]: ERR_SA_BASKETID_DOESNOT_FOUND', 'SA', NULL);COMMIT;

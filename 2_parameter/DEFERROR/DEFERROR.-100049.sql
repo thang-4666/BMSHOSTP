@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100049;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100049, '[-100049]: Tên NSD này đã tồn tại!', '[-100049]: User name is duplicated!', 'SA', NULL);COMMIT;

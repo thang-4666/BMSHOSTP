@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100005;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100005, '[-100005]: Mã chi nhánh cấp trên không tồn tại!', '[-100005]: Parent branch is not exist!', 'SA', NULL);COMMIT;

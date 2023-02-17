@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900040;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900040, '[-900040]: Không đủ số lượng CK hạn chế chuyển nhượng để giải tỏa', '[-900040]: BLOCKED NOT ENOUGHT', 'SE', NULL);COMMIT;

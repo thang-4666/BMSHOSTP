@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200196;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200196, '[-200196]: Không được chuyển sang loại hình tiểu khoản khác!', '[-200196]:Can not change to orther account type!', 'CF', NULL);COMMIT;

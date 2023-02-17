@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400500;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400500, '[-400500]: Vi phạm tỷ lệ xử lý của tài khoản', '[-400500]: Vi phạm tỷ lệ xử lý của tài khoản', 'SE', NULL);COMMIT;

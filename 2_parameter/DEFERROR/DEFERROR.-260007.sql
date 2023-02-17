@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260007, '[-260007] Số lượng quyền chờ về không đủ để làm deal', '[-260007] Số lượng quyền chờ về không đủ để làm deal', 'DF', NULL);COMMIT;

@@ -1,0 +1,3 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('BRIDMAP','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('BRIDMAP', 'Nhóm chi nhánh', 'Pool/Room Master', '
+SELECT bridmap.autoid, bridmap.prcode, bridmap.brid, decode(bridmap.brid,''ALL'',''Toan he thong'',brgrp.brname) brname FROM bridmap, brgrp WHERE bridmap.brid = brgrp.brid(+) AND bridmap.prcode = ''<$KEYVAL>''
+', 'PR.BRIDMAP', 'BRID', '', '', NULL, 50, 'N', 30, '', 'Y', 'T', '', 'N', '', '');COMMIT;

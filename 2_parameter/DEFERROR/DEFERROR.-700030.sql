@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700030;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700030, '[-700030]: Lenh dang trong qua trinh day vao san', '[-700030]: Order is sending, try again later', 'OD', NULL);COMMIT;

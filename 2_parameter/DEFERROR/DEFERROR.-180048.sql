@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180048;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180048, '[-180048]: Loại hình margin không phải loại hình thường, tham số corebank yêu cầu đặt là NO!', '[-180048]: Loại hình margin không phải loại hình thường, tham số corebank yêu cầu đặt là NO!', '', NULL);COMMIT;

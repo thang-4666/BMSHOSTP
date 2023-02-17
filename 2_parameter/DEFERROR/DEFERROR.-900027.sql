@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900027;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900027, 'Vẫn còn số dư chứng khoán chờ lưu ký trong tiểu khoản', '[-900027]: ERR_SE_DEPOSIT', 'SE', NULL);COMMIT;

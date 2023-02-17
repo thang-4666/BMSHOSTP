@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100351;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100351, '[-100351]:Mã nhóm khách hàng đã được gán!', '[-100351]:Mã nhóm khách hàng đã được gán!', 'SA', NULL);COMMIT;

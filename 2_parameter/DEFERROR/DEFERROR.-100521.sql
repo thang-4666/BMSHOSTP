@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100521;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100521, '[-100521]: Nguồn đã được sử dụng không được phép xóa!', '[-100521]: CAN NOT BE DELETE!', 'PR', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900047;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900047, '[-900047]: Giao dịch đã được xóa hoặc 2201 đã thực hiện thành công !', '[-900047]: DELETED OR EXCUTED 2201 !', 'SE', NULL);COMMIT;

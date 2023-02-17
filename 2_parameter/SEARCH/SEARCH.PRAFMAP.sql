@@ -1,0 +1,3 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('PRAFMAP','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('PRAFMAP', 'Nhóm khách hàng', 'Pool/Room Master', '
+SELECT a.autoid, a.prcode, a.afacctno,cf.fullname FROM prafmap a, cfmast cf, afmast af
+ where a.afacctno=af.acctno and af.custid=cf.custid and a.prcode = ''<$KEYVAL>''', 'PR.PRAFMAP', 'PRAFMAP', '', '', NULL, 50, 'N', 30, '', 'Y', 'T', '', 'N', '', '');COMMIT;

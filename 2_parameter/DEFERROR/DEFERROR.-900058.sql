@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900058;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900058, '[-900058]: Không được nhập giá trị chứng khoán HCCN và TDCN cùng lúc', '[-900058]: Không được nhập giá trị chứng khoán HCCN và TDCN cùng lúc', 'SE', 0);COMMIT;

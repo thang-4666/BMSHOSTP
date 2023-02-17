@@ -1,0 +1,138 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE "CF0001_1" (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   PV_BRID        IN       VARCHAR2,
+   TLGOUPS        IN       VARCHAR2,
+   TLSCOPE        IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+   PV_CUSTODYCD   IN       VARCHAR2,
+   I_BRIDGD       IN       VARCHAR2,
+   PV_TYPE        IN       VARCHAR2,
+   PV_TRADE       IN       VARCHAR2,
+   PV_ACTION      IN       VARCHAR2,
+   MAKER          IN       VARCHAR2,
+   CHECKER        IN       VARCHAR2
+)
+IS
+--
+-- PURPOSE: BRIEFLY EXPLAIN THE FUNCTIONALITY OF THE PROCEDURE
+--
+-- MODIFICATION HISTORY
+-- PERSON      DATE    COMMENTS
+-- NgocVTT edit 17/07/15
+-- ---------   ------  -------------------------------------------
+   V_STROPTION        VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID          VARCHAR2 (4);
+   V_INBRID            VARCHAR2(4);            -- USED WHEN V_NUMOPTION > 0
+   V_STRTYPE        VARCHAR2 (50);
+   V_STRTRADE       VARCHAR2 (50);
+   V_I_BRID         VARCHAR2 (50);
+   V_STRACTION       VARCHAR2 (50);
+   V_STRCUSTODYCD    VARCHAR2 (50);
+
+   V_MAKER           VARCHAR2 (50);
+   V_CHECKER          VARCHAR2 (50);
+
+-- DECLARE PROGRAM VARIABLES AS SHOWN ABOVE
+BEGIN
+   V_STROPTION := upper(OPT);
+   V_INBRID := pv_BRID;
+
+   IF (V_STROPTION = 'A')
+   THEN
+      V_STRBRID := '%';
+   ELSE if (V_STROPTION = 'B') then
+            select brgrp.mapid into V_STRBRID from brgrp where brgrp.brid = V_INBRID;
+        else
+            V_STRBRID := V_INBRID;
+        end if;
+   END IF;
+
+   -- GET REPORT'S PARAMETERS
+   IF (I_BRIDGD <> 'ALL')
+   THEN
+      V_I_BRID := I_BRIDGD;
+   ELSE
+      V_I_BRID := '%%';
+   END IF;
+
+   IF (PV_CUSTODYCD <> 'ALL')
+   THEN
+      V_STRCUSTODYCD:= PV_CUSTODYCD;
+   ELSE
+      V_STRCUSTODYCD := '%%';
+   END IF;
+
+   IF (PV_TYPE <> 'ALL')
+   THEN
+      V_STRTYPE := PV_TYPE;
+   ELSE
+      V_STRTYPE := '%%';
+   END IF;
+
+   IF (PV_TRADE <> 'ALL')
+   THEN
+      V_STRTRADE := PV_TRADE;
+   ELSE
+      V_STRTRADE := '%%';
+   END IF;
+
+    IF (PV_ACTION IS NULL OR UPPER(PV_ACTION) = 'ALL')
+   THEN
+      V_STRACTION := '%';
+   ELSE
+      V_STRACTION := PV_ACTION;
+   END IF;
+
+
+       IF (MAKER IS NULL OR UPPER(MAKER) = 'ALL')
+   THEN
+      V_MAKER := '%';
+   ELSE
+      V_MAKER := MAKER;
+   END IF;
+
+       IF (CHECKER IS NULL OR UPPER(CHECKER) = 'ALL')
+   THEN
+      V_CHECKER := '%';
+   ELSE
+      V_CHECKER := CHECKER;
+   END IF;
+
+      OPEN PV_REFCURSOR
+       FOR
+
+       SELECT SUBSTR(MA.RECORD_KEY,11,10) CUSTID,CF.CUSTODYCD,CF.FULLNAME, CF.BRID,CF.IDCODE,CF.OPNDATE,
+             MA.COLUMN_NAME,NVL(TLP.TLNAME,'') MAKER,NVL(TLP1.TLNAME,'') CHECKER,MA.ACTION_FLAG,
+             MA.MAKER_ID,MA.MAKER_DT,MA.APPROVE_ID,MA.FROM_VALUE,MA.TO_VALUE,MA.MAKER_TIME
+       FROM MAINTAIN_LOG MA,(SELECT * FROM CFMAST WHERE FNC_VALIDATE_SCOPE(BRID, CAREBY, TLSCOPE, pv_BRID, TLGOUPS)=0) CF,
+             TLPROFILES TLP, TLPROFILES TLP1
+      WHERE MA.TABLE_NAME='CFMAST' AND MA.ACTION_FLAG IN ('EDIT','ADD')
+            AND MA.COLUMN_NAME IN ('TRADEONLINE','TRADETELEPHONE')
+            AND CF.CUSTID=  SUBSTR(MA.RECORD_KEY,11,10)
+            AND NVL(MA.MAKER_ID,'000')=TLP.TLID(+)
+            AND NVL(MA.APPROVE_ID,'000')=TLP1.TLID(+)
+            AND CF.CUSTODYCD LIKE V_STRCUSTODYCD
+            AND CF.BRID LIKE V_I_BRID
+            AND MA.MAKER_DT BETWEEN TO_DATE(F_DATE,'DD/MM/YYYY') AND TO_DATE(T_DATE,'DD/MM/YYYY')
+            AND NVL(MA.MAKER_ID,'000') LIKE V_MAKER
+            AND NVL(MA.APPROVE_ID,'000') LIKE V_CHECKER
+            AND MA.ACTION_FLAG LIKE V_STRTYPE
+            AND (CASE WHEN MA.COLUMN_NAME='TRADEONLINE' THEN 'ONLINE' ELSE 'TELE' END) LIKE V_STRTRADE
+            AND MA.TO_VALUE LIKE V_STRACTION
+      ORDER BY  MAKER_DT,CF.CUSTODYCD,MA.COLUMN_NAME,MA.MAKER_TIME;
+
+ EXCEPTION
+   WHEN OTHERS
+   THEN
+    --insert into temp_bug(text) values('CF0001');commit;
+      RETURN;
+END;                                                              -- PROCEDURE
+
+ 
+ 
+ 
+ 
+/

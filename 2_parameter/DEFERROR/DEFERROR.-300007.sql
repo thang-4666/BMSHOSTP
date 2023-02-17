@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300007;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300007, '[-300007]: Không được chuyển quyền mua của CK GD và CK HCCN cùng một lúc!', '[-300007]: EN: Không được chuyển quyền mua của CK GD và CK HCCN cùng một lúc!', 'CA', NULL);COMMIT;

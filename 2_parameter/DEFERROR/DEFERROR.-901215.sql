@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -901215;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-901215, '[-901215]: CK đã được chuyển sang giao dịch trước đó!', '[-901215]: CK đã được chuyển sang giao dịch trước đó!', 'SA', NULL);COMMIT;

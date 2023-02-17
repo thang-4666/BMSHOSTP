@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180006, '[-180006]: Tỷ lệ xử lý phải < Tỷ lệ cảnh báo!', '[-180006]: Tỷ lệ xử lý phải < Tỷ lệ cảnh báo!', 'MR', NULL);COMMIT;

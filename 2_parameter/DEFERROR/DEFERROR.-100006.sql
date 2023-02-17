@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100006, '[-100006]: Mã giao dịch viên đã tồn tại!', '[-100006]: Teller id is duplicated!', 'SA', NULL);COMMIT;

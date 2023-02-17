@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200400;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200400, '[-200400]: Khách hàng này chưa được cấp tài khoản giao dịch trực tuyến!', '[-200400]: Khách hàng này chưa được cấp tài khoản giao dịch trực tuyến!', 'CF', NULL);COMMIT;

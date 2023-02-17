@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100811;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100811, '[-100811]: Giá trị tham số bắt buộc không có phần thập phân!', '[-100811]: The number must not be a decimal!', '', NULL);COMMIT;

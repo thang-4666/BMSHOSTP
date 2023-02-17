@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200194;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200194, '[-200194]: Đã có tiểu khoản margin trên hệ thống, không cho phép tạo tiểu khoản thứ 2!', '[-200194]:This customer already had Margin account!', 'CF', NULL);COMMIT;

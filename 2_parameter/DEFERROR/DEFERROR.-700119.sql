@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700119;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700119, '[-700119]:Lệnh con đã không còn thuộc lệnh tổng BloomBerg hiện tại!', '[-700119]:Lệnh con đã không còn thuộc lệnh tổng BloomBerg hiện tại !', 'OD', NULL);COMMIT;

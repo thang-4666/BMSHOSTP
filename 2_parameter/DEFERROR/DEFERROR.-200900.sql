@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200900;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200900, '[-200900]: Tài khoản đang có ít nhất một tiểu khoản bị call!', '[-200900]: Tài khoản đang có ít nhất một tiểu khoản bị call!', 'CF', NULL);COMMIT;

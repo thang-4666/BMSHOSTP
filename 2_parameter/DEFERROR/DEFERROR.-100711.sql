@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100711;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100711, '[-100711]: NSD không có quyền thực hiện cho khách hàng!', '[-100711]: NSD không có quyền thực hiện cho khách hàng!', 'SA', NULL);COMMIT;

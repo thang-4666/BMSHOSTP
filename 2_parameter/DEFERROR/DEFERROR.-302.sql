@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -302;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-302, 'Không đủ số dư tiền/CK', 'Không đủ số dư tiền/CK', 'PM', NULL);COMMIT;

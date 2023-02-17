@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570214;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570214, '[-570214]: Vượt quá hạn mức tối đa trên 1  món của đối tác', '[-570214]: Vượt quá hạn mức tối đa trên 1  món của đối tác', 'TD', NULL);COMMIT;

@@ -1,0 +1,43 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE ci1043 (
+   PV_REFCURSOR             IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT                      IN       VARCHAR2,
+   PV_BRID                  IN       VARCHAR2,
+   TLGOUPS                  IN       VARCHAR2,
+   TLSCOPE                  IN       VARCHAR2,
+   PV_TXCODE                IN       VARCHAR2
+--   PV_TLID                  IN       VARCHAR2
+)
+IS
+
+    v_TXDATE date;
+    v_TXNUM varchar2(10);
+BEGIN
+
+
+    v_TXNUM:= SUBSTR2(PV_TXCODE,1,10);
+
+    begin
+        v_TXDATE := TO_DATE(SUBSTR2(PV_TXCODE,11),'RRRRMMDD');
+    exception
+       when others
+       then
+            v_TXDATE := getcurrdate + 1;
+    end;
+
+
+OPEN PV_REFCURSOR
+FOR
+    SELECT CI.BENEFCUSTNAME,CI.BENEFACCT,CI.BENEFBANK,CI.AMT, CI.DESCRIPTION DESCRIPTION,PO.AMT AMTTOTAL,CI.POTXNUM,CI.POTXDATE,PO.BANKNAME,PO.BANKACC
+    FROM CIREMITTANCE CI, POMAST PO
+    WHERE CI.POTXDATE=PO.TXDATE(+) AND CI.POTXNUM=PO.TXNUM(+)
+    AND CI.POTXDATE=v_TXDATE AND CI.POTXNUM=v_TXNUM
+    ;
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;
+ 
+/

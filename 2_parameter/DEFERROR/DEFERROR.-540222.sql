@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540222;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540222, '[-540222]: Khối lượng hủy vượt quá khối lượng đang được vay !', '[-540222]: Khối lượng hủy vượt quá khối lượng đang được vay !', 'LN', NULL);COMMIT;

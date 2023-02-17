@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -201419;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-201419, '[-201419]: Loại hình khách hàng không đúng !', '[-201419]: Loại hình khách hàng không đúng 0!', 'SA', NULL);COMMIT;

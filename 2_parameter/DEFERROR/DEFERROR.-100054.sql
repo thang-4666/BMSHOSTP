@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100054;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100054, '[-100054]: Mã khách hàng không tồn tại!', '[-100054]:Customer ID is not exists!', 'SA', NULL);COMMIT;

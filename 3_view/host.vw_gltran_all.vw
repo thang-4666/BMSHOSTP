@@ -1,0 +1,13 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FORCE VIEW VW_GLTRAN_ALL
+(ACCTNO, TXDATE, TXNUM, BKDATE, CCYCD, 
+ DORC, SUBTXNO, AMT, DELTD, AUTOID, 
+ TLTXCD)
+BEQUEATH DEFINER
+AS 
+(
+    select "ACCTNO","TXDATE","TXNUM","BKDATE","CCYCD","DORC","SUBTXNO","AMT","DELTD","AUTOID","TLTXCD" from gltran where nvl(deltd, 'N') <> 'Y'
+    union all
+    select "ACCTNO","TXDATE","TXNUM","BKDATE","CCYCD","DORC","SUBTXNO","AMT","DELTD","AUTOID","TLTXCD" from gltrana where nvl(deltd, 'N') <> 'Y'
+)
+/

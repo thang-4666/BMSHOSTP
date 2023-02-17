@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180020;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180020, '[-180020]: Giá vay không hợp lệ ', '[-180020]:Loan price invalid !', 'MR', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670019;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670019, '[-670019]: Mã TK chứng khoán không thuộc ngân hàng quản lý', '[-670019]: Custody code invalid', 'RM', 0);COMMIT;

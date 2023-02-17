@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -106;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-106, 'Chưa có thông tin sự kiện quyền', 'Chưa có thông tin sự kiện quyền', 'PM', NULL);COMMIT;

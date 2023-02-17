@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400203;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400203, '[-400203]: Vượt quá phí lưu ký cộng dồn của tài khoản!', '[-400203]:Custody fee accure is not enought!', 'CI', NULL);COMMIT;

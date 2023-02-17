@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300066;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300066, '[-300066]:Mã sư kiện quyền không phù hợp với chứng khoán và loại thực hiện quyền', '[-300066]: Mã sư kiện quyền không phù hợp với chứng khoán và loại thực hiện quyền', 'CA', NULL);COMMIT;

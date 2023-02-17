@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -150002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-150002, '[-150002]: Không tìm thấy số hiệu tệp tin báo cáo!', '[-150002]: The report reference ID is not found!', 'ST', NULL);COMMIT;
