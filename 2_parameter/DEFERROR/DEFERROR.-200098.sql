@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200098;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200098, '[-200098]: Tại một thời điểm chỉ một chữ ký được hoạt động!', '[-200098]: Tại một thời điểm chỉ một chữ ký được hoạt động!', 'CF', NULL);COMMIT;

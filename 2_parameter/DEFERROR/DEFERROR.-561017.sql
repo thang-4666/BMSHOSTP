@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -561017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-561017, '[-561017] : Loại hình môi giới hiện tại không đúng', '[-561017] : Invalid current retype', 'RE', NULL);COMMIT;

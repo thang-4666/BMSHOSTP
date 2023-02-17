@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400201;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400201, '[-400201]: Trạng thái bảng kê (UNC) không đúng', '[-400201]: Trạng thái bảng kê (UNC) không đúng', 'CI', NULL);COMMIT;

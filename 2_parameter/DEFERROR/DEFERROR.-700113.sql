@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700113;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700113, '[-700113]: KL giữ thỏa thuận không được nhỏ hơn số lượng đã đặt thỏa thuận!', '[-700113]:  KL giữ thỏa thuận không được nhỏ hơn số lượng đã đặt thỏa thuận!', 'OD', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200086;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200086, '[-200086]: User được gán không có quyền Careby khách hàng này !', '[-200086]: ERR_NOT_CARE_BY !', 'CF', NULL);COMMIT;

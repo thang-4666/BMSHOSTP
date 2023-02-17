@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200101;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200101, '[-200101]: Loại hình ứng trươc chưa được duyệt.', '[-200101]: ADTYPE not approved', 'SA', NULL);COMMIT;

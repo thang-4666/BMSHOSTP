@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -500015;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-500015, '[-500015]: Mã TK chi tiết 2 bao gồm 3 ký tự', '[-500015]: DETAILS2 include 3 character', 'GL', NULL);COMMIT;

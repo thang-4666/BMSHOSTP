@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100003;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100003, '[-100003]: Không thể xoá chi nhánh/đại lý tồn tại chi nhánh/đại lý cấp dưới!', '[-100003]: Cannot delete the branch which contains children!', 'SA', NULL);COMMIT;

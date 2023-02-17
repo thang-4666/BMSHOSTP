@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('FN.FNTYPE','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('FN', 'FN.FNTYPE', 'Loại hình quỹ, ủy thác vốn', 'Fund, trust unit product type', 'N', 'N', 'NNNNYYY');COMMIT;

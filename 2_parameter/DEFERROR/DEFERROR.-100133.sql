@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100133;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100133, '[-100133]: Vượt quá số tiền được phép chuyển khoản tối đa qua kênh giao dịch trực tuyến !', '[-100133]: Vượt quá số tiền được phép chuyển khoản tối đa qua kênh giao dịch trực tuyến!', 'SA', NULL);COMMIT;

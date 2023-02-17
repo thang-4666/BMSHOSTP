@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300018;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300018, 'Ngày thực hiện giao dịch phải lớn hơn ngày ngày đăng ký cuối cùng của đợt thực hiện quyền !', '[-300018]: ERR_CA_TXDATE_INVALID', 'CA', NULL);COMMIT;

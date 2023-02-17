@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200210;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200210, 'Khách hàng vẫn đang có tiểu khoản sử dụng', 'Already has inused sub-account', 'CF', NULL);COMMIT;

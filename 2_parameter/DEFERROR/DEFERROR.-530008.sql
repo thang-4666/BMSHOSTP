@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -530008;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-530008, 'The secured amount must be less than collaterall using amount', 'The secured amount must be less than collaterall using amount', 'CL', NULL);COMMIT;

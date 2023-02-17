@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540225;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540225, '[-540225]: Món vay có ngày hiện tại nằm trong khoảng tính lãi tối thiểu!', '[-540225]: Món vay có ngày hiện tại nằm trong khoảng tính lãi tối thiểu!', 'LN', NULL);COMMIT;

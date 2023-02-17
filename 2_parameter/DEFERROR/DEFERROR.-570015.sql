@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570015;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570015, 'Vượt quá số lượng được phép cầm cố tối đa!', 'Vượt quá số lượng được phép cầm cố tối đa!', 'TD', NULL);COMMIT;

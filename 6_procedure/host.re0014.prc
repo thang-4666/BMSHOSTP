@@ -1,0 +1,120 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE "RE0014" (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   pv_BRID           IN       VARCHAR2,
+   TLGOUPS        IN       VARCHAR2,
+   TLSCOPE        IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+   PV_CUSTODYCD        IN       VARCHAR2,
+   PV_TYPE        IN       VARCHAR2,
+   I_BRIDGD        IN       VARCHAR2,
+   MAKER        IN       VARCHAR2,
+   CHECKER         IN       VARCHAR2
+ )
+IS
+--
+-- PURPOSE: BRIEFLY EXPLAIN THE FUNCTIONALITY OF THE PROCEDURE
+-- BAO CAO THAY DOI KHACH HANG CUA MOI GIOI
+-- MODIFICATION HISTORY
+-- PERSON      DATE    COMMENTS
+--NGOCVTT    22/05/2015
+-- ---------   ------  -------------------------------------------
+   V_STROPT     VARCHAR2 (50);            -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID       VARCHAR2 (40);            -- USED WHEN V_NUMOPTION > 0
+   V_INBRID         VARCHAR2 (50);
+
+   V_STRCUSTODYCD  VARCHAR2 (20);
+   V_STRTYPE       VARCHAR2(100);
+   V_I_BRID        VARCHAR2(100);
+   V_MAKER       VARCHAR2(100);
+   V_CHECKER    VARCHAR2(100);
+
+
+BEGIN
+
+    V_STROPT := upper(OPT);
+    V_INBRID := pv_BRID;
+    if(V_STROPT = 'A') then
+        V_STRBRID := '%';
+    else
+        if(V_STROPT = 'B') then
+            select br.BRID into V_STRBRID from brgrp br where  br.brid = V_INBRID;
+        else
+            V_STRBRID := pv_BRID;
+        end if;
+    end if;
+
+    IF (UPPER(PV_CUSTODYCD) = 'ALL' OR PV_CUSTODYCD IS NULL)
+    THEN
+      V_STRCUSTODYCD := '%%';
+    ELSE
+      V_STRCUSTODYCD := PV_CUSTODYCD;
+    END IF;
+
+        IF (UPPER(PV_TYPE) = 'ALL' OR PV_TYPE IS NULL)
+    THEN
+      V_STRTYPE := '%%';
+    ELSE
+      V_STRTYPE := PV_TYPE;
+    END IF;
+  --------------------------
+
+
+    IF (UPPER(I_BRIDGD) = 'ALL' OR I_BRIDGD IS NULL)
+    THEN
+      V_I_BRID := '%%';
+    ELSE
+      V_I_BRID := I_BRIDGD;
+    END IF;
+
+    IF MAKER = 'ALL' OR MAKER IS NULL THEN
+        V_MAKER:= '%%';
+    ELSE
+        V_MAKER:= MAKER;
+    END IF;
+
+    IF UPPER(CHECKER) = 'ALL' OR CHECKER IS NULL THEN
+        V_CHECKER := '%';
+    ELSE
+        V_CHECKER:= CHECKER;
+    END IF;
+
+    OPEN  PV_REFCURSOR FOR
+
+  SELECT * FROM(
+      SELECT CF.BRID, CF.CUSTODYCD, CF.FULLNAME,RE.TXDATE,NVL(TL.TLNAME,'') MAKER, NVL(TLP.TLNAME,'') CHECKER,
+             NVL(REF1.FULLNAME,'') OLD_RE, NVL(REF2.FULLNAME,'') NEW_RE,
+             (CASE WHEN RE.OLDREACCTNO IS NULL THEN 'A'
+             WHEN RE.NEWREACCTNO IS NULL THEN 'C'
+               ELSE 'B' END) TYPE,TLOG.TXTIME
+      FROM  RE_CUSTOMERCHANGE_LOG RE,VW_TLLOG_ALL TLOG,
+       (SELECT * FROM CFMAST WHERE FNC_VALIDATE_SCOPE(BRID, CAREBY, TLSCOPE, pv_BRID, TLGOUPS)=0 ) CF, TLPROFILES TL, TLPROFILES TLP,CFMAST REF1, CFMAST REF2
+      WHERE RE.CUSTID=CF.CUSTID
+      AND RE.MKID=TL.TLID(+)
+      AND RE.CHKID=TLP.TLID(+)
+      AND RE.TXNUM=TLOG.TXNUM AND RE.TXDATE=TLOG.TXDATE
+      AND SUBSTR(RE.OLDREACCTNO,1,10)=REF1.CUSTID(+)
+      AND SUBSTR(RE.NEWREACCTNO,1,10)=REF2.CUSTID(+)
+      AND CF.BRID LIKE V_I_BRID
+      AND CF.CUSTODYCD LIKE V_STRCUSTODYCD
+      AND RE.TXDATE BETWEEN TO_DATE(F_DATE,'DD/MM/YYYY') AND TO_DATE(T_DATE,'DD/MM/YYYY')
+      AND NVL(RE.MKID,'000') LIKE V_MAKER
+      AND NVL(RE.CHKID,'000') LIKE V_CHECKER )
+  WHERE TYPE LIKE V_STRTYPE
+
+
+
+     ;
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;                                                              -- PROCEDURE
+ 
+ 
+ 
+ 
+/

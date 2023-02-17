@@ -1,0 +1,123 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE "CI0041" (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   pv_BRID           IN       VARCHAR2,
+   TLGOUPS        IN       VARCHAR2,
+   TLSCOPE        IN       VARCHAR2,
+   INMONTH        IN       VARCHAR2
+
+ )
+IS
+
+--
+-- ---------   ------  -------------------------------------------
+   V_STROPT     VARCHAR2 (5);            -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID       VARCHAR2 (40);            -- USED WHEN V_NUMOPTION > 0
+   V_INBRID         VARCHAR2 (5);
+
+   V_STRISBRID      VARCHAR2 (5);
+   V_FROMDATE       DATE;
+   V_TODATE         DATE;
+   V_CFROMDATE       DATE;
+   V_CTODATE         DATE;
+   V_CURR_DATE   DATE;
+
+
+BEGIN
+
+
+    V_STROPT := OPT;
+
+    IF (V_STROPT <> 'A') AND (pv_BRID <> 'ALL')
+    THEN
+      V_STRBRID := pv_BRID;
+    ELSE
+      V_STRBRID := '%%';
+    END IF;
+    -- GET REPORT'S PARAMETERS
+
+   IF TO_NUMBER(SUBSTR(INMONTH,1,2)) <= 12 THEN
+        V_CFROMDATE := TO_DATE('01/' || SUBSTR(INMONTH,1,2) || '/' || SUBSTR(INMONTH,4,4),'DD/MM/RRRR');
+    ELSE
+        V_CFROMDATE := TO_DATE('31/12/9999','DD/MM/RRRR');
+    END IF;
+
+        V_CTODATE := LAST_DAY(V_CFROMDATE);
+
+    SELECT TO_DATE(V_CFROMDATE,'DD/MM/RRRR')-1 INTO V_TODATE FROM DUAL;
+    SELECT TO_DATE('01/' || SUBSTR(V_TODATE,4,2) || '/' || SUBSTR(V_TODATE,7,4),'DD/MM/RRRR') INTO V_FROMDATE FROM DUAL;
+
+        SELECT to_date(varvalue,'DD/MM/RRRR') INTO V_CURR_DATE FROM sysvar WHERE varname = 'CURRDATE';
+
+   -- GET REPORT'S DATA
+
+    OPEN  PV_REFCURSOR FOR
+
+  SELECT V_CFROMDATE fromdate,V_CTODATE todate ,A.AMT AMT1,A.FEEAMT FEE1,B.AMT AMT2 ,B.FEEAMT FEE2 ,C.AMT AMT3 ,C.FEEAMT FEE3
+  FROM
+         ( SELECT NVL(SUM(AMT),0) AMT,NVL(SUM(PAIDAMT),0) PAIDAMT,NVL(SUM(BANKFEE),0) BANKFEE, NVL(SUM(FEEAMT),0) FEEAMT
+            FROM
+            -- THANG TRUOC
+                   (SELECT AUTOID,ISMORTAGE,STATUS,DELTD,ACCTNO,TXDATE,TXNUM,CLEARDT,AMT,
+                             FEEAMT,VATAMT,BANKFEE,PAIDAMT,RRTYPE,ODDATE,NVL(PAIDDATE,'') PAIDDATE
+                    FROM adschd where TXDATE >=V_FROMDATE and TXDATE <= V_TODATE AND DELTD<>'Y'
+                      AND NVL(PAIDDATE,'') >=V_CFROMDATE AND NVL(PAIDDATE,'') <=V_CTODATE
+                        AND SUBSTR(ACCTNO,1,4)  LIKE  V_STRBRID
+                     UNION ALL
+                    SELECT AUTOID,ISMORTAGE,STATUS,DELTD,ACCTNO,TXDATE,TXNUM,CLEARDT,AMT,
+                            FEEAMT,VATAMT,BANKFEE,PAIDAMT,RRTYPE,ODDATE,NVL(PAIDDATE,'') PAIDDATE
+                    FROM adschdhist where TXDATE >= V_FROMDATE and TXDATE <= V_TODATE AND DELTD<>'Y'
+                    AND NVL(PAIDDATE,'') >=V_CFROMDATE AND NVL(PAIDDATE,'') <= V_CTODATE
+                     AND SUBSTR(ACCTNO,1,4)  LIKE  V_STRBRID
+            ))A,
+
+            --TAI THANG
+         (SELECT NVL(SUM(AMT),0) AMT,NVL(SUM(PAIDAMT),0) PAIDAMT,NVL(SUM(BANKFEE),0) BANKFEE, NVL(SUM(FEEAMT),0) FEEAMT
+          FROM
+                  (SELECT AUTOID,ISMORTAGE,STATUS,DELTD,ACCTNO,TXDATE,TXNUM,CLEARDT,AMT,
+                           FEEAMT,VATAMT,BANKFEE,PAIDAMT,RRTYPE,ODDATE,NVL(PAIDDATE,'') PAIDDATE
+                   FROM adschd where TXDATE >= V_CFROMDATE and TXDATE <= V_CTODATE AND DELTD<>'Y'
+                          AND NVL(PAIDDATE,'') >=V_CFROMDATE AND NVL(PAIDDATE,'') <=V_CTODATE
+                           AND SUBSTR(ACCTNO,1,4)  LIKE  V_STRBRID
+                   UNION ALL
+                   SELECT AUTOID,ISMORTAGE,STATUS,DELTD,ACCTNO,TXDATE,TXNUM,CLEARDT,AMT,
+                             FEEAMT,VATAMT,BANKFEE,PAIDAMT,RRTYPE,ODDATE,NVL(PAIDDATE,'') PAIDDATE
+                   FROM adschdhist where TXDATE >= V_CFROMDATE and TXDATE <=V_CTODATE AND DELTD<>'Y'
+                         AND NVL(PAIDDATE,'') >=V_CFROMDATE AND NVL(PAIDDATE,'') <= V_CTODATE
+                          AND SUBSTR(ACCTNO,1,4)  LIKE  V_STRBRID
+            ) )B,
+
+            --THANG SAU
+           ( SELECT NVL(SUM(AMT),0) AMT,NVL(SUM(PAIDAMT),0) PAIDAMT,NVL(SUM(BANKFEE),0) BANKFEE, NVL(SUM(FEEAMT),0) FEEAMT
+             FROM
+                     (SELECT AUTOID,ISMORTAGE,STATUS,DELTD,ACCTNO,TXDATE,TXNUM,CLEARDT,AMT,
+                               FEEAMT,VATAMT,BANKFEE,PAIDAMT,RRTYPE,ODDATE,NVL(PAIDDATE,'') PAIDDATE
+                      FROM adschd where TXDATE >= V_CFROMDATE and TXDATE <= V_CTODATE AND DELTD<>'Y'
+                                    AND NVL(PAIDDATE,'') >=V_CTODATE
+                                     AND SUBSTR(ACCTNO,1,4)  LIKE  V_STRBRID
+                     UNION ALL
+                     SELECT AUTOID,ISMORTAGE,STATUS,DELTD,ACCTNO,TXDATE,TXNUM,CLEARDT,AMT,
+                               FEEAMT,VATAMT,BANKFEE,PAIDAMT,RRTYPE,ODDATE,NVL(PAIDDATE,'') PAIDDATE
+                     FROM adschdhist where TXDATE >= V_CFROMDATE and TXDATE <= V_CTODATE AND DELTD<>'Y'
+                           AND NVL(PAIDDATE,'') >= V_CTODATE
+                            AND SUBSTR(ACCTNO,1,4)  LIKE  V_STRBRID
+                     UNION
+                     SELECT AUTOID,ISMORTAGE,STATUS,DELTD,ACCTNO,TXDATE,TXNUM,CLEARDT,AMT,
+                                 FEEAMT,VATAMT,BANKFEE,PAIDAMT,RRTYPE,ODDATE,NVL(PAIDDATE,'') PAIDDATE
+                     FROM adschd where TXDATE >= V_CFROMDATE and TXDATE <= V_CTODATE AND DELTD<>'Y'
+                           AND PAIDAMT=0  AND SUBSTR(ACCTNO,1,4)  LIKE  V_STRBRID
+            ) )C
+     ;
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;                                                              -- PROCEDURE
+
+ 
+ 
+ 
+ 
+/

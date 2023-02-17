@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('ENDBATCHTIME','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'ENDBATCHTIME', '00:00:00', 'Thời gian tối thiểu chạy batch cuối ngày', 'Minimum time could run batch end of day', 'Y', 'A', 'P');COMMIT;

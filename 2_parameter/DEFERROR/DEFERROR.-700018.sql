@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700018;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700018, '[-700018]: Số lượng yêu cầu hủy không phù hợp', '[-700018]: Số lượng yêu cầu hủy không phù hợp', 'OD', NULL);COMMIT;

@@ -1,0 +1,149 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE od0062 (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   pv_BRID           IN       VARCHAR2,
+   TLGOUPS        IN       VARCHAR2,
+   TLSCOPE        IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+   PV_TRADEPLACE  IN       VARCHAR2,
+   SGD_NUM        IN       NUMBER
+   )
+IS
+    --
+    -- PURPOSE: THONG KE GIA TRI GD MUA, BAN CP TRONG NGAY
+    -- MODIFICATION HISTORY
+    -- PERSON       DATE        COMMENTS
+    -- THENN        08-MAR-2012 CREATED
+    -- ---------    ------      -------------------------------------------
+
+    V_STROPTION      VARCHAR2 (5);            -- A: ALL; B: BRANCH; S: SUB-BRANCH
+    V_BRID         VARCHAR2 (4);
+
+    V_STRBRID        VARCHAR2 (40);            -- USED WHEN V_NUMOPTION > 0
+    V_TRADEPLACE     VARCHAR2 (20);
+    V_TRADEPLACE2     VARCHAR2 (20);
+
+BEGIN
+    V_STROPTION := upper(OPT);
+    V_BRID := pv_BRID;
+
+    IF V_STROPTION = 'A' THEN
+        V_STRBRID := '%%';
+    ELSIF V_STROPTION = 'B' AND V_BRID <> 'ALL' AND V_BRID IS NOT NULL THEN
+        SELECT MAPID INTO V_STRBRID FROM BRGRP WHERE BRID = V_BRID;
+    ELSIF V_STROPTION = 'S' AND V_BRID <> 'ALL' AND V_BRID IS NOT NULL THEN
+        V_STRBRID := V_BRID;
+    ELSE
+        V_STRBRID := V_BRID;
+    END IF;
+
+    IF  PV_TRADEPLACE = 'ALL' OR PV_TRADEPLACE IS NULL THEN
+        V_TRADEPLACE := '%%';
+        V_TRADEPLACE2 := '%%';
+    ELSIF PV_TRADEPLACE = '200' THEN
+        V_TRADEPLACE := '002';
+        V_TRADEPLACE2 := '005';
+    ELSE
+        V_TRADEPLACE := PV_TRADEPLACE;
+        V_TRADEPLACE2 := PV_TRADEPLACE;
+    END IF;
+
+    OPEN PV_REFCURSOR
+    FOR
+        SELECT OD.BRID, MAX(OD.BRNAME) BRNAME, OD.TXDATE, OD.SECTYPE, OD.TRADEPLACE TRADEPLACEVL, MAX(A1.CDCONTENT) TRADEPLACE,
+            SUM(CASE WHEN OD.EXECTYPE = 'B' AND OD.CUSTATCOM = 'Y' THEN OD.EXECAMT ELSE 0 END) B_AMT_CUSCOM,
+            SUM(CASE WHEN OD.EXECTYPE = 'S' AND OD.CUSTATCOM = 'Y' THEN OD.EXECAMT ELSE 0 END) S_AMT_CUSCOM,
+            SUM(CASE WHEN OD.EXECTYPE = 'B' AND OD.CUSTATCOM = 'N' THEN OD.EXECAMT ELSE 0 END) B_AMT_NONCOM,
+            SUM(CASE WHEN OD.EXECTYPE = 'S' AND OD.CUSTATCOM = 'N' THEN OD.EXECAMT ELSE 0 END) S_AMT_NONCOM,
+            --ROUND(SUM(OD.EXECAMT*OD.FEERATE/100)) FEEACR,
+            round(sum(od.FEACR_TMP)) FEEACR,
+            --ROUND(SUM(OD.EXCFEEAMT)/SUM(OD.EXECAMT)*100,4) FEERATE,
+            ROUND(MAX(OD.FEERATE),4) FEERATE, SGD_NUM SGDNUM
+        FROM
+        (
+                            SELECT OD.TXDATE, OD.EXECTYPE, OD.TRADEPLACE, OD.CUSTATCOM, OD.BRID,
+                                MAX(OD.BRNAME) BRNAME,
+                                 OD.SECTYPE,
+                                SUM(OD.EXECAMT) EXECAMT,
+                                SUM(OD.FEEACR)FEEACR,
+                                SUM(NVL(OD.EXCFEEAMT,0)) EXCFEEAMT,
+                                TRUNC (SUM( OD.EXECAMT* OD.FEERATE) /SUM(OD.EXECAMT),6)  FEERATE,
+                                SUM(OD.EXECAMT* OD.FEERATE/100) FEACR_TMP
+                FROM
+                            (   SELECT OD.TXDATE, SUBSTR(OD.EXECTYPE,2,1) EXECTYPE, OD.TRADEPLACE, CF.CUSTATCOM, BR.BRID,
+                                BR.BRNAME BRNAME,
+                                CASE WHEN SB.SECTYPE IN ('001','008') THEN 'CP' WHEN SB.SECTYPE IN ('003','006') THEN 'TP' ELSE 'OT' END SECTYPE,
+                                OD.EXECAMT EXECAMT,
+                                (CASE WHEN OD.EXECAMT >0 AND OD.FEEACR =0 AND OD.STSSTATUS = 'N' THEN ROUND(OD.EXECAMT*ODT.DEFFEERATE/100) ELSE OD.FEEACR END) FEEACR,
+                                (NVL(OD.EXCFEEAMT,0)) EXCFEEAMT,
+                               (CASE WHEN SB.SECTYPE IN ('001','008','011') AND OD.TRADEPLACE IN ('001','002') THEN TO_NUMBER(SYS1.VARVALUE) --Ngay 23/03/2017 CW NamTv them sectype 011
+                                        WHEN SB.SECTYPE IN ('001','008','011') AND OD.TRADEPLACE IN ('005') THEN TO_NUMBER(SYS2.VARVALUE) --Ngay 23/03/2017 CW NamTv them sectype 011
+                                        WHEN SB.SECTYPE IN ('003','006') AND nvl(RP.orderid,'0') = '0' AND NVL(RP2.ORDERID,'0') ='0' THEN TO_NUMBER(SYS3.VARVALUE)
+                                        WHEN SB.SECTYPE IN ('003','006') AND nvl(RP.orderid,'0') <> '0' THEN TO_NUMBER(SYS4.VARVALUE)
+                                        WHEN SB.SECTYPE IN ('003','006') AND nvl(RP2.orderid,'0') <> '0' THEN 0
+                                        ELSE 0 END) FEERATE,
+                                        --0: LENH THUONG, 1. LENH REPO LAN 1
+                                        CASE WHEN nvl(RP.orderid,'0') <> '0' THEN '1' ELSE '0' END ISREPO
+            FROM vw_odmast_tradeplace_all OD, (SELECT * FROM CFMAST WHERE FNC_VALIDATE_SCOPE(BRID, CAREBY, TLSCOPE, pv_BRID, TLGOUPS)=0) CF, AFMAST AF, SBSECURITIES SB, --TLPROFILES TLP,
+                BRGRP BR, ODTYPE ODT, SYSVAR SYS1, SYSVAR SYS2, SYSVAR SYS3,SYSVAR SYS4,
+                (select ORDERID from -- lenh repo lan 1
+                (   SELECT TB.ORDERID FROM TBL_ODREPO TB, VW_ODMAST_ALL OD , SBSECURITIES SB
+                    WHERE TB.ORDERID = OD.ORDERID AND TB.DELTD='N' AND OD.CODEID=SB.CODEID
+                    AND GETDUEDATE(TB.EXPTDATE,'B',/*'001'*/SB.TRADEPLACE,OD.CLEARDAY) - GETDUEDATE(TB.TXDATE,'B',/*'001'*/SB.TRADEPLACE,OD.CLEARDAY)  <=14
+                UNION ALL  --LENH REPO LAN 1 BEN MUA (1 FIRM)
+                    SELECT TB.REF_ORDERID ORDERID FROM TBL_ODREPO TB, VW_ODMAST_ALL OD  , SBSECURITIES SB
+                    WHERE TB.REF_ORDERID = OD.ORDERID AND TB.DELTD='N' AND OD.CODEID=SB.CODEID
+                    AND TB.REF_ORDERID IS NOT NULL    AND GETDUEDATE(TB.EXPTDATE,'B',/*'001'*/SB.TRADEPLACE,OD.CLEARDAY) - GETDUEDATE(TB.TXDATE,'B',/*'001'*/SB.TRADEPLACE,OD.CLEARDAY)  <=14
+                UNION ALL  --LENH CON CUA LENH REPO LAN 1( LENH TONG)
+                    SELECT OD2.ORDERID ORDERID FROM TBL_ODREPO TB, VW_ODMAST_ALL OD , VW_ODMAST_ALL OD2   , SBSECURITIES SB
+                    WHERE TB.ORDERID = OD.ORDERID AND OD.CODEID=SB.CODEID
+                    AND TB.DELTD='N' AND OD.GRPORDER ='Y' AND OD.ORDERID = OD2.voucher   AND OD2.voucher  IS NOT NULL
+                    AND GETDUEDATE(TB.EXPTDATE,'B',/*'001'*/SB.TRADEPLACE,OD.CLEARDAY)  - GETDUEDATE(TB.TXDATE,'B',/*'001'*/SB.TRADEPLACE,OD.CLEARDAY)  <=14
+                ) group by orderid )  RP,
+              (select ORDERID from  ---DANH SACH LENH REPO LAN 2 (khong tinh phi)
+                (--LENH LAN 2
+                 SELECT TB.ORDERID2  ORDERID FROM TBL_ODREPO TB, VW_ODMAST_ALL OD  WHERE TB.ORDERID2 = OD.ORDERID  AND TB.DELTD='N'
+                 UNION ALL  --LENH LAN 2 DOI UNG (1 FIRM)
+                 SELECT TB.REF_ORDERID2 ORDERID  FROM TBL_ODREPO TB, VW_ODMAST_ALL OD WHERE TB.REF_ORDERID2 = OD.ORDERID  AND TB.DELTD='N'
+                 UNION ALL  --LENH LAN 2 CUA LENH TONG
+                 SELECT OD2.ORDERID ORDERID  FROM TBL_ODREPO TB, VW_ODMAST_ALL OD ,
+                 VW_ODMAST_ALL OD2  WHERE TB.ORDERID2 = OD.ORDERID
+                 AND TB.DELTD='N' AND OD.GRPORDER ='Y'  AND OD.ORDERID = OD2.VOUCHER
+                 AND OD2.VOUCHER  IS NOT NULL
+                ) group by orderid )  RP2
+
+            WHERE OD.AFACCTNO = AF.ACCTNO AND AF.CUSTID = CF.CUSTID
+                AND AF.ACTYPE NOT IN ('0000')
+                AND OD.CODEID = SB.CODEID
+                --AND OD.TLID = TLP.TLID
+                --AND TLP.BRID = BR.BRID
+                AND SUBSTR(AF.ACCTNO,1,4) = BR.brid
+                AND OD.actype = ODT.actype
+                AND OD.EXECAMT > 0
+                AND OD.orderid = RP.orderid(+)
+                AND OD.orderid = RP2.orderid(+)
+                AND SYS1.GRNAME = 'DEFINED' AND SYS1.VARNAME = 'FEEVSD_CP'
+                AND SYS2.GRNAME = 'DEFINED' AND SYS2.VARNAME = 'FEEVSDUC_CP'
+                AND SYS3.GRNAME = 'DEFINED' AND SYS3.VARNAME = 'FEEVSD_TP'
+                --FEEVSD_TP_RP
+                AND SYS4.GRNAME = 'DEFINED' AND SYS4.VARNAME = 'FEEVSD_TP_RP'
+                AND OD.TXDATE >= TO_DATE (F_DATE, 'DD/MM/YYYY')
+                AND OD.TXDATE <= TO_DATE (T_DATE, 'DD/MM/YYYY')
+                AND (OD.TRADEPLACE LIKE V_TRADEPLACE OR OD.TRADEPLACE LIKE V_TRADEPLACE2)
+                AND (SUBSTR(AF.ACCTNO,1,4) LIKE V_STRBRID OR INSTR(V_STRBRID,SUBSTR(AF.ACCTNO,1,4)) >0)
+                ) OD
+            GROUP BY OD.TXDATE, OD.EXECTYPE, OD.CUSTATCOM, OD.TRADEPLACE, OD.SECTYPE, OD.BRID
+        ) OD, ALLCODE A1
+        WHERE A1.CDTYPE = 'OD' AND A1.CDNAME = 'TRADEPLACE' AND A1.CDVAL = OD.TRADEPLACE
+        GROUP BY OD.BRID, OD.TXDATE, OD.SECTYPE, OD.TRADEPLACE
+        ORDER BY OD.BRID, OD.TXDATE, OD.TRADEPLACE, OD.SECTYPE;
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;
+ 
+/

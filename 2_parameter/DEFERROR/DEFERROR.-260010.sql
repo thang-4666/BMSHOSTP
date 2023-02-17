@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260010;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260010, '[-260010] Lịch quyền chứng khoán chờ về không tồn tại', '[-260010] Lịch quyền chứng khoán chờ về không tồn tại', 'DF', NULL);COMMIT;

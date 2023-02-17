@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900055;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900055, '[-900055]: Khối lượng chứng khoán giải tỏa không hợp lệ !', '[-900055]: UNBLOCKQTTY NOT MATCH !', 'SE', NULL);COMMIT;

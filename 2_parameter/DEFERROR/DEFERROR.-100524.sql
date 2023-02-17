@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100524;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100524, '[-100524]: Vượt quá quy định gía trị vay tối đa theo chứng khoán của khách hàng!', '[-100524]: Vượt quá quy định gía trị vay tối đa theo chứng khoán của khách hàng', 'SA', NULL);COMMIT;

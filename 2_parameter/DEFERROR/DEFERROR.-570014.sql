@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -570014;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-570014, 'Số tiền giải tỏa không được lớn hơn số tiền đã phong tỏa!', 'Unbolok amount shoult not be greater than blocked amount!', 'TD', NULL);COMMIT;

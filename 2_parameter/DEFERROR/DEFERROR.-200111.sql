@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200111;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200111, '[-200111]: Số LK chuyển khác số LK nhận!', '[-200111]: Số LK chuyển khác số LK nhận!', 'CF', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260163;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260163, '[-260163]: Cần nhập mã TVLK và số lưu ký  người nhận để chuyển chứng khoán trước khi đóng !', '[-260163]:  Cần nhập mã TVLK và số lưu ký  người nhận để chuyển chứng khoán trước khi đóng', 'CF', NULL);COMMIT;

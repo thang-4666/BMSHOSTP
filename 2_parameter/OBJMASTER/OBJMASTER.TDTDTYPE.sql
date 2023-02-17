@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('TD.TDTYPE','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('TD', 'TD.TDTYPE', 'Loại hình tiết kiệm có kỳ hạn', 'Term deposit product type', 'N', 'N', 'NNNNYYY');COMMIT;

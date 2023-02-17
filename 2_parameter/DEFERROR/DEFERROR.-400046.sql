@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400046;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400046, '[-400046]: Số chừng từ (Ngân Hàng) đã được thực hiện trong ngày giao dịch hiện tại', '[-400046]: ERR_CI_REFNUM_DUPLICATED', 'SA', NULL);COMMIT;

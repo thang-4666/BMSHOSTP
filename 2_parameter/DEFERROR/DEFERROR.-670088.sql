@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670088;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670088, '[-670087]: Vượt quá độ lớn trường dữ liệu', '[-670087]: Vượt quá độ lớn trường dữ liệu', 'RM', 0);COMMIT;

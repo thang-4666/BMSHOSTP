@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200045;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200045, '[-200045]: Trạng thái khách hàng không hợp lệ hoặc Không phải là Ngân hàng !', '[-200045]: ERR_INVALIF_CFMAST_STATUS!', 'CF', NULL);COMMIT;

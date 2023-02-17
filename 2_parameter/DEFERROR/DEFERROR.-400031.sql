@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400031;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400031, 'Vượt quá số tiền đang bị phong tỏa', '[-400031]: Blocked mortage amount not enought ', 'CI', NULL);COMMIT;

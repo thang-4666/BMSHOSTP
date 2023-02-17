@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180019;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180019, '[-180019]: Giá margin không hợp lệ ', '[-180019]:Margin price invalid !', 'MR', NULL);COMMIT;

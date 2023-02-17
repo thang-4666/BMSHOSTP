@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269013;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269013, '[-269013]: Số quyền biểu quyết không hợp lệ!', '[-269013]: Số quyền biểu quyết không hợp lệ', 'SE', NULL);COMMIT;

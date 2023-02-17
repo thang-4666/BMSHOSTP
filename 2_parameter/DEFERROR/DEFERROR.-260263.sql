@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260263;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260263, '[-260263]: Ngày cấp - ngày sinh không đủ 14 năm', '[-260263]: Ngày cấp - ngày sinh không đủ 14 năm', 'CF', NULL);COMMIT;

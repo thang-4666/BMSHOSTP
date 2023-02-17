@@ -1,0 +1,7 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FORCE VIEW V_IT_COMPARE_FLEX
+(CUSTODYCD, PURCHASINGPOWER)
+BEQUEATH DEFINER
+AS 
+select custodycd,purchasingpower from vw_strade_subaccount_ci
+/

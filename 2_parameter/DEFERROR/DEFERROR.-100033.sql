@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100033;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100033, '[-100033]: Mã tổ chức phát hành bị trùng!', '[-100033]: Issuer id is duplicated!', 'SA', NULL);COMMIT;

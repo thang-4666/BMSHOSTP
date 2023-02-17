@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670094;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670094, '[-670094]: Mật khẩu đặt lệnh không đúng', '[-670094]: Trading Password invalid', 'RM', 0);COMMIT;

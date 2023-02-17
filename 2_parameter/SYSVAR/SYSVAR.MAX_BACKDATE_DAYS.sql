@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('MAX_BACKDATE_DAYS','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'MAX_BACKDATE_DAYS', '3600', 'Max number of day for back date transaction', 'Max number of day for back date transaction', 'N', 'A', 'P');COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -102024;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-102024, '[-102024]: Dữ liệu đang chờ duyệt xóa không được phép sửa!', '[-102024]: Dữ liệu đang chờ duyệt xóa không được phép sửa!', 'SA', NULL);COMMIT;

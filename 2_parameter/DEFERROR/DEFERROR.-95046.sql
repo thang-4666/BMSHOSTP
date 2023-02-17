@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -95046;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-95046, '[-95046] - Vượt quá số lượng lệnh trùng nhau cho phép', '[-95046] - Vượt quá số lượng lệnh trùng nhau cho phép', 'NFO', NULL);COMMIT;

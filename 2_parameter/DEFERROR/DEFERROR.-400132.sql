@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400132;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400132, '[-400132]: Loại hình ứng mới phải khác loại hình ứng cũ!', '[-400132]: Loại hình ứng mới phải khác loại hình ứng cũ!', 'CI', NULL);COMMIT;

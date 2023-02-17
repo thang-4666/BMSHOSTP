@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200603;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200603, '[-200603]: Một tài khoản đặt lệnh tại Bloomberg chỉ được đăng ký một lần!', '[-200603]: Một tài khoản đặt lệnh tại Bloomberg chỉ được đăng ký một lần!', 'CF', NULL);COMMIT;

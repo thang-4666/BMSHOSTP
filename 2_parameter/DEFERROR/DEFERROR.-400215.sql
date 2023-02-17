@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400215;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400215, '[-400215]: Giao dịch không được xóa vì bảng kê đã gom chờ xử lý!', '[-400215]: Giao dịch không được xóa vì bảng kê đã gom chờ xử lý!', 'CI', NULL);COMMIT;

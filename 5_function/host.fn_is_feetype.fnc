@@ -1,0 +1,35 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION FN_IS_FEETYPE(PV_AFACCTNO IN VARCHAR2)
+    RETURN CHAR IS
+    V_RESULT char(1);
+    l_count NUMBER;
+
+BEGIN
+  V_result:='N';
+  SELECT COUNT(*) INTO l_count
+  FROM AFBRKFEEGRP
+  WHERE  afacctno= PV_AFACCTNO;
+  if(L_Count> 0) THEN
+  V_result:='Y';
+  END IF;
+
+RETURN V_RESULT;
+EXCEPTION
+   WHEN OTHERS THEN
+    RETURN 'N';
+END;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/

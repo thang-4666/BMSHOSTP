@@ -1,0 +1,19 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FUNCTION fn_TEST
+    RETURN NUMBER IS
+    v_Result  NUMBER;
+   A VARCHAR2 (20);
+BEGIN
+    SELECT 10/3 INTO v_Result FROM DUAL ;
+    A:='';
+    RETURN v_Result;
+
+EXCEPTION
+   WHEN OTHERS THEN
+    RETURN 0;
+END;
+ 
+ 
+ 
+ 
+/

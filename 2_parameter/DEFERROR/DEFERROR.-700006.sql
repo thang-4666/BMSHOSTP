@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700006, '[-700006] Không được đặt lệnh lô lẻ/thỏa thuận trong ngày niêm yết đầu tiên của mã chứng khoán!', '[-700006] Don not place odd lot order with this symbol', 'OD', NULL);COMMIT;

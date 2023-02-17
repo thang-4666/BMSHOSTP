@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -2;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-2, '[-2] Bảng MEMO log thay đổi sai cấu trúc', '[-2] The memo table is invalid format', 'SY', NULL);COMMIT;

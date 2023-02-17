@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -900044;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-900044, '[-900044]: Đã xác nhận xin rút chứng khoán nên không thể xóa !', '[-900044]: EXECUTED 2292', 'SE', NULL);COMMIT;

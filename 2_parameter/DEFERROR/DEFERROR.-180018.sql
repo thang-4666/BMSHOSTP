@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180018;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180018, '[-180018]: Số lượng chứng khoán margin vượt quá quy định của hệ thống ', '[-180018]:Margin quantity over system defined !', 'MR', NULL);COMMIT;

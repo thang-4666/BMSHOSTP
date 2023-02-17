@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670058;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670058, '[-670058]: Hệ thống đang trong quá trình cuối ngày', '[-670058]: System in batch', 'RM', 0);COMMIT;

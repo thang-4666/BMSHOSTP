@@ -1,0 +1,5 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('LN5573','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('LN5573', 'Gia hạn hợp đồng vay (Giao dịch 5573)', 'Gia hạn hợp đồng vay(wait for 5573)', 'select lnc.autoid ,lnc.acctno , ln.trfacctno afacctno, cf.fullname CUSTNAME,cf.idcode LICENSE,
+cf.address,cf.custodycd,ROUND(lnc.nml) AMT,lnc.overduedate,lntype.typename  PRODUCTNAME
+from  lnschd lnc , lnmast ln, afmast af , cfmast cf,lntype
+where lnc.acctno = ln.acctno and ln.trfacctno= af.acctno
+and af.custid = cf.custid  and lntype.actype= ln.actype', 'SEMAST', 'frmSEMAST', '', '5573', NULL, 50, 'N', 30, 'NYNNYYYNNN', 'Y', 'T', '', 'N', '', '');COMMIT;

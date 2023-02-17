@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700125;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700125, '[-700125]: Trạng thái lệnh không hợp lệ!', '[-700125]:Trạng thái lệnh không hợp lệ!', 'OD', NULL);COMMIT;

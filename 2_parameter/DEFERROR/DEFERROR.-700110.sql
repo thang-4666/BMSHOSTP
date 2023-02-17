@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700110;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700110, '[-700110]: TPDN chỉ được đặt lệnh LO!', '[-700110]: TPDN can only place orders LO!', 'SA', NULL);COMMIT;

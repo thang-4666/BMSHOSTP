@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180017;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180017, '[-180017]: Tỷ lệ margin tài khoản thấp hơn tỷ lệ an toàn ', '[-180017]:Account margin rate under initial rate !', 'MR', NULL);COMMIT;

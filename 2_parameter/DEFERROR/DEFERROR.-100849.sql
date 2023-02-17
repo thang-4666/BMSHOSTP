@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100849;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100849, '[-100849]: Trùng thứ tự ưu tiên cho nguồn UTTB bên thứ 3', '[-100849]: Trùng thứ tự ưu tiên cho nguồn UTTB bên thứ 3', 'SA', NULL);COMMIT;

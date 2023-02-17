@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700070;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700070, '[-700070]: Tiểu khoản kết nối ngân hàng phải khai báo tỉ lệ trả chậm là 100%!', '[-700070]: Tiểu khoản kết nối ngân hàng phải khai báo tỉ lệ trả chậm là 100%!', 'OD', NULL);COMMIT;

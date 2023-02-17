@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400107;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400107, '[-400107]: Vượt quá số tiền thấu chi của tiểu khoản!', '[-400107]:Vượt quá số tiền thấu chi của tiểu khoản!', 'CI', NULL);COMMIT;

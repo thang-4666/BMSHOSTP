@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('CF.CFLIMITEXT','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('CF', 'CF.CFLIMITEXT', 'NH - Quy định hạn mức riêng cho từng khách hàng', 'Common customer credit limit of the bank', 'Y', 'N', 'NNNNYYY');COMMIT;

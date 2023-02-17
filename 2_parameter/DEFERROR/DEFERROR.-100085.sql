@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100085;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100085, '[-100085]: Lỗi nhập giao dịch!', '[-100085]: Error on create transaction!', 'SA', NULL);COMMIT;

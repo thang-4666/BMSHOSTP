@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('ONLINEMINTRF1120_AMT','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'ONLINEMINTRF1120_AMT', '0', 'So tien chuyen khoan noi bo toi thieu', 'So tien chuyen khoan noi bo toi thieu', 'N', 'A', 'P');COMMIT;

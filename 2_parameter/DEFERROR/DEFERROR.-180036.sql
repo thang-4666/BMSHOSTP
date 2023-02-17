@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180036;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180036, '[-180036]: Loại hình margin không tồn tại', '[-180036]:margin type was not found!', 'MR', NULL);COMMIT;

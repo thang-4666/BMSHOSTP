@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100818;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100818, '[-100818]: Giá trị nhập vào phải nằm trong khoảng 0 -> 100!', '[-100818]: Giá trị nhập vào phải nằm trong khoảng 0 -> 100!', '', NULL);COMMIT;

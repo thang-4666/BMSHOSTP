@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400009;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400009, '[-100009]: Mã loại hình bị trùng!', '[-400009]:Product type id is duplicated!', 'CI', NULL);COMMIT;

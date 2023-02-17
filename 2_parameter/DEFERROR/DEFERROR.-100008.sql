@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100008;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100008, '[-100008]: Nhóm này đã tồn tại!', '[-100008]: Group id is duplicated!', 'SA', NULL);COMMIT;

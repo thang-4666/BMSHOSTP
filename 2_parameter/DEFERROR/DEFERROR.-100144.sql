@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100144;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100144, '[-100144]:Chuyển đổi loại hình không thành công!. Tiểu khoản tồn tại tiền mặt trên hệ thống!', '[-100144]:Chuyển đổi loại hình không thành công!. Tiểu khoản tồn tại tiền mặt trên hệ thống!', 'CF', NULL);COMMIT;

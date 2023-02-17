@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200415;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200415, '[-200415]:Ngày cấp tradingcode phải nhỏ hơn ngày giao dịch hiện tại!', '[-200415]:Ngày cấp tradingcode phải nhỏ hơn ngày giao dịch hiện tại!', 'CF', NULL);COMMIT;

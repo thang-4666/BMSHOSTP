@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100423;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100423, '[-100423]: Vượt hạn mức qui định vay của khách hàng', '[-100423]: Vượt hạn mức qui định hạn mức vay của khách hàng', 'SA', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180040;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180040, '[-180040]: Giá trị hạn mức bảo lãnh tối đa phải lớn hơn tổng hạn mức đã cấp cho tiểu khoản!', '[-180040]: Giá trị hạn mức bảo lãnh tối đa phải lớn hơn tổng hạn mức đã cấp cho tiểu khoản!', 'MR', NULL);COMMIT;

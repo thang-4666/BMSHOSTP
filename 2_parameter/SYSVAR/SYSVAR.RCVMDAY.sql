@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('RCVMDAY','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'RCVMDAY', '3', 'Chu ky ttoan cua cac lenh ttoan tien ban dau ngay ttoan', '', 'N', 'A', 'P');COMMIT;

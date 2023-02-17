@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200176;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200176, '[-200176]: TK lưu ký nơi khác phải có 3 ký tự đầu khác mã thành viên lưu ký của công ty.', '[-200176]: TK lưu ký nơi khác phải có 3 ký tự đầu khác mã thành viên lưu ký của công ty.', 'CF', NULL);COMMIT;

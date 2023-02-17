@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180022;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180022, '[-180022]: Thành viên đã tham gia vào nhóm  ', '[-180022]:Member has been join a group !', 'MR', NULL);COMMIT;

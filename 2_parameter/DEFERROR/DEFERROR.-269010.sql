@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -269010;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-269010, '[-269010]: SL Chứng khoán CA không hợp lệ!', '[-269010]: SL Chứng khoán CA không hợp lệ', 'SE', NULL);COMMIT;

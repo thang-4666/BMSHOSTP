@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200202;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200202, '[-200202]: Loại hình tiểu khỏan chưa được duyệt.', '[-200202]: AFTYPE not approved', 'SA', NULL);COMMIT;

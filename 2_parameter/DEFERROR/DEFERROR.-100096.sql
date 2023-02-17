@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100096;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100096, '[-100096]: Chính sách ưu đãi phí môi giới đã có qui định chi tiết!', '[-100096]: Brokerage promotion has contraint!', 'SA', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670040;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670040, '[-670040]: Số dư không đủ để phong toả', '[-670040]: Avail balance not enough to hold', 'RM', 0);COMMIT;

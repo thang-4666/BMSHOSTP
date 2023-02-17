@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM FLDVAL WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('RE.RERFEE','NULL');Insert into FLDVAL   (FLDNAME, OBJNAME, ODRNUM, VALTYPE, OPERATOR, VALEXP, VALEXP2, ERRMSG, EN_ERRMSG, TAGFIELD, TAGVALUE, CHKLEV) Values   ('RERFRATE', 'RE.RERFEE', 1, 'V', '>>', '@0', '', 'Tỉ lệ phí phải lớn hơn 0!', 'Fee rate must be greater than 0!', '', '', 0);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100806;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100806, '[-100806]: loại tính phí mới phải khác giá trị cũ!', '[-100806]: loai tinh phi moi phai khac gia tri cu', 'SA', NULL);COMMIT;

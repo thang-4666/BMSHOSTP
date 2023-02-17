@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -604;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-604, 'Nằm ngoài pham vi thời gian mua/bán', 'Nằm ngoài pham vi thời gian mua/bán', 'PM', NULL);COMMIT;

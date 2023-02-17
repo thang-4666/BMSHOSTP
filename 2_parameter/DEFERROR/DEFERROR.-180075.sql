@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180075;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180075, '[-180075]: Vượt quá hạn mức bảo lãnh tối đa toàn cty!', '[-180075]: Vượt quá hạn mức bảo lãnh tối đa toàn cty!', 'CF', NULL);COMMIT;

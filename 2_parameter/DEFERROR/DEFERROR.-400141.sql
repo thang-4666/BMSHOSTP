@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400141;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400141, '[-400141]: Giao dịch đang sử dụng tiền ứng trước!', '[-400141]: Giao dịch đang sử dụng tiền ứng trước!', 'CF', NULL);COMMIT;

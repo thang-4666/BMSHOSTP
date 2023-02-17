@@ -1,0 +1,122 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE "MR0009"
+   (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   pv_BRID           IN       VARCHAR2,
+   TLGOUPS        IN       VARCHAR2,
+   TLSCOPE        IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+   PV_CUSTODYCD   IN       VARCHAR2,
+   PV_AFACCTNO    IN       VARCHAR2,
+   AUTOID       IN       VARCHAR2,
+   PV_AFTYPE    IN       VARCHAR2 default 'ALL'
+   )
+   IS
+   --------------------
+   --BAO CAO GIA HAN MARGIN 5574
+
+   V_STROPT         VARCHAR2(5);
+   V_STRBRID        VARCHAR2(100);
+   V_INBRID         VARCHAR2(5);
+
+   V_F_DATE         date;
+   V_T_DATE         date;
+
+   V_STRCUSTODYCD   VARCHAR2(20);
+   V_STRAFACCTNO    VARCHAR2(20);
+
+   V_AUTOID      VARCHAR2(20);
+   V_AFTYPE     VARCHAR2(10);
+
+BEGIN
+
+    V_STROPT := upper(OPT);
+    V_INBRID := pv_BRID;
+    if(V_STROPT = 'A') then
+        V_STRBRID := '%';
+    else
+        if(V_STROPT = 'B') then
+            select br.BRID into V_STRBRID from brgrp br where  br.brid = V_INBRID;
+        else
+            V_STRBRID := pv_BRID;
+        end if;
+    end if;
+
+    v_F_date := to_date(F_DATE,'dd/mm/rrrr');
+    v_T_date := to_date(T_DATE,'dd/mm/rrrr');
+
+
+    if(upper(PV_CUSTODYCD) = 'ALL' OR LENGTH(PV_CUSTODYCD) < 1 )then
+        V_STRCUSTODYCD := '%';
+    else
+        V_STRCUSTODYCD := UPPER(PV_CUSTODYCD);
+    end if;
+
+
+    if(upper(PV_AFACCTNO) = 'ALL' OR LENGTH(PV_AFACCTNO) < 1 )then
+        V_STRAFACCTNO := '%';
+    else
+        V_STRAFACCTNO := UPPER(PV_AFACCTNO);
+    end if;
+
+    if(upper(AUTOID) = 'ALL' OR LENGTH(AUTOID) < 1 )then
+        V_AUTOID := '%';
+    else
+        V_AUTOID := UPPER(AUTOID);
+    end if;
+
+    IF(PV_AFTYPE IS NULL OR UPPER(PV_AFTYPE) = 'ALL')
+    THEN V_AFTYPE :='%%';
+      ELSE V_AFTYPE := PV_AFTYPE;
+      END IF;
+
+     ---GET REPORT DATA:
+
+OPEN PV_REFCURSOR
+FOR
+
+        SELECT V_STRCUSTODYCD CUST, V_STRAFACCTNO ACC,V_AUTOID AU,
+            TL.TXDATE,TL.TXNUM, CF.CUSTODYCD, CF.FULLNAME, AF.ACCTNO,LN.LNSCHDID, LS.RLSDATE,
+            LN.ORGOVERDUEDATE,LN.FROVERDUEDATE,LN.TOOVERDUEDATE,LN.NML,LN.INTNMLACR,LN.FEEINTNMLACR,
+            NVL(FLD.NVALUE,0) MARGINRATE ,CF.BRID,CF.CUSTID,TLP.TLNAME MAKER,NVL(TLP1.TLNAME,'') CHECKER
+
+     FROM  LNSCHDEXTLOG LN, VW_LNSCHD_ALL LS, VW_LNMAST_ALL LNM, AFMAST AF,AFTYPE AFT,
+            CFMAST CF,VW_TLLOG_ALL TL
+
+     LEFT JOIN (SELECT * FROM VW_TLLOGFLD_ALL WHERE FLDCD='22') FLD ON TL.TXDATE=FLD.TXDATE AND TL.TXNUM=FLD.TXNUM
+     LEFT JOIN TLPROFILES TLP1 ON TL.OFFID=TLP1.TLID
+     LEFT JOIN TLPROFILES TLP ON TL.TLID=TLP.TLID
+
+
+     WHERE TL.TXNUM=LN.TXNUM
+          AND TL.TXDATE=LN.TXDATE
+          AND TL.TLTXCD='5574'
+          AND LS.AUTOID=LN.LNSCHDID
+          AND LNM.ACCTNO=LS.ACCTNO
+          AND LNM.TRFACCTNO=AF.ACCTNO
+          AND AF.CUSTID=CF.CUSTID
+          AND LN.DELTD<>'Y'
+          AND TL.TXSTATUS IN ('1','7')
+          AND LS.RLSDATE IS NOT NULL
+          AND LNM.FTYPE='AF'
+          AND AF.ACCTNO LIKE V_STRAFACCTNO
+          AND CF.CUSTODYCD LIKE V_STRCUSTODYCD
+          AND LN.LNSCHDID LIKE V_AUTOID
+          AND LN.TXDATE BETWEEN v_F_date AND v_T_date
+          AND AFT.ACTYPE =AF.ACTYPE
+          AND AFT.PRODUCTTYPE LIKE V_AFTYPE
+     ORDER BY LN.TXDATE,LN.LNSCHDID,CF.CUSTODYCD,AF.ACCTNO   ;
+
+
+
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN ;
+END; -- Procedure
+ 
+ 
+ 
+ 
+/

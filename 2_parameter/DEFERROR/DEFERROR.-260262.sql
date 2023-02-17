@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260262;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260262, '[-260262]: Số điện thoại không đúng !', '[-260262]: Wrong phone number !', 'CF', NULL);COMMIT;

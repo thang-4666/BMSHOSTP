@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200050;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200050, '[-200050]: Ban khong quan ly khach hang nay!', '[-200050]: You do not care this customer!', 'CF', NULL);COMMIT;

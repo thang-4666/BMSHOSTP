@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('CRB_MAX_REQ','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'CRB_MAX_REQ', '200', 'So luong request toi da trong mot bang ke', 'Max number of request in report', 'N', 'A', 'P');COMMIT;

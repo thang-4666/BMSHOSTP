@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100528;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100528, '[-100528]: Chỉ cho phép trạng thái đã hủy về trạng thái Chờ mở tài khoản!', '[-100528]: Chỉ cho phép trạng thái đã hủy về trạng thái Chờ mở tài khoản!', 'CF', NULL);COMMIT;

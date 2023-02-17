@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200001;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200001, '[-200001]: Mã loại hình hợp đồng bị trùng!', '[-200001]: Mã loại hình hợp đồng bị trùng!', 'CF', NULL);COMMIT;

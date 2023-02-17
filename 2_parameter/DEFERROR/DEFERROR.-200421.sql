@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200421;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200421, '[-200421]:Không được phép chuyển quốc tịch ra Việt Nam sang các nước khác và ngược lại!', '[-200420]:Could not change Country from VN to another, and vice versa!', 'CF', NULL);COMMIT;

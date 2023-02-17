@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200013;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200013, '[-200013]: Trạng thái tiểu khoản không phù hợp !', 'Account status invalid!', 'OD', NULL);COMMIT;

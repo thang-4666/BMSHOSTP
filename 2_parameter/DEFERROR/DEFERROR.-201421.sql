@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -201421;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-201421, '[-201421]: Chứng khoán không trong rổ magin !', '[-201421]: Chứng khoán không trong rổ magin!', 'SA', NULL);COMMIT;

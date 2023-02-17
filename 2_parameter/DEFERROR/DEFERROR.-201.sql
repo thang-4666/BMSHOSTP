@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -201;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-201, 'Mapping mã nghiệp vụ chưa khớp theo từ khoá', 'Mapping mã nghiệp vụ chưa khớp theo từ khoá', 'PM', NULL);COMMIT;

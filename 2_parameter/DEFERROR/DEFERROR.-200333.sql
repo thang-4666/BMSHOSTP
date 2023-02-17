@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200333;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200333, '[-200333]: Tiểu khoản còn nợ bảo lãnh chưa thanh toán, không được tự động cấp bảo lãnh!', '[-200333]: Tiểu khoản còn nợ bảo lãnh chưa thanh toán, không được tự động cấp bảo lãnh!', 'CF', NULL);COMMIT;

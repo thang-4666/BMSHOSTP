@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -260157;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-260157, '[-260157]: Tài khoản vẫn còn tài sản ngoài CK chưa giải chấp !', '[-260157]: Tài khoản vẫn còn tài sản ngoài CK chưa giải chấp', 'SE', NULL);COMMIT;

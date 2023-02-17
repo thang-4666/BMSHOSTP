@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200069;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200069, '[-200069]: Trạng thái khách hàng không đúng!', '[-200069]: Customer status is invalid!', 'SE', NULL);COMMIT;

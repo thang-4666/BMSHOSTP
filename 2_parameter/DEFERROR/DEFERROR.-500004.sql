@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -500004;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-500004, '[-500004]: Mã số tài khoản không tồn tại!', '[-500004]: GL code is not exists!', 'GL', NULL);COMMIT;

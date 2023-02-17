@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100813;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100813, '[-100813]: Giá trị tham số phải không bao bồm khoảng trắng!', '[-100813]: Value can not be inclued blank characters!', '', NULL);COMMIT;

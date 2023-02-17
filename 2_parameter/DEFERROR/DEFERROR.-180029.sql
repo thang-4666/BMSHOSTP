@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180029;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180029, '[-180029]: Vượt quá hạn mức margin của nhóm', '[-180029]:Over group margin limit!', 'MR', NULL);COMMIT;

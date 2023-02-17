@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300067;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300067, '[-300067]:Số lưu ký đã được chốt sự kiện quyền này tại công ty', '[-300067]: Số lưu ký đã được chốt sự kiện quyền này tại công ty', 'CA', NULL);COMMIT;

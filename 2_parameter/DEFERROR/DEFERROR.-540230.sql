@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540230;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540230, '[-540230]: Món vay thanh lý tái ký được giải ngân tại ngày hiện tại!', '[-540230]: Món vay thanh lý tái ký được giải ngân tại ngày hiện tại!', 'LN', NULL);COMMIT;

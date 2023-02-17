@@ -1,0 +1,42 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE pr_getaddsec (PV_REFCURSOR IN OUT PKG_REPORT.REF_CURSOR,p_afacctno varchar2,p_symbol varchar2, p_addAmount number)
+is
+    v_actype varchar2(4);
+    v_addqtty number(20,0);
+begin
+    v_addqtty:=0;
+    select actype into v_actype from afmast where acctno =p_afacctno;
+    for rec in  (
+        SELECT SEINF.BASICPRICE, SEINF.FLOORPRICE,SEINF.MARGINPRICE, SEINF.CEILINGPRICE, SEINF.SECUREDRATIOMAX, SEINF.SECUREDRATIOMIN, SEINF.TRADELOT,
+         SEINF.TRADEUNIT, SEINF.TRADEBUYSELL , SE.PARVALUE, A.CDCONTENT TRADING_CYCLE, B.FULLNAME, SE.TRADEPLACE, SE.SECTYPE,
+         (CASE WHEN (TO_DATE(SEINF.LISTTINGDATE)=(SELECT TO_DATE(VARVALUE,'DD/MM/YYYY') CURRDATE FROM SYSVAR WHERE VARNAME='BUSDATE'
+         AND GRNAME='SYSTEM') AND SE.TRADEPLACE='001') THEN 'Y' ELSE 'N' END ) FIRSTLISTTING, NVL(RSK.MRRATIORATE,0) MRRATIORATE,
+         NVL(RSK.MRPRICERATE,0) MRPRICERATE ,NVL(RSK.MRRATIOLOAN,0) MRRATIOLOAN, NVL(RSK.MRPRICELOAN,0) MRPRICELOAN,
+         NVL(RSK2.MRRATIORATE,0) MRRATIORATE2, NVL(RSK2.MRPRICERATE,0) MRPRICERATE2
+         FROM SECURITIES_INFO SEINF,SBSECURITIES SE,ALLCODE A, ISSUERS B,
+         (SELECT codeid,MRRATIOLOAN,MRPRICELOAN,MRRATIORATE,MRPRICERATE  FROM AFSERISK WHERE   ACTYPE= v_actype) RSK,
+         (SELECT codeid,MRRATIOLOAN,MRPRICELOAN,MRRATIORATE,MRPRICERATE  FROM AFSERISK74 WHERE   ACTYPE= v_actype) RSK2
+         WHERE SEINF.CODEID=SE.CODEID AND SEINF.SYMBOL=p_symbol AND A.CDVAL=SE.TRADEPLACE
+         AND SE.ISSUERID = B.ISSUERID AND A.CDTYPE='SA' AND A.CDNAME='TRADING_CYCLE'  AND SE.CODEID= RSK.CODEID(+) AND SE.CODEID= RSK2.CODEID(+)
+    )
+    loop
+        if rec.MRRATIORATE>0 then
+            v_addqtty:= ceil (p_addAmount/least(rec.MRPRICERATE,rec.MARGINPRICE)/rec.MRRATIORATE*100); --Tinh ra so luong chung khoan can bo sung
+            v_addqtty:=ceil(v_addqtty/rec.TRADELOT) * rec.TRADELOT; --Lam tron theo Lo
+        else
+            v_addqtty:=0;
+        end if;
+    end loop;
+    open PV_REFCURSOR for
+    select v_addqtty ADDQTTY from dual;
+EXCEPTION WHEN others THEN
+    --plog.error('PPSE.EXCEPTION WHEN others THEN:'||dbms_utility.format_error_backtrace);
+    open PV_REFCURSOR for
+    select 0 ADDQTTY from dual;
+    return;
+end;
+ 
+ 
+ 
+ 
+/

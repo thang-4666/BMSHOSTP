@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100027;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100027, '[-100027]: Không xoá được mã chứng khoán do vẫn còn dữ liệu liên quan!', '[-100027]: Cannot delete the Securities which contains related data', 'SA', NULL);COMMIT;

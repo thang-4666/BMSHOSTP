@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100038;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100038, '[-100038]: Mã báo cáo không tồn tại!', '[-100038]:Report code is not exist!', 'SA', NULL);COMMIT;

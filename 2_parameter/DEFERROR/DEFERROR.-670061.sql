@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670061;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670061, '[-670061]: Lỗi hệ thống ngân hàng', '[-670061]: Bank system error', 'RM', 0);COMMIT;

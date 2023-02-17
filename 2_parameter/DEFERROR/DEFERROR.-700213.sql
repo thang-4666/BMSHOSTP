@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700213;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700213, '[-700213]: Loại thanh toán không hợp lệ!', '[-700213]: Invalid clearing type!', 'OD', NULL);COMMIT;

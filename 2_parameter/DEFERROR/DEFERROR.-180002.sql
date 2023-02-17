@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -180002;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-180002, '[-180002]: Biên độ dao động tỷ lệ ban đầu không hợp lệ!', '[-180002]:Invalid initial rate amplitude !', 'MR', NULL);COMMIT;

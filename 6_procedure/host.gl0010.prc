@@ -1,0 +1,164 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE "GL0010" (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   BRID           IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+   FACCTNO        IN       VARCHAR2,
+   TACCTNO        IN       VARCHAR2,
+   TYPEBA         IN       VARCHAR2
+    )
+IS
+--
+-- PURPOSE: BRIEFLY EXPLAIN THE FUNCTIONALITY OF THE PROCEDURE
+--
+-- MODIFICATION HISTORY
+-- PERSON      DATE    COMMENTS
+-- NAMNT   21-NOV-06  CREATED
+-- ---------   ------  -------------------------------------------
+  V_STROPTION            VARCHAR2 (5);       -- A: ALL; B: BRANCH; S: SUB-BRANCH
+  V_STRBRID              VARCHAR2 (4);
+  V_DATEENBALANCE        DATE;
+  V_EOY                  VARCHAR2 (1);
+  V_EOM                  VARCHAR2 (1);
+  V_DMIN                 DATE;
+  V_DMAX                 DATE;
+  V_PERIOD               VARCHAR2 (4);
+  V_FACCTNO              VARCHAR2 (20);
+  V_TACCTNO              VARCHAR2 (20);
+  V_STRTYPEBA            VARCHAR2 (10);
+  PV_CUR             PKG_REPORT.REF_CURSOR;
+    -- USED WHEN V_NUMOPTION > 0
+  -- V_STRLEVELG        VARCHAR2 (10);
+
+-- DECLARE PROGRAM VARIABLES AS SHOWN ABOVE
+BEGIN
+   V_STROPTION := OPT;
+
+   IF (V_STROPTION <> 'A') AND (BRID <> 'ALL')
+   THEN
+      V_STRBRID := BRID;
+   ELSE
+      V_STRBRID := '%%';
+   END IF;
+
+   IF (FACCTNO <> 'ALL') AND (TACCTNO  <> 'ALL')
+   THEN
+      V_FACCTNO := TO_NUMBER(FACCTNO);
+      V_TACCTNO := TO_NUMBER(TACCTNO);
+   ELSE
+      V_FACCTNO := 0;
+      V_TACCTNO := 1000000000000000000;
+   END IF;
+   --001 la ngoai bang
+   --002 la noi bang
+   IF (TYPEBA = '001') THEN
+        V_STRTYPEBA := '0';
+   ELSE
+        V_STRTYPEBA := '123456789';
+   END IF;
+-- NGAY GAN NGAY F_DATE NHAT CO DU LIEU
+OPEN PV_CUR
+FOR
+SELECT TO_DATE(MAX(TXDATE),'DD/MM/YYYY')
+FROM GLHIST
+WHERE TXDATE<  TO_DATE ( F_DATE ,'DD/MM/YYYY')
+AND TO_NUMBER(ACCTNO) BETWEEN V_FACCTNO AND V_TACCTNO
+ ;
+
+LOOP
+FETCH PV_CUR
+INTO V_DMAX ;
+EXIT WHEN PV_CUR%NOTFOUND;
+END LOOP;
+CLOSE PV_CUR;
+
+--NGAY NHO NHAT TRONG GLHIST
+ OPEN PV_CUR
+  FOR
+SELECT MIN(TXDATE)
+ FROM GLHIST
+WHERE TO_NUMBER(ACCTNO) BETWEEN V_FACCTNO AND V_TACCTNO
+;
+ LOOP
+   FETCH PV_CUR
+   INTO V_DMIN ;
+   EXIT WHEN PV_CUR%NOTFOUND;
+ END LOOP;
+  CLOSE PV_CUR;
+--XAC DINH LOAI NGAY
+
+
+V_PERIOD :='EOD';
+
+ OPEN PV_REFCURSOR
+       FOR
+ SELECT BE_BALANCE.ACCTNO, SUBSTR(BE_BALANCE.ACCTNO,7,5) GLBANK,BE_BALANCE.GLNAME, BE_BALANCE.ACNAME, round(NVL(BE_BALANCE.BALANCE,0)) BE_BALANCE,
+        ROUND(NVL(BALANCE.AMTD,0)) AMTD ,ROUND(NVL(BALANCE.AMTC,0)) AMTC,
+       (ROUND(NVL(BE_BALANCE.BALANCE,0))-ROUND(NVL(BALANCE.AMTD,0))+ROUND(NVL(BALANCE.AMTC,0))) EN_BALANCE
+  FROM
+ (SELECT GL.ACCTNO ,GH.BALANCE ,GL.ACNAME,GL.GLNAME FROM
+ (SELECT GL.ACCTNO ,GL.ACNAME,GK.GLNAME
+   FROM  GLMAST GL,GLBANK GK
+   WHERE SUBSTR(GL.ACCTNO,7,5) =GK.GLBANK
+   AND SUBSTR(GL.ACCTNO,1,4) LIKE V_STRBRID
+   --thanhtc sua them dk ngoai bang, noi bang
+   AND INSTR(V_STRTYPEBA,SUBSTR(GL.acctno,7,1)) >0
+   --thanhtc end.
+   )GL
+ LEFT JOIN
+   (SELECT * FROM GLHIST
+    WHERE TO_DATE(TXDATE,'DD/MM/YYYY')  = V_DMAX
+    --thanhtc sua them dk ngoai bang, noi bang
+    AND INSTR(V_STRTYPEBA,SUBSTR(acctno,7,1)) >0
+   --thanhtc end.
+    AND PERIOD LIKE V_PERIOD)GH
+   ON GL.ACCTNO =GH.ACCTNO
+   WHERE TO_NUMBER(GL.ACCTNO) BETWEEN V_FACCTNO AND V_TACCTNO
+   ) BE_BALANCE
+ LEFT JOIN
+  ( SELECT AMT.ACCTNO,SUM (AMT.AMTD) AMTD,SUM(AMT.AMTC) AMTC
+   FROM
+             (SELECT  ACCTNO , (CASE WHEN DORC = 'D' THEN  AMT ELSE 0 END) AMTD,
+                               (CASE WHEN DORC ='C' THEN  AMT ELSE 0 END)AMTC
+              FROM GLTRAN GT
+              where GT.DELTD <>'Y'
+              AND GT.BKDATE >= TO_DATE (F_DATE, 'DD/MM/YYYY')
+              AND GT.BKDATE <= TO_DATE (T_DATE, 'DD/MM/YYYY')
+              --thanhtc sua them dk ngoai bang, noi bang
+              AND INSTR(V_STRTYPEBA,SUBSTR(GT.acctno,7,1)) >0
+              --thanhtc end.
+
+              AND  TO_NUMBER(GT.ACCTNO) BETWEEN V_FACCTNO AND V_TACCTNO
+
+            UNION ALL
+              SELECT  ACCTNO , (CASE WHEN DORC = 'D' THEN  AMT ELSE 0 END) AMTD,
+                                (CASE WHEN DORC ='C' THEN  AMT ELSE 0 END)AMTC
+               FROM GLTRANA GT
+               WHERE GT.DELTD <>'Y'
+               --thanhtc sua them dk ngoai bang, noi bang
+               AND INSTR(V_STRTYPEBA,SUBSTR(GT.acctno,7,1)) >0
+               and GT.bkdate >= TO_DATE (F_DATE, 'DD/MM/YYYY')
+               and GT.bkdate <= TO_DATE (T_DATE, 'DD/MM/YYYY')
+               --thanhtc end.
+               AND TO_NUMBER(GT.ACCTNO) BETWEEN V_FACCTNO AND V_TACCTNO
+                            ) AMT
+      GROUP BY AMT.ACCTNO
+                            ) BALANCE
+        ON   BALANCE.ACCTNO= BE_BALANCE.ACCTNO
+  WHERE (BE_BALANCE.BALANCE <>0 OR BALANCE.AMTD<>0 OR BALANCE.AMTC<>0)
+  ORDER BY BE_BALANCE.ACCTNO;
+
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;                                                              -- PROCEDURE
+
+ 
+ 
+ 
+ 
+/

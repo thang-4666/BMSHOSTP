@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200112;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200112, '[-200112]: Không thể nhập hai loại CK cùng lúc!', '[-200112]: Không thể nhập hai loại CK cùng lúc!', 'SE', NULL);COMMIT;

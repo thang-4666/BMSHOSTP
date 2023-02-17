@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100127;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100127, '[-100127]: Tỉ lệ trả chậm và số ngày trả chậm phải đồng thời bằng 0 hoặc khác 0!', '[-100127]: Tỉ lệ trả chậm và số ngày trả chậm phải đồng thời bằng 0 hoặc khác 0!', 'CF', NULL);COMMIT;

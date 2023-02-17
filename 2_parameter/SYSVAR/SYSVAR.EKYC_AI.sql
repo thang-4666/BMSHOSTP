@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('EKYC_AI','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'EKYC_AI', '90', 'Điểm đánh giá cho phép mở tài khoản Ekyc', 'Record of individual customers open Ekyc', 'Y', 'A', '');COMMIT;

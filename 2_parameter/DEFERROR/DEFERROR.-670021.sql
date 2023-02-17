@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670021;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670021, '[-670021]: Số tiền chuyển trong bảng kê lỗi', '[-670021]: Amount in batch transfer invalid', 'RM', 0);COMMIT;

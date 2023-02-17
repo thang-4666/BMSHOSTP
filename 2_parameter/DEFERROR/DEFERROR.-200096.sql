@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200096;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200096, '[-200096]: Loại hình margin chưa được duyệt.', '[-200096]: DFTYPE not approved', 'SA', NULL);COMMIT;

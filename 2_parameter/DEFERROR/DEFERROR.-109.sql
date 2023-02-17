@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -109;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-109, '[H109]: Tài khoản đang trong quá trình thay đổi thông tin, quý khách chờ trong giây lát hoặc liên hệ với nhân viên môi giới!', '[H109]: Username status invalid', 'HT', NULL);COMMIT;

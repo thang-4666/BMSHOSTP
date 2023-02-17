@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM SYSVAR WHERE 1 = 1 AND NVL(VARNAME,'NULL') = NVL('MAXREGRPLEVEL','NULL');Insert into SYSVAR   (GRNAME, VARNAME, VARVALUE, VARDESC, EN_VARDESC, EDITALLOW, STATUS, PSTATUS) Values   ('SYSTEM', 'MAXREGRPLEVEL', '3', 'Qui định mức nhóm môi giới tối đa', 'The maximum level of remiser group', 'N', 'A', 'P');COMMIT;

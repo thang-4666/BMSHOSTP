@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300028;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300028, '[-300028]: ERR_CA_BOND_PAY_INTEREST_MUSTBE_FINISHED', '[-300028]: Phải thực hiện thu lãi trái phiếu trước khi thực hiện trả gốc', 'CA', NULL);COMMIT;

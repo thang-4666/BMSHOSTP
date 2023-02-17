@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700114;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700114, '[-700114]: Lệnh lô lẻ chỉ cho phép đặt lệnh LO', '[-700114]: Lệnh lô lẻ chỉ cho phép đặt lệnh LO', 'OD', NULL);COMMIT;

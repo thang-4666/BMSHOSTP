@@ -1,0 +1,9 @@
+SET DEFINE OFF;
+CREATE OR REPLACE FORCE VIEW VW_TRADER_POLICY_GETALL
+(AUTOID, AFACCTNO, GROUPID, ADMINID, LEADERID, 
+ TRADERID, LASTDATE, LEADERCD, STATUS, PSTATUS, 
+ APPRV_STS)
+BEQUEATH DEFINER
+AS 
+SELECT autoid,afacctno,groupid,adminid,leaderid,traderid,lastdate,leadercd,status,pstatus,apprv_sts FROM cfaftrdlnk
+/

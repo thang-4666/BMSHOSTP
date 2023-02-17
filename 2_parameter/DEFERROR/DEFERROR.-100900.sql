@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100900;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100900, '[-100900]: User xác nhận phải là User của bạn!', '[-100900]: User xác nhận phải là User của bạn!', 'DL', NULL);COMMIT;

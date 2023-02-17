@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100130;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100130, '[-100130]: Một loại hình không được gán 2 biểu lãi suất lồng nhau !', '[-100130]: Một loại hình không được gán 2 biểu lãi suất lồng nhau!', 'SA', NULL);COMMIT;

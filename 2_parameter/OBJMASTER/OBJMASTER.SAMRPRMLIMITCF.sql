@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM OBJMASTER WHERE 1 = 1 AND NVL(OBJNAME,'NULL') = NVL('SA.MRPRMLIMITCF','NULL');Insert into OBJMASTER   (MODCODE, OBJNAME, OBJTITLE, EN_OBJTITLE, USEAUTOID, CAREBYCHK, OBJBUTTONS) Values   ('SA', 'SA.MRPRMLIMITCF', 'Danh sách tiểu khoản hưởng chính sách ưu đãi hạn mức margin', 'Fee schema', 'Y', 'N', 'NNNNYYY');COMMIT;

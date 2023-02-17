@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300027;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300027, '[-300027]: ERR_CA_CODEID_CANNOT_EXECUTE', '[-300027]: Thực hiện quyền không cho phép đối với chứng khoán này', 'CA', NULL);COMMIT;

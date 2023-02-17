@@ -1,0 +1,4 @@
+SET DEFINE OFF;DELETE FROM SEARCH WHERE 1 = 1 AND NVL(SEARCHCODE,'NULL') = NVL('SMSOTCTP','NULL');Insert into SEARCH   (SEARCHCODE, SEARCHTITLE, EN_SEARCHTITLE, SEARCHCMDSQL, OBJNAME, FRMNAME, ORDERBYCMDSQL, TLTXCD, CNTRECORD, ROWPERPAGE, AUTOSEARCH, INTERVAL, AUTHCODE, ROWLIMIT, CMDTYPE, CONDDEFFLD, BANKINQ, BANKACCT, CHKSCOPECMDSQL) Values   ('SMSOTCTP', 'Đăng ký nhận SMS trái phiếu OTC', 'SMS monitor management', 'select s.autoid, s.mobile, s.camastid, s.ngaythongbao,a.cdcontent status ,(CASE WHEN s.STATUS IN (''P'') THEN ''Y'' ELSE ''N'' END) APRALLOW, tl.tlfullname tlname
+  from SMSOTCTP S, tlprofiles tl,allcode a
+ where s.tlid = tl.tlid and a.cdval = s.status and a.CDTYPE = ''SA'' AND a.CDNAME = ''STATUS'' order by autoid 
+', 'SMSOTCTP', 'frmSMSMONITORMANAGER', '', '', NULL, 50, 'N', 30, '', 'Y', 'T', '', 'N', '', '');COMMIT;

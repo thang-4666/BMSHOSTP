@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400006;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400006, '[-400006]: Lãi tiền gửi cộng dồn không đủ', '[-400006]: Not enought accrual interest.', 'CI', NULL);COMMIT;

@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -300071;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-300071, '[-300071]:Khách hàng vẫn còn quyền mua đã đăng kí mua(3384) mà chưa thực cắt tiền mua(3387)', '[-300071]: Khách hàng vẫn còn quyền mua đã đăng kí mua(3384) mà chưa thực cắt tiền mua(3387)', 'CA', NULL);COMMIT;

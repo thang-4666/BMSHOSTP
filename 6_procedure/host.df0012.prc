@@ -1,0 +1,309 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE "DF0012" (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   PV_BRID           IN       VARCHAR2,
+   TLGOUPS        IN       VARCHAR2,
+   TLSCOPE        IN       VARCHAR2,
+   I_DATE         in       VARCHAR2,
+   PV_CUSTODYCD   IN       VARCHAR2,
+   PV_AFACCTNO    IN       VARCHAR2,
+   I_STATUS       in       VARCHAR2
+   )
+IS
+
+
+   
+--
+
+-- PURPOSE: BRIEFLY EXPLAIN THE FUNCTIONALITY OF THE PROCEDURE
+--
+-- MODIFICATION HISTORY
+-- PERSON      DATE    COMMENTS
+-- THANHNM   12-APR-2012  CREATE
+-- ---------   ------  -------------------------------------------
+    PV_A            PKG_REPORT.REF_CURSOR;
+   V_STROPTION      VARCHAR2 (5);            -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID        VARCHAR2 (4);            -- USED WHEN V_NUMOPTION > 0
+
+   V_STRI_BRID      VARCHAR2 (5);
+   V_STRI_TYPE      VARCHAR2 (5);
+   V_STRCIACCTNO    VARCHAR2 (20);
+
+   V_STRACCTNO      VARCHAR2 (20);
+
+   V_STRFULLNAME    VARCHAR2 (100);
+   V_STRCUSTODYCD   VARCHAR2 (20);
+   V_STRCUSTODYCD1    VARCHAR2 (20);
+   V_CURRDATE       DATE;
+
+   V_APMT           NUMBER(20,0);
+   V_T0_APMT        NUMBER(20,0);
+   V_T1_APMT        NUMBER(20,0);
+   V_T2_APMT        NUMBER(20,0);
+   V_BALANCE        NUMBER(20,0);
+   V_DFDEBTAMT      NUMBER(20,0);
+   V_ADVANCELINE    NUMBER(20,0);
+   V_PAIDAMT        NUMBER(20,0);
+   V_BALDEFOVD      NUMBER(20,0);
+   V_MBLOCK         NUMBER(20,0);
+   V_AAMT           NUMBER(20,0);
+   V_SECUREAMT      NUMBER(20,0);
+   V_T0ODAMT        NUMBER(20,0);
+   V_MARGINAMT   NUMBER(20,0);
+     V_T0AMT  NUMBER(20,0);
+     V_DUEAMT   NUMBER(20,0);
+     V_IDATE       date;
+     V_STRSTATUS   varchar2(3);
+
+     BEGIN
+   V_STROPTION := OPT;
+
+   IF V_STROPTION = 'A' THEN     -- TOAN HE THONG
+      V_STRBRID := '%';
+   ELSIF V_STROPTION = 'B' THEN
+      V_STRBRID := SUBSTR(PV_BRID,1,2) || '__' ;
+   ELSE
+      V_STRBRID := PV_BRID;
+   END IF;
+
+   V_IDATE := to_date (I_DATE,'DD/MM/RRRR');
+   V_STRSTATUS:= I_STATUS;
+
+  -- V_STRCUSTODYCD:=PV_CUSTODYCD;
+   IF UPPER(PV_CUSTODYCD) ='ALL' THEN
+   V_STRCUSTODYCD1:='%%';
+   ELSE
+   V_STRCUSTODYCD1  := PV_CUSTODYCD;
+   END IF;
+   
+   IF PV_AFACCTNO ='ALL' THEN
+   V_STRCIACCTNO:='%%';
+   ELSE
+   V_STRCIACCTNO  := PV_AFACCTNO;
+   END IF;
+
+
+
+OPEN PV_A --THONG TIN CUA KHACH HANG.
+   FOR
+SELECT MAX(MST.AFACCTNO) AFACCTNO, MAX(CF.FULLNAME) FULLNAME, CF.CUSTODYCD,
+    SUM(NVL(ADV.AAMT,0)) AAMT,  -- SO TIEN DA UNG TRUOC
+    SUM(MST.EMKAMT+MST.MBLOCK) PT, --SO TIEN PHONG TOA
+    SUM(NVL(ADV.ADVANCEAMOUNT,0)) APMT, --SO DU CO THE UNG TRUOC
+    SUM(TRUNC(MST.BALANCE)-NVL(AL.SECUREAMT,0)-NVL (AL.ADVAMT, 0)) BALANCE, --SO DU HIEN CO
+    SUM(MST.dfodamt) DFDEBTAMT, --Du no DF
+    SUM(MST.ODAMT) ODAMT , --SO DU BAO LANH
+    SUM(AL.SECUREAMT) SECUREAMT,--Ky quy lenh
+    SUM(MST.T0ODAMT) T0ODAMT,--CHO NHAN VAY BAO LANH
+    SUM(NVL(ADV.PAIDAMT,0)) PAIDAMT, -- SO TIEN PHAI TRA BAN DEAL.
+    sum(nvl(LN.MARGINAMT,0)) MARGINAMT, --DU NO MARGIN
+    sum(nvl(ln.T0AMT,0)) T0AMT, --DU NO BAO LANH
+    sum(nvl(ln.DUEAMT,0)) DUEAMT, --DU NO KHE UOC
+    SUM(GREATEST(NVL(ADV.AVLADVANCE,0) + MST.BALANCE - MST.ODAMT- MST.DFDEBTAMT -
+    MST.DFINTDEBTAMT - NVL (AL.ADVAMT, 0)-NVL(AL.SECUREAMT,0) - MST.RAMT,0)) BALDEFOVD
+FROM CIMAST MST, AFMAST AF, (SELECT * FROM CFMAST WHERE FNC_VALIDATE_SCOPE(BRID, CAREBY, TLSCOPE, PV_BRID, TLGOUPS)=0)  CF,
+   (select ln.trfacctno, TRUNC(NVL(SUM(LN.PRINNML+LN.PRINOVD+LN.INTNMLACR+LN.INTDUE+LN.INTOVDACR+LN.INTNMLOVD+
+     LN.FEEINTNMLACR+LN.FEEINTDUE+LN.FEEINTOVDACR+LN.FEEINTNMLOVD),0),0) MARGINAMT, --DU NO MARGIN
+     TRUNC(NVL(SUM(LN.OPRINNML+LN.OPRINOVD+LN.OINTNMLACR+LN.OINTDUE+LN.OINTOVDACR+LN.OINTNMLOVD),0),0) T0AMT, --DU NO BAO LANH
+     0 DUEAMT --DU NO KHE UOC
+     from   LNMAST LN
+       where  LN.FTYPE ='AF'
+       group by ln.trfacctno ) LN ,
+    (
+        SELECT AAMT,DEPOAMT AVLADVANCE, ADVAMT ADVANCEAMOUNT,AFACCTNO, PAIDAMT
+        FROM V_GETACCOUNTAVLADVANCE WHERE AFACCTNO LIKE V_STRCIACCTNO
+    ) ADV ,
+    (SELECT * FROM V_GETBUYORDERINFO WHERE AFACCTNO LIKE V_STRCIACCTNO) AL
+WHERE AF.ACCTNO = MST.AFACCTNO
+    AND CF.CUSTODYCD LIKE V_STRCUSTODYCD1
+    AND AF.CUSTID = CF.CUSTID
+    AND MST.ACCTNO LIKE V_STRCIACCTNO
+    AND MST.ACCTNO = ADV.AFACCTNO (+)
+    AND MST.ACCTNO  = AL.AFACCTNO (+)
+    AND AF.ACCTNO = LN.trfacctno(+)
+    group by CF.CUSTODYCD
+    ;
+LOOP
+  FETCH PV_A
+       INTO V_STRACCTNO, V_STRFULLNAME, V_STRCUSTODYCD, V_AAMT, V_MBLOCK, V_APMT,
+        V_BALANCE, V_DFDEBTAMT, V_ADVANCELINE,V_SECUREAMT,V_T0ODAMT, V_PAIDAMT,
+        V_MARGINAMT,V_T0AMT,V_DUEAMT,  V_BALDEFOVD;
+       EXIT WHEN PV_A%NOTFOUND;
+  END LOOP;
+CLOSE PV_A;
+
+
+SELECT TO_DATE(VARVALUE,'DD/MM/YYYY') INTO V_CURRDATE FROM SYSVAR WHERE VARNAME LIKE 'CURRDATE' AND GRNAME = 'SYSTEM';
+
+SELECT
+    SUM(CASE WHEN GETDUEDATE(V_CURRDATE, 'B', '000', 3) = cleardate THEN MAXAVLAMT ELSE 0 END) T0,
+    SUM(CASE WHEN GETDUEDATE(V_CURRDATE, 'B', '000', 2) = cleardate THEN MAXAVLAMT ELSE 0 END) T1,
+    SUM(CASE WHEN GETDUEDATE(V_CURRDATE, 'B', '000', 1) = cleardate THEN MAXAVLAMT ELSE 0 END) T2
+    INTO V_T0_APMT, V_T1_APMT, V_T2_APMT
+FROM
+(SELECT CUSTODYCD, CUSTID, FULLNAME,IDCODE, IDTYPE, IDDATE,IDPLACE, ADDRESS, ACCTNO, AUTOADV, ACTYPE, TRFBANK, COREBANK,
+BANKACCT, BANKCODE, CLEARDATE, TXDATE, CURRDATE, GREATEST(MAXAVLAMT-ROUND(DEALPAID,0),0) MAXAVLAMT, EXECAMT, AMT,
+AAMT, PAIDAMT, PAIDFEEAMT, BRKFEEAMT, RIGHTTAX, INCOMETAXAMT, DAYS
+FROM (
+    SELECT VW.CUSTODYCD, VW.CUSTID, VW.FULLNAME, VW.ACCTNO, VW.AUTOADV, VW.ACTYPE, VW.TRFBANK, VW.COREBANK,
+    VW.BANKACCT, VW.BANKCODE, VW.CLEARDATE, VW.TXDATE, VW.CURRDATE, VW.MAXAVLAMT, VW.EXECAMT, VW.AMT,
+    VW.AAMT, VW.PAIDAMT, VW.PAIDFEEAMT, VW.BRKFEEAMT, VW.RIGHTTAX, VW.INCOMETAXAMT, VW.DAYS,
+    (CASE WHEN VW.TXDATE =TO_DATE(SYS.VARVALUE,'DD/MM/RRRR') THEN fn_getdealgrppaid(VW.ACCTNO) ELSE 0 END)*
+    (1+ADT.ADVRATE/100/360*VW.days) DEALPAID,CF.IDCODE, CF.IDTYPE, CF.IDDATE, CF.IDPLACE, CF.ADDRESS
+    FROM VW_ADVANCESCHEDULE VW, SYSVAR SYS,AFMAST AF, AFTYPE AFT ,ADTYPE ADT,CFMAST CF
+    WHERE SYS.GRNAME='SYSTEM' AND SYS.VARNAME ='CURRDATE'
+    AND VW.ACCTNO = AF.ACCTNo AND AF.ACTYPE=AFT.ACTYPE AND AFT.ADTYPE=ADT.ACTYPE
+    AND CF.CUSTID = AF.CUSTID
+) WHERE CUSTODYCD LIKE V_STRCUSTODYCD1 AND ACCTNO LIKE V_STRCIACCTNO)
+;
+
+
+ if V_STRSTATUS ='001' then
+    OPEN PV_REFCURSOR
+    FOR
+
+select  PV_AFACCTNO AFACCTNO, V_STRFULLNAME FULLNAME, V_STRCUSTODYCD CUSTODYCD,
+    V_APMT APMT, V_BALANCE BALANCE, V_DFDEBTAMT DFDEBTAMT, V_ADVANCELINE ADVANCELINE,
+    V_PAIDAMT PAIDAMT, V_MARGINAMT MARGINAMT,V_T0AMT T0AMT,V_DUEAMT DUEAMT,
+    V_BALDEFOVD BALDEFOVD, V_AAMT AAMT, V_MBLOCK MBLOCK,V_SECUREAMT  SECUREAMT,
+    NVL(V_T0_APMT,0) T0_APMT, NVL(V_T1_APMT,0) T1_APMT, NVL(V_T2_APMT,0) T2_APMT,
+        case when ln.ftype ='DF' then LN.ACCTNO else ln.trfacctno end  acctno,
+        case when ln.ftype ='DF' then 'DF' else
+           (case when ls.reftype ='GP' then 'BL' else 'CL' end) end  F_TYPE,
+           to_char(ls.rlsdate,'DD/MM/RRRR') rlsdate,TO_CHAR(ls.overduedate,'DD/MM/RRRR') overduedate,
+            ls.nml+ls.ovd+ls.paid F_GTGN, ls.PAID F_GTTL,
+           ls.nml+ls.ovd - nvl(LNTR.PRIN_MOVE,0)  F_DNHT,
+           (ls.intnmlacr+ls.intdue+ls.intovd+ls.intovdprin - nvl(LNTR.PRFEE_MOVE,0)
+           +LS.FEEINTNMLACR+LS.FEEDUE+LS.FEEOVD+LS.FEEINTOVDACR+LS.FEEINTNMLOVD+
+           LS.FEEINTDUE+LS.OVDFEEINT+LS.FEEINTNML+LS.FEEINTOVD ) F_LAI_PHI,
+           '' F_LOAICB,  case when ln.ftype ='DF' then  to_char(ln.rate2) || ' - ' || to_char(ln.cfrate2)  else
+           (case when ls.reftype ='GP' then to_char(ln.rate2) || ' - ' || to_char(ln.cfrate2) else
+           to_char(ln.rate2) || ' - ' || to_char(ln.cfrate2) end) end  F_TLLAI,
+           case when ln.ftype = 'DF' then v.rttdf else round(sec.marginrate,2) end kRate,
+           NVL(V.VNDSELLDF,0) VNDSELLDF , nvl(v.ODCALLDF,0) ODCALLDF, I_DATE  IDATE ,I_STATUS  ISTATUS
+from (select * from lnmast union select * from lnmasthist) ln,
+       (select * from lnschd union select * from lnschdhist) ls,
+        (
+            SELECT TR.ACCTNO LNACCTNO,
+           SUM(CASE WHEN TX.FIELD IN ('PRINNML','PRINOVD') THEN
+                 (CASE WHEN TX.TXTYPE = 'C' THEN NAMT
+                      WHEN TX.TXTYPE = 'D' THEN -NAMT
+                      ELSE 0 END)
+               ELSE 0 END)        PRIN_MOVE,
+           SUM(CASE WHEN TX.FIELD IN ('INTNMLACR','INTDUE','INTOVDACR','INTNMLOVD',
+                 'FEEINTNMLACR','FEEINTDUE','FEEINTOVDACR','FEEINTNMLOVD') THEN
+                   ( CASE WHEN TX.TXTYPE = 'C' THEN NAMT
+                      WHEN TX.TXTYPE = 'D' THEN -NAMT
+                      ELSE 0 END)
+                     ELSE 0 END ) PRFEE_MOVE
+           FROM VW_LNTRAN_ALL TR, APPTX TX
+            WHERE TX.APPTYPE = 'LN' AND TR.TXCD = TX.TXCD
+            AND TXDATE > V_IDATE
+            GROUP BY TR.ACCTNO) LNTR,
+      (SELECT * FROM CFMAST WHERE FNC_VALIDATE_SCOPE(BRID, CAREBY, TLSCOPE, PV_BRID, TLGOUPS)=0)  CF, afmast af , v_getgrpdealformular v, v_getsecmarginratio sec
+where ln.acctno = ls.acctno
+and ls.reftype in ('P','GP')
+and ln.rlsdate <= V_IDATE
+and ls.rlsdate <=  V_IDATE
+and ls.nml+ls.ovd - nvl(LNTR.PRIN_MOVE,0) = 0
+AND CF.CUSTID = AF.CUSTID
+AND LN.trfacctno = AF.ACCTNO
+AND CF.CUSTODYCD LIKE V_STRCUSTODYCD1
+AND AF.ACCTNO LIKE V_STRCIACCTNO
+and af.acctno = sec.afacctno
+and ln.acctno = v.lnacctno(+)
+and ln.acctno = LNTR.LNACCTNO(+)
+
+UNION ALL
+
+SELECT PV_AFACCTNO AFACCTNO, V_STRFULLNAME FULLNAME, V_STRCUSTODYCD CUSTODYCD,
+    V_APMT APMT, V_BALANCE BALANCE, V_DFDEBTAMT DFDEBTAMT, V_ADVANCELINE ADVANCELINE,
+    V_PAIDAMT PAIDAMT, V_MARGINAMT MARGINAMT,V_T0AMT T0AMT,V_DUEAMT DUEAMT,
+    V_BALDEFOVD BALDEFOVD, V_AAMT AAMT, V_MBLOCK MBLOCK, V_SECUREAMT  SECUREAMT,
+    NVL(V_T0_APMT,0) T0_APMT, NVL(V_T1_APMT,0) T1_APMT, NVL(V_T2_APMT,0) T2_APMT,
+    '' acctno, ''  F_TYPE,  ''  rlsdate,'' overduedate, 0 F_GTGN, 0 F_GTTL,
+    0 F_DNHT, 0 F_LAI_PHI, '' F_LOAICB, ''  F_TLLAI,0  kRate, 0 VNDSELLDF ,0 ODCALLDF,I_DATE  IDATE,I_STATUS  ISTATUS
+FROM DUAL
+;
+ else
+    OPEN PV_REFCURSOR
+    FOR
+
+select  PV_AFACCTNO AFACCTNO, V_STRFULLNAME FULLNAME, V_STRCUSTODYCD CUSTODYCD,
+    V_APMT APMT, V_BALANCE BALANCE, V_DFDEBTAMT DFDEBTAMT, V_ADVANCELINE ADVANCELINE,
+    V_PAIDAMT PAIDAMT, V_MARGINAMT MARGINAMT,V_T0AMT T0AMT,V_DUEAMT DUEAMT,
+    V_BALDEFOVD BALDEFOVD, V_AAMT AAMT, V_MBLOCK MBLOCK,V_SECUREAMT  SECUREAMT,
+    NVL(V_T0_APMT,0) T0_APMT, NVL(V_T1_APMT,0) T1_APMT, NVL(V_T2_APMT,0) T2_APMT,
+        case when ln.ftype ='DF' then LN.ACCTNO else ln.trfacctno end  acctno,
+        case when ln.ftype ='DF' then 'DF' else
+           (case when ls.reftype ='GP' then 'BL' else 'CL' end) end  F_TYPE,
+           to_char(ls.rlsdate,'DD/MM/RRRR') rlsdate,TO_CHAR(ls.overduedate,'DD/MM/RRRR') overduedate,
+            ls.nml+ls.ovd+ls.paid F_GTGN, ls.PAID F_GTTL,
+            ls.nml+ls.ovd - nvl(LNTR.PRIN_MOVE,0) F_DNHT,
+            (ls.intnmlacr+ls.intdue+ls.intovd+ls.intovdprin - nvl(LNTR.PRFEE_MOVE,0)
+            +LS.FEEINTNMLACR+LS.FEEDUE+LS.FEEOVD+LS.FEEINTOVDACR+LS.FEEINTNMLOVD+LS.FEEINTDUE
+            +LS.OVDFEEINT+LS.FEEINTNML+LS.FEEINTOVD ) F_LAI_PHI,
+           '' F_LOAICB,  case when ln.ftype ='DF' then  to_char(ln.rate2) || ' - ' || to_char(ln.cfrate2)  else
+           (case when ls.reftype ='GP' then to_char(ln.rate2) || ' - ' || to_char(ln.cfrate2) else
+           to_char(ln.rate2) || ' - ' || to_char(ln.cfrate2) end) end  F_TLLAI,
+           case when ln.ftype = 'DF' then v.rttdf else round(sec.marginrate,2) end kRate,
+           NVL(V.VNDSELLDF,0) VNDSELLDF , nvl(v.ODCALLDF,0) ODCALLDF, I_DATE  IDATE ,I_STATUS  ISTATUS
+
+from (select * from lnmast union select * from lnmasthist) ln,
+      (select * from lnschd union select * from lnschdhist) ls,
+       (
+            SELECT TR.ACCTNO LNACCTNO,
+           SUM(CASE WHEN TX.FIELD IN ('PRINNML','PRINOVD') THEN
+                 (CASE WHEN TX.TXTYPE = 'C' THEN NAMT
+                      WHEN TX.TXTYPE = 'D' THEN -NAMT
+                      ELSE 0 END)
+               ELSE 0 END)        PRIN_MOVE,
+           SUM(CASE WHEN TX.FIELD IN ('INTNMLACR','INTDUE','INTOVDACR','INTNMLOVD',
+                 'FEEINTNMLACR','FEEINTDUE','FEEINTOVDACR','FEEINTNMLOVD') THEN
+                   ( CASE WHEN TX.TXTYPE = 'C' THEN NAMT
+                      WHEN TX.TXTYPE = 'D' THEN -NAMT
+                      ELSE 0 END)
+                     ELSE 0 END ) PRFEE_MOVE
+           FROM VW_LNTRAN_ALL TR, APPTX TX
+            WHERE TX.APPTYPE = 'LN' AND TR.TXCD = TX.TXCD
+            AND TXDATE > V_IDATE
+            GROUP BY TR.ACCTNO) LNTR,
+      CFMAST CF, afmast af , v_getgrpdealformular v, v_getsecmarginratio sec
+where ln.acctno = ls.acctno
+and ls.reftype in ('P','GP')
+and ln.rlsdate <= V_IDATE
+and ls.rlsdate <=  V_IDATE
+and decode(V_STRSTATUS,'ALL',1,ls.nml+ls.ovd - nvl(LNTR.PRIN_MOVE,0)) > 0
+AND CF.CUSTID = AF.CUSTID
+AND LN.trfacctno = AF.ACCTNO
+AND CF.CUSTODYCD LIKE V_STRCUSTODYCD1
+AND AF.ACCTNO LIKE V_STRCIACCTNO
+and af.acctno = sec.afacctno
+and ln.acctno = v.lnacctno (+)
+and ln.acctno = LNTR.LNACCTNO(+)
+
+UNION ALL
+
+SELECT PV_AFACCTNO AFACCTNO, V_STRFULLNAME FULLNAME, V_STRCUSTODYCD CUSTODYCD,
+    V_APMT APMT, V_BALANCE BALANCE, V_DFDEBTAMT DFDEBTAMT, V_ADVANCELINE ADVANCELINE,
+    V_PAIDAMT PAIDAMT, V_MARGINAMT MARGINAMT,V_T0AMT T0AMT,V_DUEAMT DUEAMT,
+    V_BALDEFOVD BALDEFOVD, V_AAMT AAMT, V_MBLOCK MBLOCK, V_SECUREAMT  SECUREAMT,
+    NVL(V_T0_APMT,0) T0_APMT, NVL(V_T1_APMT,0) T1_APMT, NVL(V_T2_APMT,0) T2_APMT,
+    '' acctno, ''  F_TYPE,  ''  rlsdate,'' overduedate, 0 F_GTGN, 0 F_GTTL,
+    0 F_DNHT, 0 F_LAI_PHI, '' F_LOAICB, ''  F_TLLAI,0  kRate, 0 VNDSELLDF ,0 ODCALLDF,I_DATE  IDATE,I_STATUS  ISTATUS
+FROM DUAL
+;
+ end if;
+
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;                                                              -- PROCEDURE
+ 
+ 
+ 
+ 
+/

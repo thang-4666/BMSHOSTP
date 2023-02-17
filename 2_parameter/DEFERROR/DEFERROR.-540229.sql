@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540229;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540229, '[-540229]: Xuất dữ liệu báo cáo ghi log không thành công!', '[-540229]: Xuất dữ liệu báo cáo ghi log không thành công!', 'LN', NULL);COMMIT;

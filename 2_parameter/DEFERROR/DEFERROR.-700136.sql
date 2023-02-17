@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700136;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700136, '[-700136]: Lệnh đã được xử lý hết!', '[-700136]: Lệnh đã được xử lý hết!', 'OD', NULL);COMMIT;

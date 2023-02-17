@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -200067;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-200067, '[-200067]: Khách hàng phải lưu ký tại công ty!', '[-200067]: Khách hàng phải lưu ký tại công ty', 'CF', NULL);COMMIT;

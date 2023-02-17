@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -670076;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-670076, '[-670076] : Mã bảng kê không tồn tại, hoặc bản kê đã được duyệt rồi', '[-670076] : Mã bảng kê không tồn tại, hoặc bản kê đã được duyệt rồi', 'RM', 0);COMMIT;

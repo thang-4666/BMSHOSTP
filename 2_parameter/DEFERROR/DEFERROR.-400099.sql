@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400099;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400099, '[-400099]: Tài khoản margin không được mua chứng khoán ngoài danh mục!', '[-400099]:Margin account can not buy securities out of basket!', 'CI', NULL);COMMIT;

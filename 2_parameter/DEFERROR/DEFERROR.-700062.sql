@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -700062;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-700062, '[-700062]: Hệ thống không cho phép mua trên tiểu khoản margin!', '[-700062]: Hệ thống không cho phép mua trên tiểu khoản margin!', 'OD', NULL);COMMIT;

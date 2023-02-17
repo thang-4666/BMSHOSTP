@@ -1,0 +1,195 @@
+SET DEFINE OFF;
+CREATE OR REPLACE PROCEDURE "CI0017" (
+   PV_REFCURSOR   IN OUT   PKG_REPORT.REF_CURSOR,
+   OPT            IN       VARCHAR2,
+   pv_BRID           IN       VARCHAR2,
+   TLGOUPS        IN       VARCHAR2,
+   TLSCOPE        IN       VARCHAR2,
+   P_CUSTODYCD    IN       VARCHAR2,
+   P_AFACCTNO     IN       VARCHAR2,
+   F_DATE         IN       VARCHAR2,
+   T_DATE         IN       VARCHAR2,
+   F_CDATE        IN       VARCHAR2,
+   T_CDATE        IN       VARCHAR2,
+   F_ODATE        IN       VARCHAR2,
+   T_ODATE        IN       VARCHAR2,
+   I_BRID         IN       VARCHAR2,
+   I_ADTYPE       IN       VARCHAR2,
+   VIA            IN       VARCHAR2,
+   PV_CLEARDT     IN       VARCHAR2
+ )
+IS
+--
+-- PURPOSE: BRIEFLY EXPLAIN THE FUNCTIONALITY OF THE PROCEDURE
+-- Ban ke hoan ung
+-- MODIFICATION HISTORY
+-- PERSON      DATE    COMMENTS
+--NGOCVTT    22/04/2015
+-- ---------   ------  -------------------------------------------
+   V_STROPT     VARCHAR2 (50);            -- A: ALL; B: BRANCH; S: SUB-BRANCH
+   V_STRBRID       VARCHAR2 (40);            -- USED WHEN V_NUMOPTION > 0
+   V_INBRID         VARCHAR2 (50);
+
+   V_STRAFACCTNO   VARCHAR2 (20);
+   V_STRCUSTODYCD  VARCHAR2 (20);
+
+   V_STRISBRID      VARCHAR2 (50);
+   V_FROMDATE       DATE;
+   V_TODATE         DATE;
+   V_CFROMDATE       DATE;
+   V_CTODATE         DATE;
+   V_OFROMDATE       DATE;
+   V_OTODATE         DATE;
+   V_ADVFEERATE NUMBER(20,6);
+
+    -- ADDED BY TRUONG FOR LOGGING
+   V_TRADELOG CHAR(20);
+   V_AUTOID NUMBER;
+   V_INSTANCE VARCHAR2 (10);
+   V_ADTYPE     VARCHAR2(20);
+   V_STRVIA     VARCHAR2(60);
+   V_PV_CLEARDT   NUMBER;
+   V_STRCASHPLACE      VARCHAR2(1000);
+
+BEGIN
+    V_STROPT := upper(OPT);
+    V_INBRID := pv_BRID;
+    if(V_STROPT = 'A') then
+        V_STRBRID := '%';
+    else
+        if(V_STROPT = 'B') then
+            select br.BRID into V_STRBRID from brgrp br where  br.brid = V_INBRID;
+        else
+            V_STRBRID := pv_BRID;
+        end if;
+    end if;
+
+-----------------
+    IF (UPPER(P_CUSTODYCD) = 'ALL' OR P_CUSTODYCD IS NULL)
+    THEN
+      V_STRCUSTODYCD := '%%';
+    ELSE
+      V_STRCUSTODYCD := P_CUSTODYCD;
+    END IF;
+
+        IF (UPPER(P_AFACCTNO) = 'ALL' OR P_AFACCTNO IS NULL)
+    THEN
+      V_STRAFACCTNO := '%%';
+    ELSE
+      V_STRAFACCTNO := P_AFACCTNO;
+    END IF;
+  --------------------------
+
+
+    IF (UPPER(I_BRID) = 'ALL' OR I_BRID IS NULL)
+    THEN
+      V_STRISBRID := '%%';
+    ELSE
+      V_STRISBRID := I_BRID;
+    END IF;
+
+    IF I_ADTYPE = 'ALL' OR I_ADTYPE IS NULL THEN
+        V_ADTYPE := '%%';
+    ELSE
+        V_ADTYPE := I_ADTYPE;
+    END IF;
+
+    IF UPPER(VIA) = 'ALL' OR VIA IS NULL THEN
+        V_STRVIA := '%';
+    ELSE
+        V_STRVIA := VIA;
+    END IF;
+
+    IF(UPPER(PV_CLEARDT) = 'ALL')OR PV_CLEARDT IS NULL THEN
+        V_PV_CLEARDT := 0;
+    ELSE
+        V_PV_CLEARDT := PV_CLEARDT;
+    END IF;
+
+   V_FROMDATE   := TO_DATE(F_DATE,'DD/MM/YYYY');
+   V_TODATE     := TO_DATE(T_DATE,'DD/MM/YYYY');
+   V_CFROMDATE  := TO_DATE(F_CDATE,'DD/MM/YYYY');
+   V_CTODATE    := TO_DATE(T_CDATE,'DD/MM/YYYY');
+   V_OFROMDATE  := TO_DATE(F_ODATE,'DD/MM/YYYY');
+   V_OTODATE    := TO_DATE(T_ODATE,'DD/MM/YYYY');
+
+   -- END OF GETTING REPORT'S PARAMETERS
+
+
+   -- GET REPORT'S DATA
+
+    OPEN  PV_REFCURSOR FOR
+
+    SELECT V_CFROMDATE FROMDATE ,V_CTODATE TODATE, TO_CHAR(AD.ODDATE,'DD/MM/RRRR') ODDATE, BR.BRNAME BRNAME,
+            CF.BRID CAREBY,TL1.TLNAME MAKER,TO_CHAR(AD.TXDATE,'DD/MM/RRRR') TXDATE, TO_CHAR(AD.TXNUM) TXNUM ,
+            CF.CUSTODYCD, AF.ACCTNO,CF.FULLNAME FULLNAME,A0.CDCONTENT PRODUCTTYPE,
+            AD.CLEARDT CLEARDT, ADT.AMT NAMT, ADT.FEEADVB  bankfee, ADT.RRTYPE,
+            ADT.FEEADVC vatamt, NVL(ADT.CUSTBANK,'') BANK,
+            NVL(ADT.ADVRATE,0)  FEE, NVL(ADT.BANKRATE,0)  BANKFEERATE,
+            ADT.FEEADV FEEAMT, ADT.AMT -ADT.FEEADV AMT,ADT.VAT,
+            NVL(CF2.SHORTNAME,CF2.MNEMONIC) CUSTBANK,
+            TO_NUMBER(AD.CLEARDT-AD.TXDATE) NGAYUT,DECODE(V_ADTYPE,'%%','ALL',NVL(ADTY.TYPENAME,''))  ADVBANK,
+            AD.ADTYPE,  DECODE(V_STRISBRID,'%%','ALL',NVL(BR.BRNAME,'')) BRANCH,
+            (CASE WHEN SUBSTR(AD.TXNUM,1,2) = '68' THEN '68'
+                WHEN SUBSTR(AD.TXNUM,1,2) = '99' THEN '99' ELSE '00' END) KENH,  CASE WHEN SUBSTR(AF.ACCTNO,1,2)= SUBSTR(AD.TXNUM,1,2) OR substr(AD.TXNUM,1,2) IN ('99','68')   THEN '1'  ELSE '2' END TYPEBRID,
+            ad.txkey
+        FROM (SELECT * FROM
+                (
+                    SELECT AUTOID,ACCTNO, TXDATE,RRTYPE, TXNUM, CLEARDT, AMT, FEEAMT, PAIDAMT, DELTD,CUSTBANK, NVL(ADTYPE,'----') ADTYPE, ODDATE, bankfee, vatamt ,
+                        to_char(txdate,'DDMMRRRR') || substr(txnum,5,6) txkey
+                    FROM ADSCHD
+                    UNION ALL
+                    SELECT AUTOID,ACCTNO, TXDATE,RRTYPE, TXNUM, CLEARDT, AMT, FEEAMT, PAIDAMT, DELTD,CUSTBANK, NVL(ADTYPE,'----') ADTYPE, ODDATE, bankfee, vatamt,
+                        to_char(txdate,'DDMMRRRR') || substr(txnum,5,6) txkey
+                    FROM ADSCHDHIST)
+             ) AD, AFMAST AF,AFTYPE AFT,ALLCODE A0,  (SELECT * FROM CFMAST WHERE FNC_VALIDATE_SCOPE(BRID, CAREBY, TLSCOPE, pv_BRID, TLGOUPS)=0) CF,
+             ( SELECT BR.BRID,BR.BRNAME,TL.GRPID CAREBY FROM BRGRP BR, TLGROUPS TL
+                   WHERE TL.GRPTYPE='2' AND TL.GRPID NOT IN (SELECT CA.GRPID
+                       FROM TRADEPLACE PA, TRADECAREBY CA
+                       WHERE  PA.TRAID=CA.TRADEID AND PA.BRID=SUBSTR(BR.BRID,1,4))
+                   UNION ALL
+                   SELECT BRID||TRAID BRID, TRADENAME BRNAME, CA.GRPID CAREBY
+                   FROM TRADEPLACE PA, TRADECAREBY CA WHERE PA.TRAID=CA.TRADEID) BR, VW_TLLOG_ALL TL,ADTYPE ADTY,CFMAST CF2,
+             vw_advsreslog_all ADT, TLPROFILES TL1
+        WHERE AD.DELTD <> 'Y' AND ADT.DELTD<>'Y'
+            AND AF.ACCTNO = AD.ACCTNO
+            AND AF.CUSTID = CF.CUSTID
+            AND AD.TXNUM = TL.TXNUM
+            AND AD.TXDATE = TL.TXDATE
+            AND CF.BRID=SUBSTR(BR.BRID,1,4)
+            AND AD.TXDATE >= V_FROMDATE
+            AND AD.TXDATE <= V_TODATE
+            AND AD.CLEARDT >= V_CFROMDATE
+            AND AD.CLEARDT <= V_CTODATE
+            and AD.ODDATE >= V_OFROMDATE
+            and AD.ODDATE <= V_OTODATE
+            AND NVL(ADT.CUSTBANK,'000') = CF2.CUSTID
+            AND TL.TLID=TL1.TLID(+)
+            AND AD.ADTYPE = ADTY.ACTYPE
+            AND AD.TXDATE = ADT.TXDATE
+            AND AD.TXNUM=ADT.TXNUM
+            AND CF.CAREBY=BR.CAREBY
+            AND AFT.ACTYPE=AF.ACTYPE
+            AND AD.PAIDAMT>0
+            AND CF.CUSTODYCD LIKE V_STRCUSTODYCD
+            AND AF.ACCTNO LIKE V_STRAFACCTNO
+            AND A0.CDNAME='PRODUCTTYPE' AND A0.CDTYPE='CF' AND A0.CDVAL=AFT.PRODUCTTYPE
+            AND NVL(ADT.CUSTBANK,'0000') LIKE V_ADTYPE
+            AND BR.BRID LIKE V_STRISBRID
+            AND (CASE WHEN V_PV_CLEARDT = 0 THEN V_PV_CLEARDT ELSE TO_NUMBER(AD.CLEARDT-AD.TXDATE)END) LIKE V_PV_CLEARDT   --HOANGND
+            AND ((CASE WHEN SUBSTR(AD.TXNUM,1,2) = '68' THEN 'O' ELSE 'FA' END) LIKE V_STRVIA
+            OR (CASE WHEN SUBSTR(AD.TXNUM,1,2) = '68' THEN 'O'
+                WHEN SUBSTR(AD.TXNUM,1,2) = '99' THEN 'A' ELSE 'F' END) LIKE V_STRVIA)
+        ORDER BY AD.CLEARDT, AD.ACCTNO, AD.CUSTBANK
+     ;
+
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RETURN;
+END;                                                              -- PROCEDURE
+ 
+ 
+ 
+ 
+/

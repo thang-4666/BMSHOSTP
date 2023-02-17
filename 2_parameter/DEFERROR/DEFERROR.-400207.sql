@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -400207;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-400207, '[-400207]: Tài khoản vẫn còn HM cho vay được cấp chưa thu hồi !', '[-400207]: Tài khoản vẫn còn HM cho vay được cấp chưa thu hồi', 'CI', NULL);COMMIT;

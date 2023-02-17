@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -540030;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-540030, '[-540030]: Tài khoản có nợ đến hạn hoặc nợ quá hạn!', '[-540030]: Tài khoản có nợ đến hạn hoặc nợ quá hạn!', 'LN', NULL);COMMIT;

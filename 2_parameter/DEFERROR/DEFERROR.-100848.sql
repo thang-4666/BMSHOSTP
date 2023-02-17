@@ -1,0 +1,1 @@
+SET DEFINE OFF;DELETE FROM DEFERROR WHERE 1 = 1 AND ERRNUM = -100848;Insert into DEFERROR   (ERRNUM, ERRDESC, EN_ERRDESC, MODCODE, CONFLVL) Values   (-100848, '[-100848]: Chỉ được khai báo một nguồn ứng trước công ty', '[-100848]: System can have only one company adv resource', 'SA', NULL);COMMIT;
